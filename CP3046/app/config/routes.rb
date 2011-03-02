@@ -1,4 +1,11 @@
 App::Application.routes.draw do
+  resources :researchers
+  resources :researchers do
+    member do
+      get 'profile'
+	end
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

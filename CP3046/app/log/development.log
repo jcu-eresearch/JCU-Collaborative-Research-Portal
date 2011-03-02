@@ -1,0 +1,199 @@
+
+
+Started GET "/researcher" for 127.0.0.1 at 2011-03-02 22:17:14 +1000
+
+ActionController::RoutingError (No route matches "/researcher"):
+  
+
+Rendered /Users/robertpyke/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/researchers" for 127.0.0.1 at 2011-03-02 22:17:30 +1000
+  Processing by ResearchersController#index as HTML
+  [1m[36mResearcher Load (0.5ms)[0m  [1mSELECT "researchers".* FROM "researchers"[0m
+SQLite3::SQLException: no such table: researchers: SELECT "researchers".* FROM "researchers"
+Completed   in 63ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: researchers: SELECT "researchers".* FROM "researchers"):
+  app/controllers/researchers_controller.rb:5:in `index'
+
+Rendered /Users/robertpyke/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/robertpyke/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+Rendered /Users/robertpyke/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.2ms)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (3.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreateResearchers (20110302121657)
+  [1m[36mSQL (0.7ms)[0m  [1mCREATE TABLE "researchers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "title" varchar(255), "address" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110302121657')
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("researchers")
+
+
+Started GET "/researchers" for 127.0.0.1 at 2011-03-02 22:17:58 +1000
+  Processing by ResearchersController#index as HTML
+  [1m[36mResearcher Load (0.5ms)[0m  [1mSELECT "researchers".* FROM "researchers"[0m
+Rendered researchers/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 66ms (Views: 9.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/researchers/new" for 127.0.0.1 at 2011-03-02 22:18:02 +1000
+  Processing by ResearchersController#new as HTML
+Rendered researchers/_form.html.erb (40.4ms)
+Rendered researchers/new.html.erb within layouts/application (44.8ms)
+Completed 200 OK in 61ms (Views: 50.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/researchers" for 127.0.0.1 at 2011-03-02 22:21:17 +1000
+  Processing by ResearchersController#index as HTML
+  [1m[36mResearcher Load (0.5ms)[0m  [1mSELECT "researchers".* FROM "researchers"[0m
+Rendered researchers/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 67ms (Views: 8.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/researchers/new" for 127.0.0.1 at 2011-03-02 22:21:21 +1000
+  Processing by ResearchersController#new as HTML
+Rendered researchers/_form.html.erb (12.9ms)
+Rendered researchers/new.html.erb within layouts/application (40.6ms)
+Completed 200 OK in 59ms (Views: 46.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/researchers" for 127.0.0.1 at 2011-03-02 22:21:24 +1000
+  Processing by ResearchersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mbFvMX98coAgoFvGSPY+4umyTZrn8E61iP1iKBMY6y8=", "researcher"=>{"name"=>"", "title"=>"", "address"=>""}, "commit"=>"Create Researcher"}
+Rendered researchers/_form.html.erb (7.2ms)
+Rendered researchers/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 38ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/researchers" for 127.0.0.1 at 2011-03-02 22:25:49 +1000
+  Processing by ResearchersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mbFvMX98coAgoFvGSPY+4umyTZrn8E61iP1iKBMY6y8=", "researcher"=>{"name"=>"Name", "title"=>"Title", "address"=>"This is \r\nthe address"}, "commit"=>"Create Researcher"}
+Rendered researchers/_form.html.erb (5.4ms)
+Rendered researchers/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 39ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/researchers" for 127.0.0.1 at 2011-03-02 22:25:54 +1000
+  Processing by ResearchersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mbFvMX98coAgoFvGSPY+4umyTZrn8E61iP1iKBMY6y8=", "researcher"=>{"name"=>"Nameaaa", "title"=>"Title", "address"=>"This is \r\nthe address"}, "commit"=>"Create Researcher"}
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "researchers" ("name", "title", "address", "created_at", "updated_at") VALUES ('Nameaaa', 'Title', 'This is 
+the address', '2011-03-02 12:25:54.345299', '2011-03-02 12:25:54.345299')
+Redirected to http://localhost:3000/researchers/1
+Completed 302 Found in 117ms
+
+
+Started GET "/researchers/1" for 127.0.0.1 at 2011-03-02 22:25:54 +1000
+  Processing by ResearchersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1[0m
+Rendered researchers/show.html.erb within layouts/application (100.0ms)
+Completed 200 OK in 132ms (Views: 113.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/researchers/1/profile" for 127.0.0.1 at 2011-03-02 22:26:01 +1000
+
+AbstractController::ActionNotFound (The action 'profile' could not be found for ResearchersController):
+  
+
+Rendered /Users/robertpyke/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.9ms)
+
+
+Started GET "/researchers/1/profile" for 127.0.0.1 at 2011-03-02 22:26:11 +1000
+
+AbstractController::ActionNotFound (The action 'profile' could not be found for ResearchersController):
+  
+
+Rendered /Users/robertpyke/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.9ms)
+
+
+Started GET "/researchers/1/profile2" for 127.0.0.1 at 2011-03-02 22:26:12 +1000
+
+ActionController::RoutingError (No route matches "/researchers/1/profile2"):
+  
+
+Rendered /Users/robertpyke/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/researchers/1/profile" for 127.0.0.1 at 2011-03-02 22:26:15 +1000
+
+AbstractController::ActionNotFound (The action 'profile' could not be found for ResearchersController):
+  
+
+Rendered /Users/robertpyke/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.9ms)
+
+
+Started GET "/researchers/1/profile" for 127.0.0.1 at 2011-03-02 22:26:54 +1000
+  Processing by ResearchersController#profile as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1
+Completed   in 114ms
+
+ActionView::MissingTemplate (Missing template researchers/profile with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/Users/robertpyke/Dropbox/Documents/Uni/2011/CP3046/repos/CP3046/app/app/views"):
+  
+
+Rendered /Users/robertpyke/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/researchers/1/profile" for 127.0.0.1 at 2011-03-02 22:28:39 +1000
+  Processing by ResearchersController#profile as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1
+Rendered researchers/profile.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 107ms (Views: 18.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/researchers" for 127.0.0.1 at 2011-03-02 22:28:49 +1000
+  Processing by ResearchersController#index as HTML
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers"[0m
+Rendered researchers/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 27ms (Views: 18.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/researchers/1" for 127.0.0.1 at 2011-03-02 22:28:51 +1000
+  Processing by ResearchersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1
+Rendered researchers/show.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 31ms (Views: 18.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/researchers/1/profile" for 127.0.0.1 at 2011-03-02 22:28:56 +1000
+  Processing by ResearchersController#profile as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1[0m
+Rendered researchers/profile.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 28ms (Views: 15.6ms | ActiveRecord: 0.2ms)
