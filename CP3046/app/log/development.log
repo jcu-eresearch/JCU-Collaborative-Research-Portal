@@ -197,3 +197,15 @@ Started GET "/researchers/1/profile" for 127.0.0.1 at 2011-03-02 22:28:56 +1000
   [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1[0m
 Rendered researchers/profile.html.erb within layouts/application (10.4ms)
 Completed 200 OK in 28ms (Views: 15.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/researchers/1/profile" for 127.0.0.1 at 2011-03-02 22:42:22 +1000
+  Processing by ResearchersController#profile as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1
+Rendered researchers/profile.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 109ms (Views: 19.0ms | ActiveRecord: 0.7ms)

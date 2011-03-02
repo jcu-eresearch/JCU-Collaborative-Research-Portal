@@ -1,20 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @researcher.name %>
-</p>
+<h1><%= @researcher.name %></h1>
 
-<p>
-  <b>Title:</b>
-  <%= @researcher.title %>
-</p>
+<h2><%= @researcher.title %></h2>
 
-<p>
-  <b>Address:</b>
-  <%= @researcher.address %>
-</p>
-
+<div class='address'>
+  <p><%= @researcher.address %></p>
+</div>
 
 <%= link_to 'Edit', edit_researcher_path(@researcher) %> |
 <%= link_to 'Back', researchers_path %>
