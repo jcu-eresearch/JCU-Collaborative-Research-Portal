@@ -22,4 +22,7 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
+
+<%= render :partial => 'preview', :locals => {:source_field => "post_content", :post_url => textile_preview_path } %>

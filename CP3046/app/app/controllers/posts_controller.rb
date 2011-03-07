@@ -9,7 +9,7 @@ class PostsController < ApplicationController
       format.xml  { render :xml => @posts }
     end
   end
-
+  
   # GET /posts/1
   # GET /posts/1.xml
   def show
@@ -20,6 +20,7 @@ class PostsController < ApplicationController
       format.xml  { render :xml => @post }
     end
   end
+
 
   # GET /posts/new
   # GET /posts/new.xml
@@ -51,6 +52,9 @@ class PostsController < ApplicationController
         format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }
       end
     end
+  end
+  
+  def preview 
   end
 
   # PUT /posts/1

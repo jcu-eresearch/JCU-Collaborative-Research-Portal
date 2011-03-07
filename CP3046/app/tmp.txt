@@ -1,0 +1,12 @@
+
+  <script type="text/javascript">;
+  document.observe("dom:loaded", function() {
+	    new TryRedClothObserver('media_description', 'redclothpreview_form', 'result').parseRedcloth();
+		  $('redclothpreview_form').hide();
+  });
+  <script>
+
+  <div class="output">;
+    <div class="type">Text Preview</div>;
+	  <div id="result"></div>;
+  </div>

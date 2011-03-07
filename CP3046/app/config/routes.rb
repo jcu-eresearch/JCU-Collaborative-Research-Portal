@@ -1,5 +1,8 @@
 App::Application.routes.draw do
   resources :posts
+  resources :posts do
+  end
+
 
   resources :researchers
   resources :researchers do
@@ -7,6 +10,16 @@ App::Application.routes.draw do
       get 'profile'
 	end
   end
+
+
+=begin
+  resources :textile_preview do
+  	collection do
+		get 'preview'
+	end
+  end
+=end
+  match 'textile_preview' => 'textile_preview#preview'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
