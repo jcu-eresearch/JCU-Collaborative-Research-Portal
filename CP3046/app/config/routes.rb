@@ -1,4 +1,6 @@
 App::Application.routes.draw do
+  resources :posts
+
   resources :researchers
   resources :researchers do
     member do

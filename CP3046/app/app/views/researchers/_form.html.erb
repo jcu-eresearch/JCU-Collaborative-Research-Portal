@@ -1,4 +1,5 @@
 <%= form_for(@researcher) do |f| %>
+  <% @researcher.build_address unless @researcher.address %>
   <% if @researcher.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@researcher.errors.count, "error") %> prohibited this researcher from being saved:</h2>
@@ -19,10 +20,12 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_area :address %>
-  </div>
+
+  <%= f.fields_for :address do |address_fields| %>
+    <%= render :partial => 'shared/address', :locals => {:f => address_fields} %>
+  <% end %>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
