@@ -18,11 +18,10 @@
   <div class="field">
     <%= f.label :content %><br />
     <%= f.text_area :content %>
+    <%= render :partial => "api/preview_textile_input", :locals => { :source_field => "post_content" } %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 
 <% end %>
-
-<%= render :partial => 'preview', :locals => {:source_field => "post_content", :post_url => textile_preview_path } %>

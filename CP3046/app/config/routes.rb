@@ -19,7 +19,8 @@ App::Application.routes.draw do
 	end
   end
 =end
-  match 'textile_preview' => 'textile_preview#preview'
+
+  match 'api/preview_textile' => 'api#preview_textile'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
