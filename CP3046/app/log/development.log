@@ -14953,3 +14953,105 @@ Started GET "/posts/" for 127.0.0.1 at 2011-03-08 20:35:36 +1000
   [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts"
 Rendered posts/index.html.erb within layouts/application (14.8ms)
 Completed 200 OK in 28ms (Views: 20.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/" for 127.0.0.1 at 2011-03-08 21:04:08 +1000
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.7ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+Rendered posts/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 98ms (Views: 23.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at 2011-03-08 21:04:10 +1000
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 4) LIMIT 1[0m
+Rendered posts/show.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 52ms (Views: 16.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/4/edit" for 127.0.0.1 at 2011-03-08 21:04:12 +1000
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 4) LIMIT 1
+Rendered api/_preview_textile_input.html.erb (1.6ms)
+Rendered posts/_form.html.erb (17.6ms)
+Rendered posts/edit.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 40ms (Views: 27.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/preview_textile" for 127.0.0.1 at 2011-03-08 21:04:12 +1000
+  Processing by ApiController#preview_textile as JS
+  Parameters: {"text"=>"h1. Yeah\n\nThis is the craziest thing\nThis is the craziest thing\n\nThis is the craziest thing\n\nThis is the craziest thing\n\nThis is the craziest thing\n\nThis is the craziest thing\n\nThis is the craziest thing", "_"=>""}
+Rendered api/_preview_textile_output.html.erb (0.5ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/preview_textile" for 127.0.0.1 at 2011-03-08 21:04:22 +1000
+  Processing by ApiController#preview_textile as JS
+  Parameters: {"text"=>"h1. Yeah\n\nThis is the craziest thing\nThis is the craziest thing\n\nThis is the craziest thing\n\nThis is the craziest thing\n\nThis is the craziest thing\n\nThis is the craziest thing\n\nThis is the craziest thing\n\nWow.\n\n", "_"=>""}
+Rendered api/_preview_textile_output.html.erb (0.5ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/preview_textile" for 127.0.0.1 at 2011-03-08 21:04:27 +1000
+  Processing by ApiController#preview_textile as JS
+  Parameters: {"text"=>"h1. Yeah\n\nThis is the craziest thing\nThis is the craziest thing\n\nThis is the craziest thing\n\nThis is the craziest thing\n\nThis is the craziest thing\n\nThis is the craziest thing\n\nThis is the craziest thing\n\nWow.\n\n_WOW_\n\n*WOW*", "_"=>""}
+Rendered api/_preview_textile_output.html.erb (0.5ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/preview_textile" for 127.0.0.1 at 2011-03-08 21:04:32 +1000
+  Processing by ApiController#preview_textile as JS
+  Parameters: {"text"=>"h1. Yeah\n\nThis is the craziest thing\nThis is the craziest thing\n\nThis is the craziest thing\n\nThis is the craziest thing\n\nThis is the craziest thing\n\nThis is the craziest thing\n\nThis is the craziest thing\n\nWow.\n\n_WOW_\n\n*WOW*\n\n_*WOW*", "_"=>""}
+Rendered api/_preview_textile_output.html.erb (0.4ms)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/preview_textile" for 127.0.0.1 at 2011-03-08 21:04:37 +1000
+  Processing by ApiController#preview_textile as JS
+  Parameters: {"text"=>"h1. Yeah\n\nThis is the craziest thing\nThis is the craziest thing\n\nThis is the craziest thing\n\nThis is the craziest thing\n\nThis is the craziest thing\n\nThis is the craziest thing\n\nThis is the craziest thing\n\nWow.\n\n_WOW_\n\n*WOW*\n\n_*WOW*_\n", "_"=>""}
+Rendered api/_preview_textile_output.html.erb (0.4ms)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/4" for 127.0.0.1 at 2011-03-08 21:04:49 +1000
+  Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3RVDXhl89XbTKUgQQqEbihk7ClzHPym3UNE+F4KUTYA=", "post"=>{"title"=>"", "content"=>"h1. Yeah\r\n\r\nThis is the craziest thing\r\nThis is the craziest thing\r\n\r\nThis is the craziest thing\r\n\r\nThis is the craziest thing\r\n\r\nThis is the craziest thing\r\n\r\nThis is the craziest thing\r\n\r\nThis is the craziest thing\r\n\r\nWow.\r\n\r\n_WOW_\r\n\r\n*WOW*\r\n\r\n_*WOW*_\r\n"}, "commit"=>"Update Post", "id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 4) LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  UPDATE "posts" SET "content" = 'h1. Yeah
+
+This is the craziest thing
+This is the craziest thing
+
+This is the craziest thing
+
+This is the craziest thing
+
+This is the craziest thing
+
+This is the craziest thing
+
+This is the craziest thing
+
+Wow.
+
+_WOW_
+
+*WOW*
+
+_*WOW*_
+', "updated_at" = '2011-03-08 11:04:50.031895' WHERE ("posts"."id" = 4)
+Redirected to http://localhost:3000/posts/4
+Completed 302 Found in 38ms
+
+
+Started GET "/posts/4" for 127.0.0.1 at 2011-03-08 21:04:50 +1000
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 4) LIMIT 1[0m
+Rendered posts/show.html.erb within layouts/application (32.9ms)
+Completed 200 OK in 60ms (Views: 42.2ms | ActiveRecord: 0.8ms)

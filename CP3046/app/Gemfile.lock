@@ -16,6 +16,8 @@ GEM
       rack-mount (~> 0.6.13)
       rack-test (~> 0.5.6)
       tzinfo (~> 0.3.23)
+    activeldap (1.0.9)
+      activerecord
     activemodel (3.0.3)
       activesupport (= 3.0.3)
       builder (~> 2.1.2)
@@ -40,6 +42,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    net-ldap (0.1.1)
     paperclip (2.3.8)
       activerecord
       activesupport
@@ -76,6 +79,8 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth
+  activeldap
+  net-ldap
   paperclip (~> 2.3)
   rails (= 3.0.3)
   sqlite3-ruby
