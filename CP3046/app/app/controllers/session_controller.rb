@@ -8,7 +8,7 @@ class SessionController < ApplicationController
     researcher = Researcher.authenticate(params[:login], params[:password])
     if researcher 
       session[:jc_number] = researcher.id
-      notice = "Welcome back, #{researcher.name}!"
+      notice = "Welcome #{researcher.name}"
       redirect_to(researcher, :notice => notice)
     else
       alert = "The username or password you entered is incorrect."
