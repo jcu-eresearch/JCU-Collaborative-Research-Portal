@@ -83,10 +83,9 @@ class ResearchersController < ApplicationController
 			format.xml  { render :xml => {"error" => "You can't update another user's details"}, :status => :unprocessable_entity }
 		end
 	end
-
-
   end
 
+=begin
   # DELETE /researchers/1
   # DELETE /researchers/1.xml
   def destroy
@@ -99,5 +98,6 @@ class ResearchersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+=end
 
 end
