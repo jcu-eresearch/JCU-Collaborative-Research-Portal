@@ -3,6 +3,7 @@ class CreateResearchers < ActiveRecord::Migration
     create_table :researchers do |t|
       t.string :name
       t.string :title
+      t.string :jc_number
 
       t.timestamps
     end

@@ -21,6 +21,7 @@ class ResearchersController < ApplicationController
     end
   end
 
+=begin
   # GET /researchers/new
   # GET /researchers/new.xml
   def new
@@ -31,6 +32,7 @@ class ResearchersController < ApplicationController
       format.xml  { render :xml => @researcher }
     end
   end
+=end
 
   # GET /researchers/1/edit
   def edit
@@ -45,6 +47,7 @@ class ResearchersController < ApplicationController
   # POST /researchers
   # POST /researchers.xml
   def create
+  	raise "TODO -> REMOVE THIS. There should be no interface for creating a researcher."
     @researcher = Researcher.new(params[:researcher])
 
     respond_to do |format|
@@ -62,16 +65,26 @@ class ResearchersController < ApplicationController
   # PUT /researchers/1.xml
   def update
     @researcher = Researcher.find(params[:id])
+	
+	# Only allow the user to change the details of the researcher, if the researcher is the current user.
+  	if @current_user == @researcher
+		respond_to do |format|
+		  if @researcher.update_attributes(params[:researcher])
+			format.html { redirect_to(@researcher, :notice => 'Researcher was successfully updated.') }
+			format.xml  { head :ok }
+		  else
+			format.html { render :action => "edit" }
+			format.xml  { render :xml => @researcher.errors, :status => :unprocessable_entity }
+		  end
+		end
+	else
+		respond_to do |format|
+			format.html { redirect_to(@researcher, :alert => "You can't update another user's details.") }
+			format.xml  { render :xml => {"error" => "You can't update another user's details"}, :status => :unprocessable_entity }
+		end
+	end
 
-    respond_to do |format|
-      if @researcher.update_attributes(params[:researcher])
-        format.html { redirect_to(@researcher, :notice => 'Researcher was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @researcher.errors, :status => :unprocessable_entity }
-      end
-    end
+
   end
 
   # DELETE /researchers/1
@@ -85,4 +98,5 @@ class ResearchersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
 end

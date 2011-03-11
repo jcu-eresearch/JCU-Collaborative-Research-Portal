@@ -1,0 +1,28 @@
+<% if alert %>
+<div id="error_explanation">
+<h2><%= alert %></h2>
+</div>
+<% end %>
+
+<% if notice %>
+<p><%= notice %></p>
+<% end %>
+
+<!-- START:form --> 
+<% form_for :session, :url => { :action => "create" } do |f| -%>
+<fieldset>  
+  
+  <p>        
+    <%= f.label :login, { :class => "required" } %>
+    <%= text_field_tag :login, params[:login] %>
+  </p> 
+  <p> 
+    <%= f.label :password, { :class => "required" } %>
+    <%= password_field_tag :password, params[:password] %>
+  </p> 
+  <p> 
+    <%= submit_tag 'Log in' %>
+  </p> 
+</fieldset> 
+<% end -%>
+<!-- END:form --> 

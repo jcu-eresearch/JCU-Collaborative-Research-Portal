@@ -19,6 +19,7 @@ App::Application.routes.draw do
 	end
   end
 =end
+  resources :session
 
   match 'api/preview_textile' => 'api#preview_textile'
 
