@@ -90,6 +90,7 @@ class ResearchersController < ApplicationController
   # DELETE /researchers/1
   # DELETE /researchers/1.xml
   def destroy
+  	raise "TODO -> REMOVE THIS. There should be no interface for removing a researcher."
     @researcher = Researcher.find(params[:id])
     @researcher.destroy
 
