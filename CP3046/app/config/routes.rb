@@ -1,25 +1,17 @@
 App::Application.routes.draw do
-  resources :posts
-  resources :posts do
+  resources :posts, :except => [:destroy] do
   end
 
-
-  resources :researchers
-  resources :researchers do
+  # A researcher cannot be created or destroyed.
+  resources :researchers, :except => [:destroy, :new, :create] do
     member do
       get 'profile'
 	end
   end
 
-
-=begin
-  resources :textile_preview do
-  	collection do
-		get 'preview'
-	end
-  end
-=end
-  resources :session
+  # A session can't be updated
+  # It can only be created, and destroyed.
+  resource :session, :only => [:new, :create, :destroy]
 
   match 'api/preview_textile' => 'api#preview_textile'
 

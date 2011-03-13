@@ -10,7 +10,7 @@
 <body>
 
 <% if logged_in? %>
-	<%= button_to "Logout", :controller => "session", :method => :delete %>
+	<%= link_to "Logout", :session, {:method => :delete} %>
 <% else %> 
 	<% # button_to 'Login', :controller => "session", :method => :create %>
 <% end %>
