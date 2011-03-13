@@ -6,7 +6,7 @@
 <script type="text/javascript">
 document.observe("dom:loaded", function() {
 	<% a = "'#{source_field}'" %>
-	<% b = "'#{api_preview_textile_path}'" %>
+	<% b = "'#{preview_textile_path}'" %>
 	new TryRedClothObserver(<%= a %>, 'preview_textile', <%= b %>).parseRedcloth();
 });
 </script>

@@ -13,7 +13,9 @@ App::Application.routes.draw do
   # It can only be created, and destroyed.
   resource :session, :only => [:new, :create, :destroy]
 
-  match 'api/preview_textile' => 'api#preview_textile'
+  resource :textile, :only => [], do
+  	post 'preview'
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
