@@ -20265,3 +20265,110 @@ Started GET "/researchers/5" for 127.0.0.1 at 2011-03-12 00:02:14 +1000
   [1m[35mAddress Load (0.2ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 5 AND "addresses".addressable_type = 'Researcher') LIMIT 1
 Rendered researchers/show.html.erb within layouts/application (26.1ms)
 Completed 200 OK in 51ms (Views: 32.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-03-12 14:30:28 +1000
+  Processing by PostsController#index as HTML
+Redirected to http://127.0.0.1:3000/session/new
+Completed 302 Found in 0ms
+
+
+Started GET "/session/new" for 127.0.0.1 at 2011-03-12 14:30:54 +1000
+  Processing by SessionController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_session_new_html_erb___780151887_15028572__704372922 at C:/Documents and Settings/Jessie/My Documents/CP3046/app/app/views/session/new.html.erb:12)
+Rendered session/new.html.erb within layouts/application (484.4ms)
+Completed 200 OK in 766ms (Views: 765.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2011-03-12 14:31:19 +1000
+  Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K2FHz7YjAtCgMMRFi/oDa9OgjW5HjoUf4ruLjQFWUhM=", "login"=>"jc160109", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mResearcher Load (0.0ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc160109') LIMIT 1
+  [1m[36mResearcher Load (0.0ms)[0m  [1mSELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" = 'jc160109') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "researchers" ("name", "title", "jc_number", "created_at", "updated_at") VALUES (NULL, NULL, 'jc160109', '2011-03-12 04:31:25.796875', '2011-03-12 04:31:25.796875')
+Redirected to http://127.0.0.1:3000/researchers/9
+Completed 302 Found in 5859ms
+
+
+Started GET "/researchers/9" for 127.0.0.1 at 2011-03-12 14:31:25 +1000
+  Processing by ResearchersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mResearcher Load (15.6ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 9) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 9) LIMIT 1
+  [1m[36mAddress Load (0.0ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 9 AND "addresses".addressable_type = 'Researcher') LIMIT 1[0m
+Rendered researchers/show.html.erb within layouts/application (500.0ms)
+Completed 200 OK in 1031ms (Views: 796.9ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/researchers/9/edit" for 127.0.0.1 at 2011-03-12 14:31:33 +1000
+  Processing by ResearchersController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mResearcher Load (0.0ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 9) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 9) LIMIT 1[0m
+  [1m[35mAddress Load (0.0ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 9 AND "addresses".addressable_type = 'Researcher') LIMIT 1
+Rendered shared/_address.html.erb (0.0ms)
+Rendered researchers/_form.html.erb (281.2ms)
+Rendered researchers/edit.html.erb within layouts/application (390.6ms)
+Completed 200 OK in 828ms (Views: 656.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/researchers/9" for 127.0.0.1 at 2011-03-12 14:31:49 +1000
+  Processing by ResearchersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K2FHz7YjAtCgMMRFi/oDa9OgjW5HjoUf4ruLjQFWUhM=", "researcher"=>{"name"=>"QIUWEN", "title"=>"", "address_attributes"=>{"line1"=>"", "line2"=>"", "city"=>"", "state"=>"", "postcode"=>""}}, "commit"=>"Update Researcher", "id"=>"9"}
+  [1m[36mResearcher Load (0.0ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 9) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 9) LIMIT 1
+  [1m[36mAddress Load (0.0ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 9 AND "addresses".addressable_type = 'Researcher') LIMIT 1[0m
+  [1m[35mResearcher Load (0.0ms)[0m  SELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" = 'jc160109') AND ("researchers".id <> 9) LIMIT 1
+Rendered shared/_address.html.erb (15.6ms)
+Rendered researchers/_form.html.erb (109.4ms)
+Rendered researchers/edit.html.erb within layouts/application (203.1ms)
+Completed 200 OK in 906ms (Views: 531.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/researchers/9" for 127.0.0.1 at 2011-03-12 14:32:02 +1000
+  Processing by ResearchersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K2FHz7YjAtCgMMRFi/oDa9OgjW5HjoUf4ruLjQFWUhM=", "researcher"=>{"name"=>"QIUWEN", "title"=>"", "address_attributes"=>{"line1"=>"", "line2"=>"", "city"=>"", "state"=>"", "postcode"=>"4814"}}, "commit"=>"Update Researcher", "id"=>"9"}
+  [1m[36mResearcher Load (62.5ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 9) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 9) LIMIT 1
+  [1m[36mAddress Load (0.0ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 9 AND "addresses".addressable_type = 'Researcher') LIMIT 1[0m
+  [1m[35mResearcher Load (0.0ms)[0m  SELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" = 'jc160109') AND ("researchers".id <> 9) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mUPDATE "researchers" SET "name" = 'QIUWEN', "title" = '', "updated_at" = '2011-03-12 04:32:03.187500' WHERE ("researchers"."id" = 9)[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "addresses" ("line1", "line2", "city", "state", "postcode", "addressable_id", "addressable_type", "created_at", "updated_at") VALUES ('', '', '', '', '4814', 9, 'Researcher', '2011-03-12 04:32:03.203125', '2011-03-12 04:32:03.203125')
+Redirected to http://127.0.0.1:3000/researchers/9
+Completed 302 Found in 438ms
+
+
+Started GET "/researchers/9" for 127.0.0.1 at 2011-03-12 14:32:03 +1000
+  Processing by ResearchersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mResearcher Load (0.0ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 9) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 9) LIMIT 1
+  [1m[36mAddress Load (0.0ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 9 AND "addresses".addressable_type = 'Researcher') LIMIT 1[0m
+Rendered researchers/show.html.erb within layouts/application (359.4ms)
+Completed 200 OK in 734ms (Views: 625.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session?method=delete" for 127.0.0.1 at 2011-03-12 14:32:15 +1000
+  Processing by SessionController#create as HTML
+  Parameters: {"authenticity_token"=>"K2FHz7YjAtCgMMRFi/oDa9OgjW5HjoUf4ruLjQFWUhM=", "method"=>"delete"}
+  [1m[35mResearcher Load (0.0ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" IS NULL) LIMIT 1
+  [1m[36mResearcher Load (0.0ms)[0m  [1mSELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" IS NULL) LIMIT 1[0m
+Redirected to http://127.0.0.1:3000/researchers
+Completed 302 Found in 156ms
+
+
+Started GET "/researchers" for 127.0.0.1 at 2011-03-12 14:32:16 +1000
+  Processing by ResearchersController#index as HTML
+Redirected to http://127.0.0.1:3000/session/new
+Completed 302 Found in 0ms
+
+
+Started GET "/session/new" for 127.0.0.1 at 2011-03-12 14:32:16 +1000
+  Processing by SessionController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_session_new_html_erb___780151887_13926324__704372922 at C:/Documents and Settings/Jessie/My Documents/CP3046/app/app/views/session/new.html.erb:12)
+Rendered session/new.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 297ms (Views: 296.9ms | ActiveRecord: 62.5ms)
