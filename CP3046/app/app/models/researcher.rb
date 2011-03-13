@@ -1,4 +1,5 @@
 class Researcher < ActiveRecord::Base
+	# A researcher must have a jc number, and that jc number must be unique among all researchers.
 	validates :jc_number, :presence => true, :uniqueness => true
 	attr_readonly :jc_number
 	
@@ -9,6 +10,7 @@ class Researcher < ActiveRecord::Base
 	has_many :post
 	accepts_nested_attributes_for :address
 
+	# TODO: 
 	# At this point, we need to check against the ldap to see if this username/password is valid
 	#
 	# If this user/pass is valid:
@@ -16,7 +18,10 @@ class Researcher < ActiveRecord::Base
 	# 	If the user/pass doesn't match an existing researcher's user_id, create a new researcher, and return it.
 	# Else, the user/pass is invalid: return false
 	def self.authenticate(jc_number, pass)
-		valid = true
+		# XXX Put in temporary code to randomly set whether the log in is valid
+		valid = false
+		rand_number = 1 + rand(6)
+		valid = true if rand_number > 3
 		if valid
 			Researcher.find_or_create_by_jc_number(jc_number)
 		else
