@@ -20666,3 +20666,72 @@ Started GET "/session/new" for 127.0.0.1 at 2011-03-20 13:22:25 +1000
 DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb___762686009_13410840_420013527 at C:/Documents and Settings/Jessie/My Documents/CP3046/app/app/views/sessions/new.html.erb:12)
 Rendered sessions/new.html.erb within layouts/application (31.2ms)
 Completed 200 OK in 312ms (Views: 312.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-03-30 15:41:14 +1000
+  Processing by PostsController#index as HTML
+Redirected to http://127.0.0.1:3000/session/new
+Completed 302 Found in 0ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-30 15:42:05 +1000
+  Processing by HomeController#index as */*
+Rendered home/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 1359ms (Views: 1359.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-30 15:42:07 +1000
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 531ms (Views: 531.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-03-30 15:42:15 +1000
+  Processing by PostsController#index as HTML
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 0ms
+
+
+Started GET "/session/new" for 127.0.0.1 at 2011-03-30 15:42:16 +1000
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb___701406743_13744680__255061852 at C:/Documents and Settings/Jessie/My Documents/CP3046/app/app/views/sessions/new.html.erb:12)
+Rendered sessions/new.html.erb within layouts/application (484.4ms)
+Completed 200 OK in 844ms (Views: 843.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-30 15:42:21 +1000
+  Processing by HomeController#index as */*
+Rendered home/index.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 1484ms (Views: 1484.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/researchers" for 127.0.0.1 at 2011-03-30 15:43:36 +1000
+  Processing by ResearchersController#index as HTML
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 0ms
+
+
+Started GET "/session/new" for 127.0.0.1 at 2011-03-30 15:43:37 +1000
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb___701406743_14065284__255061852 at C:/Documents and Settings/Jessie/My Documents/CP3046/app/app/views/sessions/new.html.erb:12)
+Rendered sessions/new.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 281ms (Views: 281.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-30 15:43:41 +1000
+  Processing by HomeController#index as */*
+Rendered home/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 1031ms (Views: 1031.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-03-30 15:43:44 +1000
+  Processing by PostsController#index as HTML
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 0ms
+
+
+Started GET "/session/new" for 127.0.0.1 at 2011-03-30 15:43:45 +1000
+  Processing by SessionsController#new as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_sessions_new_html_erb___701406743_13539936__255061852 at C:/Documents and Settings/Jessie/My Documents/CP3046/app/app/views/sessions/new.html.erb:12)
+Rendered sessions/new.html.erb within layouts/application (78.1ms)
+Completed 200 OK in 344ms (Views: 343.8ms | ActiveRecord: 0.0ms)
