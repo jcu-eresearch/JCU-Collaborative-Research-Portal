@@ -10,9 +10,30 @@
 <body>
 
 <% if logged_in? %>
-	<%= link_to "Logout", :session, {:method => :delete} %>
+	<div class='main_navigation navigation'>
+		<ul>
+			<li><%= link_to "My Account", account_researcher_path(logged_in_researcher) %></li>
+			<li><%= link_to "Research", posts_path %></li>
+			<li><%= link_to "Researchers", researchers_path %></li>
+		</ul>
+	</div>
+	<div class='sub_navigation navigation'>
+		<ul>
+			<li><%= link_to "Logout", :session, {:method => :delete} %></li>
+		</ul>
+	</div>
 <% else %> 
-	<% # button_to 'Login', :controller => "session", :method => :create %>
+	<div class='main_navigation navigation'>
+		<ul>
+			<li><%= link_to 'About', about_home_path %></li>
+			<li><%= link_to 'Support', support_home_path %></li>
+		</ul>
+	</div>
+	<div class='sub_navigation navigation'>
+		<ul>
+			<li><%= link_to 'Login', new_session_path %></li>
+		</ul>
+	</div>
 <% end %>
 
 <%= yield %>

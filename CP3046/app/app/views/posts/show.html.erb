@@ -3,7 +3,7 @@
 <h1 class="title"><%= @post.title %></h1>
 
 <div class="content">
-  <%= raw RedCloth.new(@post.content).to_html %>
+  <%= raw BlueCloth.new(@post.content).to_html %>
 </div>
 
 

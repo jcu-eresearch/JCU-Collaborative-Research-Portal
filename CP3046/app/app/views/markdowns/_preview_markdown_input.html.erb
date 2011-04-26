@@ -1,0 +1,15 @@
+<% content_for(:head) do %>
+	<%= javascript_include_tag 'preview_markdown' %>
+	<%= stylesheet_link_tag 'preview_markdown' %>
+<% end %>
+
+<script type="text/javascript">
+document.observe("dom:loaded", function() {
+	<% a = "'#{source_field}'" %>
+	<% b = "'#{preview_markdown_path}'" %>
+	new TryBlueClothObserver(<%= a %>, 'preview_markdown', <%= b %>).parseBluecloth();
+});
+</script>
+
+<!-- <p class="preview_title" id="preview_title">Preview</p> -->
+<div id="preview_markdown" title="Preview"></div>

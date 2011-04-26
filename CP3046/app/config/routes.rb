@@ -1,13 +1,18 @@
 App::Application.routes.draw do
-  get "home/index"
+
 
   resources :posts, :except => [:destroy] do
   end
 
   # A researcher cannot be created or destroyed.
   resources :researchers, :except => [:destroy, :new, :create] do
+  	collection do
+		get 'search'
+	end
     member do
       get 'profile'
+	  get 'account'
+	  get 'research'
 	end
   end
 
@@ -18,7 +23,16 @@ App::Application.routes.draw do
   resource :textile, :only => [], do
   	post 'preview'
   end
+  
+  resource :markdown, :only => [], do
+  	post 'preview'
+  end
 
+  resource :home, :only => [], do
+  	get 'about'
+	get 'support'
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -68,7 +82,7 @@ App::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "home#index"
+  root :to => "sessions#new"
 
   # See how all your routes lay out with "rake routes"
 

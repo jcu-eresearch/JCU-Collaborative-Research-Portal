@@ -5,11 +5,11 @@
 <% end %>
 
 <% if notice %>
-<p><%= notice %></p>
+<p class='notice'><%= notice %></p>
 <% end %>
 
 <!-- START:form --> 
-<% form_for :session, :url => { :action => "create" } do |f| -%>
+<%= form_for :session, :url => { :action => "create" } do |f| %>
 <fieldset>  
   
   <p>        
@@ -21,8 +21,8 @@
     <%= password_field_tag :password, params[:password] %>
   </p> 
   <p> 
-    <%= submit_tag 'Log in' %>
+	<%= submit_tag 'Log In', :class => "submit" %>
   </p> 
 </fieldset> 
-<% end -%>
+<% end %>
 <!-- END:form --> 

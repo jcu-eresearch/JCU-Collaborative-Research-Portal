@@ -3,16 +3,14 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <td></td>
+    <td></td>
+    <td></td>
   </tr>
 
 <% @posts.each do |post| %>
   <tr>
     <td><%= post.title %></td>
-    <td><%= post.content %></td>
     <td><%= link_to 'Show', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
   </tr>

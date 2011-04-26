@@ -6,34 +6,18 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # :secret => '45cee7d63e12a98bccc4f673bd4068ff'
     
   helper_method :logged_in?
+  helper_method :logged_in_researcher
 
   before_filter :login_required
 
 
   private
 
-=begin
-
-  def login_required 
-    unless session[:user_id]
-      flash[:notice] = "Please log in" 
-      redirect_to new_session_url
-    end 
-  end
-
-=end
-
-
   def login_required
     respond_to do |format|
       format.html do
-        if session[:jc_number]
-		  begin
-            @current_user = Researcher.find(session[:jc_number])
-		  rescue
-            alert = "Existing session has become invalid. Please log in"         
-            redirect_to(new_session_url, :alert => alert)
-		  end
+        if logged_in?
+			logged_in_researcher
         else
           notice = "Please log in"         
           redirect_to(new_session_url, :notice => notice)
@@ -57,4 +41,15 @@ class ApplicationController < ActionController::Base
     session[:jc_number]
   end
 
+  def logged_in_researcher
+    if logged_in?
+		begin
+			@current_user = Researcher.find(session[:jc_number])
+		rescue
+			alert = "Existing session has become invalid. Please log in"         
+			redirect_to(new_session_url, :alert => alert)
+		end
+	else
+	end
+  end
 end

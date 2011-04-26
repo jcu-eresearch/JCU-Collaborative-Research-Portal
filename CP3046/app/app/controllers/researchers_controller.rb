@@ -20,6 +20,24 @@ class ResearchersController < ApplicationController
       format.xml  { render :xml => @researcher }
     end
   end
+  
+  # GET /researchers/1/account
+  def account
+    @researcher = Researcher.find(params[:id])
+
+    respond_to do |format|
+      format.html # account.html.erb
+    end
+  end
+  
+  # GET /researchers/1/research
+  def research 
+    @researcher = Researcher.find(params[:id])
+
+    respond_to do |format|
+      format.html # research.html.erb
+    end
+  end
 
   # GET /researchers/1/edit
   def edit
