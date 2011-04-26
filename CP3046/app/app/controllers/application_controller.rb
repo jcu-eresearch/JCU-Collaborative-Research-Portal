@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # :secret => '45cee7d63e12a98bccc4f673bd4068ff'
     
   helper_method :logged_in?
+  helper_method :logged_in_researcher
 
   before_filter :login_required
 
@@ -25,7 +26,17 @@ class ApplicationController < ActionController::Base
           Researcher.authenticate(login, password)
         end
         if user
-          @current_user = user
+          @current_researcher = user
+        else
+          request_http_basic_authentication
+        end
+      end
+      format.rss do   
+        user = authenticate_with_http_basic do |login, password|
+          Researcher.authenticate(login, password)
+        end
+        if user
+          @current_researcher = user
         else
           request_http_basic_authentication
         end
@@ -37,14 +48,32 @@ class ApplicationController < ActionController::Base
     session_id = session[:jc_number]
 	if session_id
 		begin
-			@current_user = Researcher.find(session_id)
-			return true
+			@current_researcher = Researcher.find(session_id)
+			if @current_researcher
+				return true
+			else
+				session[:jc_number] = nil
+				return false
+			end
 		rescue
 			session[:jc_number] = nil
 			return false
 		end
 	else
 		return false
+	end
+  end
+
+  def logged_in_researcher
+  	# Early exit if @current_researcher is already set. (caching)
+  	if @current_researcher
+		return @current_researcher
+	end
+
+  	if logged_in?
+		@current_researcher
+	else
+		raise "Attempting to look up logged in researcher, when the user isn't logged in."
 	end
   end
 

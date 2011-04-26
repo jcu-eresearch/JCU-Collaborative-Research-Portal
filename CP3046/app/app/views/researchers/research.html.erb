@@ -1,9 +1,4 @@
-<p id="notice"><%= notice %></p>
-<% if alert %>
-	<div id="error_explanation">
-		<h2><%= alert %></h2>
-	</div>
-<% end %>
+<h1>My Research</h1>
 
 <table>
   <tr>
@@ -13,8 +8,9 @@
     <td></td>
   </tr>
 
-<% @researcher.posts.each do |post| %>
-  <tr>
+<% @researcher.posts.each_with_index do |post, index| %>
+  <% css_class = (index % 2 == 0) ? "even" : "odd" %>
+  <tr class='<%= css_class %>'>
     <td><%= post.title %></td>
     <td><%= link_to 'Show', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>

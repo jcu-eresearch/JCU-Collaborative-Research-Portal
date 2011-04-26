@@ -1,9 +1,3 @@
-<p id="notice"><%= notice %></p>
-<% if alert %>
-	<div id="error_explanation">
-		<h2><%= alert %></h2>
-	</div>
-<% end %>
 <p>
   <b>JC Number:</b>
   <%= @researcher.jc_number %>
@@ -21,7 +15,7 @@
 
 <p>
   <b>Address:</b>
-  <%= @researcher.address %>
+  <%= raw @researcher.address.to_html %>
 </p>
 
 

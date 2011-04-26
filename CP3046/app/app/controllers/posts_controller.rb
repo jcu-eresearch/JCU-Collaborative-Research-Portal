@@ -1,12 +1,19 @@
 class PostsController < ApplicationController
+
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.all
+	respond_to do |format|
+      format.html { 
+	    # index.html.erb
+		@posts= Post.paginate :page => params[:page], :order => 'updated_at DESC'
+	  }
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @posts }
+      format.xml  { 
+		  @posts= Post.all
+		  render :xml => @posts
+      }
+
     end
   end
   
@@ -42,7 +49,7 @@ class PostsController < ApplicationController
   # POST /posts.xml
   def create
     @post = Post.new(params[:post])
-	@post.researcher = @current_user
+	@post.researcher = logged_in_researcher 
 
     respond_to do |format|
       if @post.save

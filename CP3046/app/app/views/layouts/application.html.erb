@@ -36,6 +36,16 @@
 	</div>
 <% end %>
 
+<% if alert %>
+	<div id="error_explanation">
+		<h2><%= alert %></h2>
+	</div>
+<% end %>
+
+<% if notice %>
+	<p class='notice'><%= notice %></p>
+<% end %>
+
 <%= yield %>
 
 </body>

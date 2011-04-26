@@ -1,32 +1,34 @@
 <%= form_for(@researcher) do |f| %>
-  <% @researcher.build_address unless @researcher.address %>
-  <% if @researcher.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@researcher.errors.count, "error") %> prohibited this researcher from being saved:</h2>
+  <fieldset>
+	  <% @researcher.build_address unless @researcher.address %>
+	  <% if @researcher.errors.any? %>
+		<div id="error_explanation">
+		  <h2><%= pluralize(@researcher.errors.count, "error") %> prohibited this researcher from being saved:</h2>
 
-      <ul>
-      <% @researcher.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+		  <ul>
+		  <% @researcher.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		  <% end %>
+		  </ul>
+		</div>
+	  <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
+	  <div class="field">
+		<%= f.label :name %><br />
+		<%= f.text_field :name %>
+	  </div>
+	  <div class="field">
+		<%= f.label :title %><br />
+		<%= f.text_field :title %>
+	  </div>
 
-  <%= f.fields_for :address do |address_fields| %>
-    <%= render :partial => 'shared/address', :locals => {:f => address_fields} %>
-  <% end %>
+	  <%= f.fields_for :address do |address_fields| %>
+		<%= render :partial => 'shared/address', :locals => {:f => address_fields} %>
+	  <% end %>
 
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+	  <div class="actions">
+		<%= f.submit :class => "submit" %>
+	  </div>
+  </fieldset>
 <% end %>

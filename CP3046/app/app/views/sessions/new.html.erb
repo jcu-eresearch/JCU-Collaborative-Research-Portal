@@ -1,13 +1,3 @@
-<% if alert %>
-<div id="error_explanation">
-<h2><%= alert %></h2>
-</div>
-<% end %>
-
-<% if notice %>
-<p class='notice'><%= notice %></p>
-<% end %>
-
 <!-- START:form --> 
 <%= form_for :session, :url => { :action => "create" } do |f| %>
 <fieldset>  
@@ -21,7 +11,7 @@
     <%= password_field_tag :password, params[:password] %>
   </p> 
   <p> 
-	<%= submit_tag 'Log In', :class => "submit" %>
+	<%= f.submit 'Log In', :class => "submit" %>
   </p> 
 </fieldset> 
 <% end %>

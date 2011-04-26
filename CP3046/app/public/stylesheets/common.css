@@ -76,18 +76,18 @@ div.rating {
 }
 
 div.navigation {
-	text-align: center; 
 	margin: 0;
 	height: 4em;
-
 }
 
 div.main_navigation {
 	float: left;
+	height: 4em;
 }
 
-div. sub_navigation {
-	float: right;
+div.sub_navigation {
+	height: 4em;
+	text-align: right;
 }
 
 div.main_navigation ul{
@@ -134,7 +134,6 @@ div.sub_navigation ul li {
 }
 
 div.sub_navigation ul{
-	float: right;
 }
 
 div.main_navigation ul li a {
@@ -197,10 +196,7 @@ button.show_hide_button, button.show_hide_button span {
 
 h1, h2, h3 {
 	font-family: 
-		"Monotype Corsiva",
-		"Apple Chancery",
-		"URW Chancery L",
-		cursive;
+		sans-serif;
 }
 
 h1 {
@@ -226,7 +222,6 @@ label {
 
 fieldset input, fieldset select{
 	width: 20em;
-	float: right;
 }
 
 textarea {

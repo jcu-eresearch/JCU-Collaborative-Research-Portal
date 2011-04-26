@@ -3,6 +3,7 @@ App::Application.routes.draw do
 
   resources :posts, :except => [:destroy] do
   	resources :comments do
+	end
   end
 
   # A researcher cannot be created or destroyed.
@@ -83,7 +84,7 @@ App::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "sessions#new"
+  root :to => "homes#index"
 
   # See how all your routes lay out with "rake routes"
 

@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if researcher 
       session[:jc_number] = researcher.id
       notice = "Welcome #{researcher.name}"
-      redirect_to(researcher, :notice => notice)
+      redirect_to(account_researcher_path(researcher), :notice => notice)
     else
       alert = "The username or password you entered is incorrect."
       redirect_to(new_session_url, :alert => alert) 

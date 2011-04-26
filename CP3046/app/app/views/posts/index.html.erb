@@ -1,4 +1,4 @@
-<h1>Listing posts</h1>
+<h1>Listing Research Posts</h1>
 
 <table>
   <tr>
@@ -8,8 +8,10 @@
     <td></td>
   </tr>
 
-<% @posts.each do |post| %>
-  <tr>
+<%= will_paginate @posts %>
+<% @posts.each_with_index do |post, index| %>
+  <% css_class = index.odd? ? "odd" : "even" %>
+  <tr class='<%= css_class %>'>
     <td><%= post.title %></td>
     <td><%= link_to 'Show', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>

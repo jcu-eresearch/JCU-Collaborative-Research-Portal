@@ -1,12 +1,16 @@
 class ResearchersController < ApplicationController
+
   # GET /researchers
   # GET /researchers.xml
   def index
-    @researchers = Researcher.all
-
     respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @researchers }
+      format.html { # index.html.erb
+		@researchers = Researcher.paginate :page => params[:page], :order => 'updated_at DESC'
+	  }
+      format.xml  { 
+		  @researchers = Researcher.all
+		  render :xml => @researchers }
+
     end
   end
 
@@ -18,6 +22,7 @@ class ResearchersController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @researcher }
+	  format.rss  { render :layout => false }
     end
   end
   
@@ -27,6 +32,7 @@ class ResearchersController < ApplicationController
 
     respond_to do |format|
       format.html # account.html.erb
+	  format.rss  { render :layout => false }
     end
   end
   
@@ -48,14 +54,14 @@ class ResearchersController < ApplicationController
   def profile
     @researcher = Researcher.find(params[:id])
   end
-
+  
   # PUT /researchers/1
   # PUT /researchers/1.xml
   def update
     @researcher = Researcher.find(params[:id])
 	
 	# Only allow the user to change the details of the researcher, if the researcher is the current user.
-  	if @current_user == @researcher
+  	if logged_in_researcher == @researcher
 		respond_to do |format|
 		  if @researcher.update_attributes(params[:researcher])
 			format.html { redirect_to(@researcher, :notice => 'Researcher was successfully updated.') }

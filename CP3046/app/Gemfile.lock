@@ -1,7 +1,6 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    BlueCloth (1.0.1)
     RedCloth (4.2.7)
     RedCloth (4.2.7-x86-mingw32)
     abstract (1.0.0)
@@ -32,6 +31,8 @@ GEM
       activesupport (= 3.0.3)
     activesupport (3.0.3)
     arel (2.0.7)
+    bluecloth (2.1.0)
+    bluecloth (2.1.0-x86-mingw32)
     builder (2.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -73,14 +74,16 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.24)
+    will_paginate (3.0.pre2)
 
 PLATFORMS
   ruby
   x86-mingw32
 
 DEPENDENCIES
-  BlueCloth
   RedCloth
+  bluecloth (~> 2.0)
   paperclip (~> 2.3)
   rails (= 3.0.3)
   sqlite3-ruby
+  will_paginate (~> 3.0.pre2)

@@ -1,4 +1,4 @@
-<h1>Listing researchers</h1>
+<h1>Listing Researchers</h1>
 
 <table>
   <tr>
@@ -10,6 +10,7 @@
     <th></th>
   </tr>
 
+<%= will_paginate @researchers %>
 <% @researchers.each do |researcher| %>
   <tr>
     <td><%= researcher.name %></td>
