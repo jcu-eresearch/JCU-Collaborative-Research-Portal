@@ -2,6 +2,7 @@ App::Application.routes.draw do
 
 
   resources :posts, :except => [:destroy] do
+  	resources :comments do
   end
 
   # A researcher cannot be created or destroyed.
