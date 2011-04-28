@@ -18,7 +18,10 @@
   <%= raw @researcher.address.to_html if @researcher.address %>
 </p>
 
-
 <% if @researcher == logged_in_researcher %>
-	<%= link_to 'Edit My Profile', edit_researcher_path(@researcher) %> |
+	<div class='sub_navigation navigation'>
+		<ul class='navigation sub_navigation'>
+			<li><%= link_to 'Edit My Profile', edit_researcher_path(@researcher) %></li>
+		</ul>
+	</div>
 <% end %>

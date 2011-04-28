@@ -6,4 +6,10 @@ class Post < ActiveRecord::Base
 	def self.per_page
 		20
 	end
+
+	def self.search(search, page)
+		paginate :per_page => self.per_page, :page => page,
+			:conditions => ['title like ?', "%#{search}%"],
+			:order => 'updated_at DESC'
+	end
 end

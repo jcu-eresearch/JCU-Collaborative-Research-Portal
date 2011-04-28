@@ -5,7 +5,8 @@ class ResearchersController < ApplicationController
   def index
     respond_to do |format|
       format.html { # index.html.erb
-		@researchers = Researcher.paginate :page => params[:page], :order => 'updated_at DESC'
+#		@researchers = Researcher.paginate :page => params[:page], :order => 'updated_at DESC'
+		@researchers = Researcher.search(params[:search], params[:page])
 	  }
       format.xml  { 
 		  @researchers = Researcher.all

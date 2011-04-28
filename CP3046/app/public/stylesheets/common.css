@@ -85,40 +85,24 @@ div.main_navigation {
 	height: 4em;
 }
 
-div.sub_navigation {
+div.session_navigation {
 	height: 4em;
 	text-align: right;
 }
 
-div.main_navigation ul{
-	margin-left: auto;
-	margin-right: auto;
+
+div.navigation ul {
+	background-color: #99f;
 	display: inline-block;
-	background-color: rgba(255,255,255,0.60);
     padding: 0.5em 0.8em 0.5em 0.8em;
 	margin-top: 0;
 	margin-bottom: 0.6em;
 	box-shadow: 2px 2px 2px rgba(0,0,0,0.75); 
-	-webkit-border-bottom-left-radius: 12px;
-	-webkit-border-bottom-right-radius: 12px;
-	-moz-border-radius-bottomright: 12px;
-	-moz-border-radius-bottomright: 12px;
-	border-bottom-left-radius: 12px;
-	border-bottom-right-radius: 12px;
 }
-div.sub_navigation ul{
-	display: inline-block;
-	background-color: rgba(255,255,255,0.60);
-    padding: 0.5em 0.8em 0.5em 0.8em;
-	margin-top: 0;
-	margin-bottom: 0.6em;
-	box-shadow: 2px 2px 2px rgba(0,0,0,0.75); 
-	-webkit-border-bottom-left-radius: 12px;
-	-webkit-border-bottom-right-radius: 12px;
-	-moz-border-radius-bottomright: 12px;
-	-moz-border-radius-bottomright: 12px;
-	border-bottom-left-radius: 12px;
-	border-bottom-right-radius: 12px;
+
+div.sub_navigation ul {
+	background-color: #ccf;
+	float: left;
 }
 
 div.main_navigation ul li {
@@ -127,13 +111,13 @@ div.main_navigation ul li {
 	position: relative;
 }
 
-div.sub_navigation ul li {
+div.session_navigation ul li, div.sub_navigation ul li {
     display: inline-block;
 	text-align: left; 
 	margin: 0;
 }
 
-div.sub_navigation ul{
+div.session_navigation ul{
 }
 
 div.main_navigation ul li a {
@@ -141,21 +125,21 @@ div.main_navigation ul li a {
 	padding: 0.5em;
     color: #000;
 }
-div.sub_navigation ul li a {
+div.session_navigation ul li a, div.sub_navigation ul li a {
     text-decoration: none;
     color: #000;
-	padding: 0;
+	padding: 0.5em;
 	margin: 0;
 }
 
-div.main_navigation ul li.current a, div.sub_navigation ul li.current {
+div.main_navigation ul li.current a, div.session_navigation ul li.current {
 	background-color: rgba(150,150,255,0.60);
     color: #000;
 }
 
-div.main_navigation ul li a:hover, div.sub_navigation ul li a:hover {
-	background-color: rgba(255,255,255,1);
-    color: #00f;
+div.main_navigation ul li a:hover, div.session_navigation ul li a:hover, div.sub_navigation ul li a:hover {
+	background-color: #66f;
+    color: #000;
 }
 
 .system_message {
@@ -212,6 +196,11 @@ h2 {
 	margin-bottom: 0.8em;
     padding-bottom: 0.2em;
     border-bottom: 2px dotted #7aaf9c;
+}
+
+h2.author {
+	font-size: small; 
+
 }
 
 label {
@@ -419,3 +408,11 @@ td {
 	padding: 0.7em;
 }
 
+form.search_form {
+	font-size: small;
+}
+
+label {
+	margin-right: 1em;
+	clear: left;
+}

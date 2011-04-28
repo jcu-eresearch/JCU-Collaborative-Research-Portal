@@ -6,7 +6,8 @@ class PostsController < ApplicationController
 	respond_to do |format|
       format.html { 
 	    # index.html.erb
-		@posts= Post.paginate :page => params[:page], :order => 'updated_at DESC'
+#		@posts = Post.paginate :page => params[:page], :order => 'updated_at DESC'
+		@posts = Post.search(params[:search], params[:page])
 	  }
 
       format.xml  { 

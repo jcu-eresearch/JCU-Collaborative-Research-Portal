@@ -45505,190 +45505,73 @@ Rendered posts/index.html.erb within layouts/application (24.5ms)
 Completed 200 OK in 92ms (Views: 30.8ms | ActiveRecord: 0.5ms)
 
 
-Started GET "/posts" for 127.0.0.1 at 2011-04-27 09:47:40 +1000
-  Processing by PostsController#index as HTML
-  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+Started GET "/" for 127.0.0.1 at 2011-04-27 20:46:34 +1000
+  Processing by HomesController#index as HTML
+Rendered homes/index.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 26ms (Views: 25.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/about" for 127.0.0.1 at 2011-04-27 20:46:37 +1000
+  Processing by HomesController#about as HTML
+Rendered homes/about.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 26ms (Views: 25.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/support" for 127.0.0.1 at 2011-04-27 20:46:38 +1000
+  Processing by HomesController#support as HTML
+Rendered homes/support.html.erb within layouts/application (29.3ms)
+Completed 200 OK in 70ms (Views: 70.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2011-04-27 20:46:39 +1000
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 44ms (Views: 43.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2011-04-27 20:46:42 +1000
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+T0RtBC38nuGByEk55UKhbwpmsTEVcf8SpVdxV7Igfw=", "login"=>"jc", "password"=>"[FILTERED]", "commit"=>"Log In"}
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 84ms
+
+
+Started GET "/session/new" for 127.0.0.1 at 2011-04-27 20:46:43 +1000
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2011-04-27 20:46:45 +1000
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+T0RtBC38nuGByEk55UKhbwpmsTEVcf8SpVdxV7Igfw=", "login"=>"jc", "password"=>"[FILTERED]", "commit"=>"Log In"}
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 9ms
+
+
+Started GET "/session/new" for 127.0.0.1 at 2011-04-27 20:46:45 +1000
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 29ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2011-04-27 20:46:47 +1000
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+T0RtBC38nuGByEk55UKhbwpmsTEVcf8SpVdxV7Igfw=", "login"=>"jc", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
-  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1
-  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY updated_at DESC LIMIT 30 OFFSET 0[0m
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc') LIMIT 1
+Redirected to http://localhost:3000/researchers/1/account
+Completed 302 Found in 56ms
+
+
+Started GET "/researchers/1/account" for 127.0.0.1 at 2011-04-27 20:46:47 +1000
+  Processing by ResearchersController#account as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mResearcher Load (0.1ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1[0m
   [1m[35mCACHE (0.0ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1
-Rendered posts/index.html.erb within layouts/application (28.5ms)
-Completed 200 OK in 111ms (Views: 34.9ms | ActiveRecord: 1.2ms)
-
-
-Started GET "/posts" for 127.0.0.1 at 2011-04-27 09:47:41 +1000
-  Processing by PostsController#index as HTML
-  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1[0m
-  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" ORDER BY updated_at DESC LIMIT 30 OFFSET 0
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1[0m
-Rendered posts/index.html.erb within layouts/application (27.9ms)
-Completed 200 OK in 93ms (Views: 34.1ms | ActiveRecord: 0.5ms)
-
-
-Started GET "/posts" for 127.0.0.1 at 2011-04-27 09:47:44 +1000
-  Processing by PostsController#index as HTML
-  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1
-  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY updated_at DESC LIMIT 30 OFFSET 0[0m
-  [1m[35mCACHE (0.0ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1
-Rendered posts/index.html.erb within layouts/application (24.4ms)
-Completed 200 OK in 88ms (Views: 30.6ms | ActiveRecord: 0.6ms)
-
-
-Started GET "/posts" for 127.0.0.1 at 2011-04-27 09:48:09 +1000
-  Processing by PostsController#index as HTML
-  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1[0m
-  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" ORDER BY updated_at DESC LIMIT 2 OFFSET 0
-  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
-  [1m[35mCACHE (0.0ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1
-Rendered posts/index.html.erb within layouts/application (22.7ms)
-Completed 200 OK in 62ms (Views: 29.1ms | ActiveRecord: 0.6ms)
-
-
-Started GET "/posts" for 127.0.0.1 at 2011-04-27 09:48:40 +1000
-  Processing by PostsController#index as HTML
-  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1[0m
-  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" ORDER BY updated_at DESC LIMIT 2 OFFSET 0
-  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
-  [1m[35mCACHE (0.0ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1
-Rendered posts/index.html.erb within layouts/application (21.7ms)
-Completed 200 OK in 60ms (Views: 27.8ms | ActiveRecord: 0.6ms)
-
-
-Started GET "/posts" for 127.0.0.1 at 2011-04-27 09:48:41 +1000
-  Processing by PostsController#index as HTML
-  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1[0m
-  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" ORDER BY updated_at DESC LIMIT 2 OFFSET 0
-  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
-  [1m[35mCACHE (0.0ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1
-Rendered posts/index.html.erb within layouts/application (53.1ms)
-Completed 200 OK in 94ms (Views: 59.8ms | ActiveRecord: 0.6ms)
-
-
-Started GET "/posts" for 127.0.0.1 at 2011-04-27 09:48:42 +1000
-  Processing by PostsController#index as HTML
-  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1[0m
-  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" ORDER BY updated_at DESC LIMIT 2 OFFSET 0
-  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
-  [1m[35mCACHE (0.0ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1
-Rendered posts/index.html.erb within layouts/application (21.7ms)
-Completed 200 OK in 91ms (Views: 27.9ms | ActiveRecord: 0.7ms)
-
-
-Started GET "/researchers" for 127.0.0.1 at 2011-04-27 09:48:42 +1000
-  Processing by ResearchersController#index as HTML
-  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1[0m
-  [1m[35mResearcher Load (0.5ms)[0m  SELECT "researchers".* FROM "researchers" ORDER BY updated_at DESC LIMIT 2 OFFSET 0
-  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "researchers"[0m
-  [1m[35mAddress Load (0.2ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 5 AND "addresses".addressable_type = 'Researcher') LIMIT 1
-  [1m[36mAddress Load (0.2ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 4 AND "addresses".addressable_type = 'Researcher') LIMIT 1[0m
-  [1m[35mCACHE (0.0ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1
-Rendered researchers/index.html.erb within layouts/application (56.7ms)
-Completed 200 OK in 115ms (Views: 92.5ms | ActiveRecord: 1.2ms)
-
-
-Started GET "/researchers" for 127.0.0.1 at 2011-04-27 09:49:14 +1000
-  Processing by ResearchersController#index as HTML
-  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1[0m
-  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" ORDER BY updated_at DESC LIMIT 2 OFFSET 0
-  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "researchers"[0m
-  [1m[35mAddress Load (0.2ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 5 AND "addresses".addressable_type = 'Researcher') LIMIT 1
-  [1m[36mAddress Load (0.2ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 4 AND "addresses".addressable_type = 'Researcher') LIMIT 1[0m
-  [1m[35mCACHE (0.0ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1
-Rendered researchers/index.html.erb within layouts/application (40.8ms)
-Completed 200 OK in 102ms (Views: 46.9ms | ActiveRecord: 1.1ms)
-
-
-Started GET "/researchers" for 127.0.0.1 at 2011-04-27 09:49:15 +1000
-  Processing by ResearchersController#index as HTML
-  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1[0m
-  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" ORDER BY updated_at DESC LIMIT 2 OFFSET 0
-  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "researchers"[0m
-  [1m[35mAddress Load (0.2ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 5 AND "addresses".addressable_type = 'Researcher') LIMIT 1
-  [1m[36mAddress Load (0.2ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 4 AND "addresses".addressable_type = 'Researcher') LIMIT 1[0m
-  [1m[35mCACHE (0.0ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1
-Rendered researchers/index.html.erb within layouts/application (41.0ms)
-Completed 200 OK in 101ms (Views: 47.2ms | ActiveRecord: 1.1ms)
-
-
-Started GET "/posts" for 127.0.0.1 at 2011-04-27 09:49:16 +1000
-  Processing by PostsController#index as HTML
-  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1[0m
-  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" ORDER BY updated_at DESC LIMIT 2 OFFSET 0
-  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
-  [1m[35mCACHE (0.0ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1
-Rendered posts/index.html.erb within layouts/application (54.3ms)
-Completed 200 OK in 93ms (Views: 60.6ms | ActiveRecord: 0.6ms)
-
-
-Started GET "/posts?page=2" for 127.0.0.1 at 2011-04-27 09:49:18 +1000
-  Processing by PostsController#index as HTML
-  Parameters: {"page"=>"2"}
-  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1[0m
-  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" ORDER BY updated_at DESC LIMIT 2 OFFSET 2
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1[0m
-Rendered posts/index.html.erb within layouts/application (56.0ms)
-Completed 200 OK in 91ms (Views: 62.1ms | ActiveRecord: 0.5ms)
-
-
-Started GET "/researchers" for 127.0.0.1 at 2011-04-27 09:49:19 +1000
-  Processing by ResearchersController#index as HTML
-  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1
-  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" ORDER BY updated_at DESC LIMIT 2 OFFSET 0[0m
-  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "researchers"
-  [1m[36mAddress Load (0.2ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 5 AND "addresses".addressable_type = 'Researcher') LIMIT 1[0m
-  [1m[35mAddress Load (0.2ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 4 AND "addresses".addressable_type = 'Researcher') LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1[0m
-Rendered researchers/index.html.erb within layouts/application (69.3ms)
-Completed 200 OK in 97ms (Views: 75.7ms | ActiveRecord: 1.1ms)
-
-
-Started GET "/researchers?page=2" for 127.0.0.1 at 2011-04-27 09:49:20 +1000
-  Processing by ResearchersController#index as HTML
-  Parameters: {"page"=>"2"}
-  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1
-  [1m[36mResearcher Load (0.7ms)[0m  [1mSELECT "researchers".* FROM "researchers" ORDER BY updated_at DESC LIMIT 2 OFFSET 2[0m
-  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "researchers"
-  [1m[36mAddress Load (0.2ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 3 AND "addresses".addressable_type = 'Researcher') LIMIT 1[0m
-  [1m[35mAddress Load (0.1ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 2 AND "addresses".addressable_type = 'Researcher') LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1[0m
-Rendered researchers/index.html.erb within layouts/application (57.1ms)
-Completed 200 OK in 85ms (Views: 63.3ms | ActiveRecord: 1.4ms)
-
-
-Started GET "/researchers?page=3" for 127.0.0.1 at 2011-04-27 09:49:21 +1000
-  Processing by ResearchersController#index as HTML
-  Parameters: {"page"=>"3"}
-  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1
-  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" ORDER BY updated_at DESC LIMIT 2 OFFSET 4[0m
-  [1m[35mAddress Load (0.3ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 1 AND "addresses".addressable_type = 'Researcher') LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1[0m
-Rendered researchers/index.html.erb within layouts/application (71.0ms)
-Completed 200 OK in 96ms (Views: 77.3ms | ActiveRecord: 0.7ms)
-
-
-Started GET "/researchers?page=2" for 127.0.0.1 at 2011-04-27 09:49:23 +1000
-  Processing by ResearchersController#index as HTML
-  Parameters: {"page"=>"2"}
-  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1
-  [1m[36mResearcher Load (0.8ms)[0m  [1mSELECT "researchers".* FROM "researchers" ORDER BY updated_at DESC LIMIT 2 OFFSET 2[0m
-  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "researchers"
-  [1m[36mAddress Load (0.2ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 3 AND "addresses".addressable_type = 'Researcher') LIMIT 1[0m
-  [1m[35mAddress Load (0.1ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 2 AND "addresses".addressable_type = 'Researcher') LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1[0m
-Rendered researchers/index.html.erb within layouts/application (56.2ms)
-Completed 200 OK in 85ms (Views: 62.0ms | ActiveRecord: 1.4ms)
-
-
-Started GET "/researchers?page=1" for 127.0.0.1 at 2011-04-27 09:49:24 +1000
-  Processing by ResearchersController#index as HTML
-  Parameters: {"page"=>"1"}
-  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1
-  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" ORDER BY updated_at DESC LIMIT 2 OFFSET 0[0m
-  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "researchers"
-  [1m[36mAddress Load (0.2ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 5 AND "addresses".addressable_type = 'Researcher') LIMIT 1[0m
-  [1m[35mAddress Load (0.2ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 4 AND "addresses".addressable_type = 'Researcher') LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 1) LIMIT 1[0m
-Rendered researchers/index.html.erb within layouts/application (70.7ms)
-Completed 200 OK in 98ms (Views: 76.7ms | ActiveRecord: 1.1ms)
+Rendered researchers/account.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 72ms (Views: 60.9ms | ActiveRecord: 1.0ms)
