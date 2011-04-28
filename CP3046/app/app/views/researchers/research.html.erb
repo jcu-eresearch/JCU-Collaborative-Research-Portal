@@ -1,3 +1,11 @@
+<% if @researcher == logged_in_researcher %>
+	<div class='sub_navigation navigation'>
+		<ul>
+			<li><%= link_to 'New Research Post', new_post_path %></li>
+		</ul>
+	</div>
+<% end %>
+
 <h1><%= @researcher.name %> - Research Posts</h1>
 
 <table>
@@ -16,6 +24,3 @@
 <% end %>
 </table>
 
-<% if @researcher == logged_in_researcher %>
-	<%= link_to 'New Research Post', new_post_path %>
-<% end %>

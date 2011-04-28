@@ -1,3 +1,11 @@
+<% if @researcher == logged_in_researcher %>
+	<div class='sub_navigation navigation'>
+		<ul class='navigation sub_navigation'>
+			<li><%= link_to 'Edit Profile', edit_researcher_path(@researcher) %></li>
+		</ul>
+	</div>
+<% end %>
+
 <p>
   <b>JC Number:</b>
   <%= @researcher.jc_number %>
@@ -18,10 +26,3 @@
   <%= raw @researcher.address.to_html if @researcher.address %>
 </p>
 
-<% if @researcher == logged_in_researcher %>
-	<div class='sub_navigation navigation'>
-		<ul class='navigation sub_navigation'>
-			<li><%= link_to 'Edit My Profile', edit_researcher_path(@researcher) %></li>
-		</ul>
-	</div>
-<% end %>
