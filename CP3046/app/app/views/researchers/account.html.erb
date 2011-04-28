@@ -1,3 +1,7 @@
-<%= link_to 'Edit My Profile', edit_researcher_path(@researcher) %> |
-<%= link_to 'View My Profile', researcher_path(@researcher) %> |
-<%= link_to 'My Research', research_researcher_path(@researcher) %> 
+<ul class='navigation'>
+	<li><%= link_to 'View My Profile', researcher_path(@researcher) %>          </li>
+	<li><%= link_to 'My Research', research_researcher_path(@researcher) %>     </li>
+	<li><!-- TODO - view notification preferences -->                           </li>
+	<li><!-- TODO - My Followed Researchers -->                                 </li>
+	<li><!-- TODO - My Groups -->                                               </li>
+</ul>

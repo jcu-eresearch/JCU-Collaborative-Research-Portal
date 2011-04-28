@@ -1,19 +1,21 @@
-<h1>My Research</h1>
+<h1><%= @researcher.name %> - Research Posts</h1>
 
 <table>
   <tr>
     <th>Title</th>
     <td></td>
     <td></td>
-    <td></td>
   </tr>
 
 <% @researcher.posts.each_with_index do |post, index| %>
-  <% css_class = (index % 2 == 0) ? "even" : "odd" %>
+  <% css_class = index.odd? ? "odd" : "even" %>
   <tr class='<%= css_class %>'>
     <td><%= post.title %></td>
     <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
   </tr>
 <% end %>
 </table>
+
+<% if @researcher == logged_in_researcher %>
+	<%= link_to 'New Research Post', new_post_path %>
+<% end %>

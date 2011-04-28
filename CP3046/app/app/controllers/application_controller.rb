@@ -65,7 +65,7 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in_researcher
-  	# Early exit if @current_researcher is already set. (caching)
+  	# Use cache if @current_researcher is already set
   	if @current_researcher
 		return @current_researcher
 	end

@@ -15,9 +15,10 @@
 
 <p>
   <b>Address:</b>
-  <%= raw @researcher.address.to_html %>
+  <%= raw @researcher.address.to_html if @researcher.address %>
 </p>
 
 
-<%= link_to 'Edit', edit_researcher_path(@researcher) %> |
-<%= link_to 'Back', researchers_path %>
+<% if @researcher == logged_in_researcher %>
+	<%= link_to 'Edit My Profile', edit_researcher_path(@researcher) %> |
+<% end %>

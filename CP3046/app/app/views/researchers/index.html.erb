@@ -4,9 +4,6 @@
   <tr>
     <th>Name</th>
     <th>Title</th>
-    <th>Address</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
@@ -15,9 +12,7 @@
   <tr>
     <td><%= researcher.name %></td>
     <td><%= researcher.title %></td>
-    <td><%= researcher.address %></td>
-    <td><%= link_to 'Show', researcher %></td>
-    <td><%= link_to 'Edit', edit_researcher_path(researcher) %></td>
+    <td><%= link_to 'Profile', researcher %></td>
   </tr>
 <% end %>
 </table>

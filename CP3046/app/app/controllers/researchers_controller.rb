@@ -29,11 +29,21 @@ class ResearchersController < ApplicationController
   # GET /researchers/1/account
   def account
     @researcher = Researcher.find(params[:id])
+	
+	# Only viewable by the logged in researcher
+	if @researcher == logged_in_researcher
+		respond_to do |format|
+		  format.html # account.html.erb
+		  format.rss  { render :layout => false }
+		end
+	else
+		respond_to do |format|
+			format.html { redirect_to(account_researcher_path(logged_in_researcher), :alert => "You can't view another user's account.") }
+			format.xml  { render :xml => {"error" => "You can't view another user's account"}, :status => :unprocessable_entity }
+			format.rss  { render :xml => {"error" => "You can't view another user's account"}, :status => :unprocessable_entity }
+		end
+	end
 
-    respond_to do |format|
-      format.html # account.html.erb
-	  format.rss  { render :layout => false }
-    end
   end
   
   # GET /researchers/1/research
@@ -47,11 +57,6 @@ class ResearchersController < ApplicationController
 
   # GET /researchers/1/edit
   def edit
-    @researcher = Researcher.find(params[:id])
-  end
-  
-  # GET /researchers/1/profile
-  def profile
     @researcher = Researcher.find(params[:id])
   end
   
