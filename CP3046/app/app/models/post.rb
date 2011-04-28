@@ -4,6 +4,6 @@ class Post < ActiveRecord::Base
 	has_many :comments
 
 	def self.per_page
-		2
+		20
 	end
 end

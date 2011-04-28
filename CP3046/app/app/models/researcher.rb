@@ -31,6 +31,6 @@ class Researcher < ActiveRecord::Base
 	end
 	
 	def self.per_page
-		2
+		20
 	end
 end
