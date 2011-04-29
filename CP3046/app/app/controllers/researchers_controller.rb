@@ -69,6 +69,7 @@ class ResearchersController < ApplicationController
 	# Only allow the user to change the details of the researcher, if the researcher is the current user.
   	if logged_in_researcher == @researcher
 		respond_to do |format|
+			
 		  if @researcher.update_attributes(params[:researcher])
 			format.html { redirect_to(@researcher, :notice => 'Researcher was successfully updated.') }
 			format.xml  { head :ok }

@@ -1,11 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name: MyString
-  title: MyString
-  address: MyText
+  name: Joe 
+  title: Mr
+  jc_number: jc1555 
 
 two:
-  name: MyString
-  title: MyString
-  address: MyText
+  name: Jane
+  title: Mrs
+  jc_number: jc2999

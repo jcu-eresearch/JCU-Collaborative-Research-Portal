@@ -21,9 +21,14 @@
 		<%= f.label :title %><br />
 		<%= f.text_field :title %>
 	  </div>
+	  
+	  <div class="field">
+		<%= f.label :email %><br />
+		<%= f.text_field :email %>
+	  </div>
 
 	  <%= f.fields_for :address do |address_fields| %>
-		<%= render :partial => 'shared/address', :locals => {:f => address_fields} %>
+		<%= render :partial => 'shared/address_form', :locals => {:f => address_fields} %>
 	  <% end %>
 
 

@@ -1,8 +1,12 @@
 class Researcher < ActiveRecord::Base
 	# A researcher must have a jc number, and that jc number must be unique among all researchers.
+	# The jc_number can't change.
 	validates :jc_number, :presence => true, :uniqueness => true
-	validates :name, :presence => true
 	attr_readonly :jc_number
+
+	# A Researcher must have a name
+	validates :name, :presence => true
+
 	
 	# A researcher has an address.
 	# The researcher's address is dependent on the researcher.

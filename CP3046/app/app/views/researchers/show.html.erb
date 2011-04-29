@@ -12,6 +12,11 @@
 </p>
 
 <p>
+  <b>Email:</b>
+  <%= @researcher.email%>
+</p>
+
+<p>
   <b>Name:</b>
   <%= @researcher.name %>
 </p>
@@ -23,6 +28,6 @@
 
 <p>
   <b>Address:</b>
-  <%= raw @researcher.address.to_html if @researcher.address %>
+  <%= render :partial => 'shared/address', :locals => {:address => @researcher.address } %>
 </p>
 

@@ -1,4 +1,6 @@
 # account.rss.builder
+# Shows the personal feed for the user.
+# This is the rss feed of all the posts relevant to the user
 xml.instruct! :xml, :version => "1.0" 
 xml.rss :version => "2.0" do
 	xml.channel do

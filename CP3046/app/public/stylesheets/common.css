@@ -416,3 +416,19 @@ label {
 	margin-right: 1em;
 	clear: left;
 }
+
+h3.commentor_name {
+	color: #339;
+}
+
+div.comment {
+	margin-left: 2em;
+	margin-bottom: 3em;
+	padding-left: 1em;
+	padding-bottom: 0.5em;
+	border-left: dotted 1px #aaa;
+	border-bottom: dotted 1px #aaa;
+}
+div.comment div.body {
+	margin-left: 2em;
+}

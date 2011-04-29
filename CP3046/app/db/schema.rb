@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20110426124316) do
   create_table "researchers", :force => true do |t|
     t.string   "name"
     t.string   "title"
+    t.string   "email"
     t.string   "jc_number"
     t.datetime "created_at"
     t.datetime "updated_at"

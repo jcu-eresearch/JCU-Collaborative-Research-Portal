@@ -7,9 +7,11 @@
 
 <h2>Comments</h2>
 <% @post.comments.each do |comment| %>
-	<h4 class="commentor_name"><%= comment.researcher.name %></h4>
 	<div class='comment'>
-		<%= raw BlueCloth.new(comment.body).to_html %>
+	<h3 class="commentor_name"><%= comment.researcher.name %></h3>
+		<div class='body'>
+			<%= raw BlueCloth.new(comment.body).to_html %>
+		</div>
 	</div>
 
 <% end %>

@@ -26,6 +26,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @post }
+	  format.rss  { render :layout => false }
     end
   end
 
