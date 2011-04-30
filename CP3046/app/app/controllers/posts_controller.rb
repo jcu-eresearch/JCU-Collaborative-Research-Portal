@@ -9,6 +9,11 @@ class PostsController < ApplicationController
 #		@posts = Post.paginate :page => params[:page], :order => 'updated_at DESC'
 		@posts = Post.search(params[:search], params[:page])
 	  }
+	  
+	  format.rss  { 
+		  @posts= Post.all
+		  render :layout => false 
+	  }
 
       format.xml  { 
 		  @posts= Post.all

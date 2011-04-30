@@ -2,7 +2,7 @@
 <h2 class="author">Author: <%= @post.researcher.name %></h2>
 
 <div class="content">
-  <%= raw BlueCloth.new(@post.content).to_html %>
+  <%= raw @post.content_as_html %>
 </div>
 
 <h2>Comments</h2>
@@ -10,7 +10,7 @@
 	<div class='comment'>
 	<h3 class="commentor_name"><%= comment.researcher.name %></h3>
 		<div class='body'>
-			<%= raw BlueCloth.new(comment.body).to_html %>
+			<%= raw comment.body_as_html %>
 		</div>
 	</div>
 

@@ -5,6 +5,10 @@ class Post < ActiveRecord::Base
 	validates :content, :presence => true
 	has_many :comments
 
+	def content_as_html
+	 	BlueCloth.new(content).to_html
+	end
+
 	def self.per_page
 		20
 	end

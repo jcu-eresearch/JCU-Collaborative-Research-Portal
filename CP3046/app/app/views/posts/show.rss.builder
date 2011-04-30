@@ -1,11 +1,11 @@
-# show.rss.builder
+# show.rss.builder (post)
 # Shows all the comments on this post
 xml.instruct! :xml, :version => "1.0" 
 xml.rss :version => "2.0" do
 	xml.channel do
 		xml.title "#{@post.title}"
 		xml.description "Research Post #{@post.title} by #{@post.researcher.name}"
-		xml.link researcher_url(@post, :rss)
+		xml.link post_url(@post, :rss)
 
 		for comment in @post.comments
 			xml.item do

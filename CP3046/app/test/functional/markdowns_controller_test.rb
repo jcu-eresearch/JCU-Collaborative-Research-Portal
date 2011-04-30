@@ -6,7 +6,7 @@ class MarkdownsControllerTest < ActionController::TestCase
   end
   
   test "should get preview" do
-    get :preview, nil, { :jc_number => @researcher.to_param }
+    post :preview, nil, { :jc_number => @researcher.to_param }
     assert_response :success
   end
 end

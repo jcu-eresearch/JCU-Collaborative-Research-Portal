@@ -9,6 +9,16 @@
 </head>
 <body>
 
+<% if alert %>
+	<div id="error_explanation">
+		<h2><%= alert %></h2>
+	</div>
+<% end %>
+
+<% if notice %>
+	<p class='notice'><%= notice %></p>
+<% end %>
+
 <% if logged_in? %>
 	<div class='main_navigation navigation'>
 		<ul>
@@ -36,15 +46,6 @@
 	</div>
 <% end %>
 
-<% if alert %>
-	<div id="error_explanation">
-		<h2><%= alert %></h2>
-	</div>
-<% end %>
-
-<% if notice %>
-	<p class='notice'><%= notice %></p>
-<% end %>
 
 <%= yield %>
 
