@@ -1,10 +1,17 @@
+<div class='sub_navigation navigation'>
 <% if @researcher == logged_in_researcher %>
-	<div class='sub_navigation navigation'>
-		<ul class='navigation sub_navigation'>
-			<li><%= link_to 'Edit Profile', edit_researcher_path(@researcher) %></li>
-		</ul>
-	</div>
+	<ul class='navigation sub_navigation'>
+		<li><%= link_to 'My Research', research_researcher_path(@researcher) %></li>
+	</ul>
+	<ul class='actions'>
+		<li><%= link_to 'Edit Profile', edit_researcher_path(@researcher) %></li>
+	</ul>
+<% else %>
+	<ul class='navigation sub_navigation'>
+		<li><%= link_to "#{@researcher.name}'s Research", research_researcher_path(@researcher) %></li>
+	</ul>
 <% end %>
+</div>
 
 <p>
   <b>JC Number:</b>
@@ -30,4 +37,3 @@
   <b>Address:</b>
   <%= render :partial => 'shared/address', :locals => {:address => @researcher.address } %>
 </p>
-

@@ -1,7 +1,16 @@
 <% if @researcher == logged_in_researcher %>
 	<div class='sub_navigation navigation'>
 		<ul>
+			<li><%= link_to 'My Profile', researcher_path(@researcher) %></li>
+		</ul>
+		<ul class='actions'>
 			<li><%= link_to 'New Research Post', new_post_path %></li>
+		</ul>
+	</div>
+<% else%>
+	<div class='sub_navigation navigation'>
+		<ul>
+			<li><%= link_to "#{@researcher.name}'s Profile", researcher_path(@researcher) %></li>
 		</ul>
 	</div>
 <% end %>

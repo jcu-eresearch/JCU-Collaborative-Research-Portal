@@ -56,10 +56,15 @@ class ResearchersController < ApplicationController
     end
   end
 
-  # GET /researchers/1/edit
-  def edit
-    @researcher = Researcher.find(params[:id])
-  end
+# GET /researchers/1/edit
+	def edit
+		@researcher = Researcher.find(params[:id])
+		unless logged_in_researcher == @researcher
+			respond_to do |format|
+				format.html { redirect_to(@researcher, :alert => "You can't edit another user's details.") }
+			end
+		end
+	end
   
   # PUT /researchers/1
   # PUT /researchers/1.xml

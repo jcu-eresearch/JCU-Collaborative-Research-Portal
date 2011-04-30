@@ -29,6 +29,7 @@ App::Application.routes.draw do
 	end
 
 	resource :home, :only => [], do
+		get 'index'
 		get 'about'
 		get 'support'
 	end

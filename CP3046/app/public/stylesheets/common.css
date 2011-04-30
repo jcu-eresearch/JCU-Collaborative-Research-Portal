@@ -102,7 +102,10 @@ div.navigation ul {
 
 div.sub_navigation ul {
 	background-color: #ccf;
-	float: left;
+}
+
+div.sub_navigation ul.actions {
+	float: right;
 }
 
 div.main_navigation ul li {
