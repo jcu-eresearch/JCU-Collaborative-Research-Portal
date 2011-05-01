@@ -187,22 +187,22 @@ button.show_hide_button, button.show_hide_button span {
 
 h1, h2, h3 {
 	font-family: 
-		sans-serif;
+	sans-serif;
 }
 
 h1 {
 	color: #2929ff;
 	margin-bottom: 1em;
-    padding-bottom: 0.2em;
-    border-bottom: 3px solid #7aaf9c;
+  padding-bottom: 0.2em;
+  border-bottom: 3px solid #7aaf9c;
 }
 
 h2 {
 	margin-top: 1em;
 	color: #5969ff;
-	margin-bottom: 0.8em;
-    padding-bottom: 0.2em;
-    border-bottom: 2px dotted #7aaf9c;
+	margin-bottom: 1em;
+  padding-bottom: 0.2em;
+  border-bottom: 2px dotted #7aaf9c;
 }
 
 h2.author {
@@ -418,12 +418,11 @@ label {
 	margin-right: 1em;
 	clear: left;
 
-	width: 16em;
+	min-width: 10em;
+  display: inline-block;
 	font-weight: bold;
 }
 
-form.search_form label {
-}
 
 h3.commentor_name {
 	color: #339;
@@ -441,18 +440,15 @@ div.comment div.body {
 	margin-left: 2em;
 }
 
-form.search_form label{
-	font-size: small;
-	font-weight: normal;
+div.tags p {
+  margin-top: 2em;
+  font-size: small;
+  margin-bottom: 2em;
 }
 
-form.search_form input {
-	font-size: small;
-	font-weight: normal;
-	margin: 0;
-	float: none;
+div.tags p span.tag_title {
+  font-weight: bold;
 }
-
-form.search_form input.submit {
-	margin: 0;
+div.tags p span.tag_list {
+  font-style: italic;
 }

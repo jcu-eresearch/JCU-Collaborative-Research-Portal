@@ -1,6 +1,16 @@
+<% content_for :head do %>
+  <link rel="alternate" type="application/rss+xml" href="<%= posts_url :rss %>" title="Posts RSS Feed">
+<% end %>
+
 <% content_for :title do %>
 	<%= "Posts" %>
 <% end %>
+
+<div class='sub_navigation navigation feeds'>
+	<ul>
+    <li><%= link_to "Posts RSS Feed", posts_path(:rss) %></li>
+	</ul>
+</div>
 
 <div class='sub_navigation navigation actions'>
 	<ul>
@@ -9,11 +19,16 @@
 </div>
 
 
+
 <!-- Search Form -->
 <%= form_tag(posts_path, :method => "get", :class => 'search_form') do %>
 <fieldset>  
-  <%= label_tag(:search, "Search by Title:") %>
-  <%= search_field_tag(:search, params[:search]) %>
+  <legend>Search By</legend>
+  <%= label_tag(:search_title, "Title:") %>
+  <%= search_field_tag(:search_title, params[:search_title]) %>
+  <br />
+  <%= label_tag(:search_tags, "Tags:") %>
+  <%= search_field_tag(:search_tags, params[:search_tags]) %>
   <%= submit_tag("Search", :class => "submit") %>
 </fieldset>  
 <% end %>
@@ -23,7 +38,7 @@
 <table>
   <tr>
     <th>Title</th>
-    <td></td>
+    <th>Tags</th>
     <td></td>
   </tr>
 
@@ -32,6 +47,7 @@
   <% css_class = index.odd? ? "odd" : "even" %>
   <tr class='<%= css_class %>'>
     <td><%= post.title %></td>
+    <td><%= post.tag_list %></td>
     <td><%= link_to 'Show', post %></td>
   </tr>
 <% end %>

@@ -2,23 +2,20 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
-	respond_to do |format|
+    respond_to do |format|
       format.html { 
-	    # index.html.erb
-#		@posts = Post.paginate :page => params[:page], :order => 'updated_at DESC'
-		@posts = Post.search(params[:search], params[:page])
-	  }
-	  
-	  format.rss  { 
-		  @posts= Post.all
-		  render :layout => false 
-	  }
-
-      format.xml  { 
-		  @posts= Post.all
-		  render :xml => @posts
+        @posts = Post.search(params[:search_title], params[:search_tags], params[:page])
+      }
+    
+      format.rss  { 
+        @posts= Post.all
+        render :layout => false 
       }
 
+      format.xml  { 
+        @posts= Post.all
+        render :xml => @posts
+      }
     end
   end
   
@@ -30,7 +27,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @post }
-	  format.rss  { render :layout => false }
+    format.rss  { render :layout => false }
     end
   end
 
@@ -50,7 +47,7 @@ class PostsController < ApplicationController
   # POST /posts.xml
   def create
     @post = Post.new(params[:post])
-	@post.researcher = logged_in_researcher 
+  @post.researcher = logged_in_researcher 
 
     respond_to do |format|
       if @post.save

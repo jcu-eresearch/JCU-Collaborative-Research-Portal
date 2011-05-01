@@ -9,7 +9,7 @@ xml.rss :version => "2.0" do
 
 		for post in @posts
 			xml.item do
-				xml.title "#{post.title} by #{post.researcher.name}"
+				xml.title "#{post.title} by #{post.researcher.name} (#{post.tag_list})"
 				xml.description post.content_as_html
 				xml.pubDate post.created_at.to_s(:rfc822)
 				xml.link post_url(post)

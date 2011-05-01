@@ -5,8 +5,13 @@
 <h1 class="title"><%= @post.title %></h1>
 <h2 class="author">Author: <%= @post.researcher.name %></h2>
 
+
 <div class="content">
   <%= raw @post.content_as_html %>
+</div>
+
+<div class="tags">
+  <p><span class='tag_title'>Tags</span>: <span class='tag_list'><%= @post.tag_list %></span></p>
 </div>
 
 <h2>Comments</h2>

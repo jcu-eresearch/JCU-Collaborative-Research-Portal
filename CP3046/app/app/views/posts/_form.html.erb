@@ -21,6 +21,10 @@
     <%= f.text_area :content %>
     <%= render :partial => "markdowns/preview_markdown_input", :locals => { :source_field => "post_content" } %>
   </div>
+  <div id="model_tags" class="field">
+    <%= f.label :tag_list %><br />
+    <%= f.text_field :tag_list %>     
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
