@@ -1,4 +1,6 @@
 App::Application.routes.draw do
+  resources :groups
+
 	# Posts can't be edited/updated or destroyed.
 	resources :posts, :except => [:destroy, :update, :edit] do
 		# Posts have comments (comments can only be created)

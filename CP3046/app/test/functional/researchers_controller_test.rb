@@ -43,10 +43,7 @@ class ResearchersControllerTest < ActionController::TestCase
   end
 
   test "should update researcher" do
-	Rails::logger.debug "Before"
-	Rails::logger.debug @researcher.attributes.inspect
     put :update, { :id => @researcher.to_param, :researcher => @researcher.attributes }, { :jc_number => @researcher.to_param }
-	Rails::logger.debug "After"
 
     assert_redirected_to researcher_path(assigns(:researcher))
   end

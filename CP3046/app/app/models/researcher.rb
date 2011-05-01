@@ -12,8 +12,10 @@ class Researcher < ActiveRecord::Base
 	# The researcher's address is dependent on the researcher.
 	# i.e. When the researcher is deleted, delete their associated address
 	has_one :address, :as => :addressable, :dependent => :destroy
-	has_many :posts
 	accepts_nested_attributes_for :address
+	
+	has_many :posts
+	has_and_belongs_to_many :groups
 
 	# TODO: 
 	# At this point, we need to check against the ldap to see if this username/password is valid
