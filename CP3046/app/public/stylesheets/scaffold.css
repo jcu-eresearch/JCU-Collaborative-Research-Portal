@@ -28,10 +28,12 @@ div.field, div.actions {
   color: red;
 }
 
+.field_with_errors label:after {
+  color: #a00;
+  content: "*";
+}
 .field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+	display: inline;
 }
 
 #error_explanation {

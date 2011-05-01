@@ -212,7 +212,6 @@ h2.author {
 
 fieldset input, fieldset select{
 	width: 20em;
-    float: right;
 }
 
 textarea {
@@ -421,7 +420,6 @@ label {
 
 	width: 16em;
 	font-weight: bold;
-	color: #000;
 }
 
 form.search_form label {
