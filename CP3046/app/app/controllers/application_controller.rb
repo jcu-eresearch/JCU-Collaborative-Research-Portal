@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
         if user
           @current_researcher = user
         else
-          request_http_basic_authentication
+          request_http_basic_authentication(request.fullpath)
         end
       end
       format.rss do   
@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
         if user
           @current_researcher = user
         else
-          request_http_basic_authentication
+          request_http_basic_authentication(request.fullpath)
         end
       end
     end
@@ -46,35 +46,35 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     session_id = session[:jc_number]
-	if session_id
-		begin
-			@current_researcher = Researcher.find(session_id)
-			if @current_researcher
-				return true
-			else
-				session[:jc_number] = nil
-				return false
-			end
-		rescue
-			session[:jc_number] = nil
-			return false
-		end
-	else
-		return false
-	end
+    if session_id
+      begin
+        @current_researcher = Researcher.find(session_id)
+        if @current_researcher
+          return true
+        else
+          session[:jc_number] = nil
+          return false
+        end
+      rescue
+        session[:jc_number] = nil
+        return false
+      end
+    else
+      return false
+    end
   end
 
   def logged_in_researcher
   	# Use cache if @current_researcher is already set
   	if @current_researcher
-		return @current_researcher
-	end
+      return @current_researcher
+    end
 
   	if logged_in?
-		@current_researcher
-	else
-		raise "Attempting to look up logged in researcher, when the user isn't logged in."
-	end
+      @current_researcher
+    else
+      raise "Attempting to look up logged in researcher, when the user isn't logged in."
+    end
   end
 
 end

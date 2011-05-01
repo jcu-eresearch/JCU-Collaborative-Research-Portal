@@ -48,8 +48,8 @@ class ResearchersController < ApplicationController
 	else
 		respond_to do |format|
 			format.html { redirect_to(researcher_path(@researcher), :alert => "You can't view another user's account.") }
-			format.xml  { render :xml => {"error" => "You can't view another user's account"}, :status => :unprocessable_entity }
-			format.rss  { render :xml => {"error" => "You can't view another user's account"}, :status => :unprocessable_entity }
+			format.xml  { request_http_basic_authentication(request.fullpath) }
+			format.rss  { request_http_basic_authentication(request.fullpath) }
 		end
 	end
 
@@ -88,25 +88,23 @@ class ResearchersController < ApplicationController
   # PUT /researchers/1.xml
   def update
     @researcher = Researcher.find(params[:id])
-	
-	# Only allow the user to change the details of the researcher, if the researcher is the current user.
+    # Only allow the user to change the details of the researcher, if the researcher is the current user.
   	if logged_in_researcher == @researcher
-		respond_to do |format|
+      respond_to do |format|
 			
-		  if @researcher.update_attributes(params[:researcher])
-			format.html { redirect_to(@researcher, :notice => 'Researcher was successfully updated.') }
-			format.xml  { head :ok }
-		  else
-			format.html { render :action => "edit" }
-			format.xml  { render :xml => @researcher.errors, :status => :unprocessable_entity }
-		  end
-		end
-	else
-		respond_to do |format|
-			format.html { redirect_to(@researcher, :alert => "You can't update another user's details.") }
-			format.xml  { render :xml => {"error" => "You can't update another user's details"}, :status => :unprocessable_entity }
-		end
-	end
+        if @researcher.update_attributes(params[:researcher])
+          format.html { redirect_to(@researcher, :notice => 'Researcher was successfully updated.') }
+          format.xml  { head :ok }
+        else
+          format.html { render :action => "edit" }
+          format.xml  { render :xml => @researcher.errors, :status => :unprocessable_entity }
+        end
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to(@researcher, :alert => "You can't update another user's details.") }
+        format.xml  { request_http_basic_authentication(request.fullpath) }
+      end
+    end
   end
-
 end
