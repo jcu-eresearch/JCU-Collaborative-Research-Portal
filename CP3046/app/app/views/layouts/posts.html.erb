@@ -1,0 +1,21 @@
+<%= render :partial => 'layouts/head' %>
+
+<div class='main_navigation navigation'>
+	<ul>
+		<li><%= link_to "Home", home_path %></li>
+		<li><%= link_to "My Account", account_researcher_path(logged_in_researcher) %></li>
+		<li class='current'><%= link_to "Posts", posts_path %></li>
+		<li><%= link_to "Researchers", researchers_path %></li>
+	</ul>
+</div>
+<div class='session_navigation navigation'>
+	<ul class='actions'>
+		<li><%= link_to "Logout", :session, {:method => :delete} %></li>
+	</ul>
+</div>
+
+
+<%= yield %>
+
+</body>
+</html>

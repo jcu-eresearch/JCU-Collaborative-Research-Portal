@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) %> - JCU</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+  <%= yield(:head) %>
+</head>
+<body>
+
+<% if alert %>
+	<div id="error_explanation">
+		<h2><%= alert %></h2>
+	</div>
+<% end %>
+
+<% if notice %>
+	<p class='notice'><%= notice %></p>
+<% end %>
