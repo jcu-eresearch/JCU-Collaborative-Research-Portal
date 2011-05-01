@@ -3,8 +3,8 @@
 xml.instruct! :xml, :version => "1.0" 
 xml.rss :version => "2.0" do
 	xml.channel do
-		xml.title "#{@researcher.name} - Researcher Posts"
-		xml.description "Research posted by #{@researcher.name}"
+		xml.title "#{@researcher.name} - Posts"
+		xml.description "Posts by #{@researcher.name}"
 		xml.link researcher_url(@researcher, :rss)
 
 		for post in @researcher.posts
