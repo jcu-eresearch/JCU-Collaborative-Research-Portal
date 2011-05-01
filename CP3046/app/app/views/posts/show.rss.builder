@@ -9,11 +9,11 @@ xml.rss :version => "2.0" do
 
 		for comment in @post.comments
 			xml.item do
-				xml.title "#{comment.id} by #{comment.researcher.name}"
-				xml.description comment.body_to_html
+				xml.title "Comment #{comment.id} by #{comment.researcher.name}"
+				xml.description comment.body_as_html
 				xml.pubDate comment.created_at.to_s(:rfc822)
-				xml.link post_url(comment)
-				xml.guid "comment_#{comment.id}"
+				xml.link post_url(@post, :comment => comment.id)
+				xml.guid post_url(@post, :comment => comment.id)
 			end
 		end
 	end

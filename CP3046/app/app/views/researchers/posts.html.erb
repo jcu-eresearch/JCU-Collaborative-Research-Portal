@@ -11,7 +11,7 @@
 	</div>
 	<div class='sub_navigation navigation actions'>
 		<ul>
-			<li><%= link_to 'New Research Post', new_post_path %></li>
+			<li><%= link_to 'New Post', new_post_path %></li>
 		</ul>
 	</div>
 <% else%>
@@ -28,8 +28,7 @@
 <table>
   <tr>
     <th>Title</th>
-    <td></td>
-    <td></td>
+    <th></th>
   </tr>
 
 <% @researcher.posts.each_with_index do |post, index| %>

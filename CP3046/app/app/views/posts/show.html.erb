@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <link rel="alternate" type="application/rss+xml" href="<%= post_url(@post, :rss) %>" title="Post: <%= @post.title %> RSS Feed">
+<% end %>
+
 <% content_for :title do %>
 	<%= "Post: #{@post.title}" %>
 <% end %>
@@ -25,13 +29,14 @@
 
 <% end %>
 
-<h2>Add a comment:</h2>
 <%= form_for([@post, @post.comments.build]) do |f| %>
 	<fieldset>  
+    <legend>Add A Comment</legend>
 		<div class="field">
-			<%= f.label :body%><br />
+			<%= f.label :body, "Comment"%><br />
 			<%= f.text_area :body %>
 		</div>
+    <%= render :partial => "markdowns/preview_markdown_input", :locals => { :source_field => "comment_body" } %>
 		<div class="actions">
 			<%= f.submit 'Comment', :class => "submit" %>
 		</div>
