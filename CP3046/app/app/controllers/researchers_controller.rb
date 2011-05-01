@@ -19,12 +19,20 @@ class ResearchersController < ApplicationController
   # GET /researchers/1.xml
   def show
     @researcher = Researcher.find(params[:id])
+	if @researcher == logged_in_researcher
+		respond_to do |format|
+		  format.html { render :layout => 'account' } # show.html.erb
+		  format.xml  { render :xml => @researcher }
+		  format.rss  { render :layout => false }
+		end
+	else
+		respond_to do |format|
+		  format.html # show.html.erb
+		  format.xml  { render :xml => @researcher }
+		  format.rss  { render :layout => false }
+		end
+	end
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @researcher }
-	  format.rss  { render :layout => false }
-    end
   end
   
   # GET /researchers/1/account
@@ -34,12 +42,12 @@ class ResearchersController < ApplicationController
 	# Only viewable by the logged in researcher
 	if @researcher == logged_in_researcher
 		respond_to do |format|
-		  format.html # account.html.erb
+		  format.html { render :layout => 'account' } # account.html.erb
 		  format.rss  { render :layout => false }
 		end
 	else
 		respond_to do |format|
-			format.html { redirect_to(account_researcher_path(logged_in_researcher), :alert => "You can't view another user's account.") }
+			format.html { redirect_to(researcher_path(@researcher), :alert => "You can't view another user's account.") }
 			format.xml  { render :xml => {"error" => "You can't view another user's account"}, :status => :unprocessable_entity }
 			format.rss  { render :xml => {"error" => "You can't view another user's account"}, :status => :unprocessable_entity }
 		end
@@ -47,19 +55,29 @@ class ResearchersController < ApplicationController
 
   end
   
-  # GET /researchers/1/research
-  def research 
-    @researcher = Researcher.find(params[:id])
+# GET /researchers/1/posts
+	def posts
+		@researcher = Researcher.find(params[:id])
 
-    respond_to do |format|
-      format.html # research.html.erb
-    end
-  end
+		if @researcher == logged_in_researcher
+			respond_to do |format|
+				format.html { render :layout => 'account' } # posts.html.erb
+			end
+		else
+			respond_to do |format|
+				format.html # research.html.erb
+			end
+		end
+	end
 
 # GET /researchers/1/edit
 	def edit
 		@researcher = Researcher.find(params[:id])
-		unless logged_in_researcher == @researcher
+		if logged_in_researcher == @researcher
+			respond_to do |format|
+				format.html { render :layout => 'account' } # edit.html.erb
+			end
+		else
 			respond_to do |format|
 				format.html { redirect_to(@researcher, :alert => "You can't edit another user's details.") }
 			end
