@@ -3,6 +3,7 @@ require 'test_helper'
 class ResearchersControllerTest < ActionController::TestCase
   setup do
     @researcher = researchers(:one)
+    @other_researcher = researchers(:two)
   end
 
   test "should get index" do
@@ -16,8 +17,23 @@ class ResearchersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get researcher's account" do
+    get :account, { :id => @researcher.to_param }, { :jc_number => @researcher.to_param }
+    assert_response :success
+  end
+  
+  test "should not get other researcher's account" do
+    get :account, { :id => @other_researcher.to_param }, { :jc_number => @researcher.to_param }
+	assert_redirected_to researcher_path(@other_researcher)
+  end
+
   test "should get edit" do
     get :edit, { :id => @researcher.to_param }, { :jc_number => @researcher.to_param }
+    assert_response :success
+  end
+  
+  test "should get posts" do
+    get :posts, { :id => @researcher.to_param }, { :jc_number => @researcher.to_param }
     assert_response :success
   end
   
