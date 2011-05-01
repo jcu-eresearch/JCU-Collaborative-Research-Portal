@@ -17,7 +17,6 @@ a:visited { color: #666; }
 a:hover { color: #fff; background-color:#000; }
 
 div.field, div.actions {
-  margin-bottom: 10px;
 }
 
 #notice, .notice {
@@ -32,6 +31,11 @@ div.field, div.actions {
   color: #a00;
   content: "*";
 }
+
+.field {
+  margin-top: 0.5em;
+}
+
 .field_with_errors {
 	display: inline;
 }

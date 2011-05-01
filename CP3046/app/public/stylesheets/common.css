@@ -214,6 +214,7 @@ fieldset input, fieldset select{
 	width: 20em;
 }
 
+
 textarea {
     width: 100%;
 	min-width: 100%;
@@ -241,14 +242,12 @@ input.submit {
 	float: right;
 }
 
-
-fieldset legend, input.submit {  
+input.submit {  
 	margin-bottom: 0.3em;
 }
 
 fieldset {
 	margin-bottom: 1em;
-
 }
 
 fieldset p {

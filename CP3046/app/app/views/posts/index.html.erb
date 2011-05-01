@@ -22,15 +22,20 @@
 
 <!-- Search Form -->
 <%= form_tag(posts_path, :method => "get", :class => 'search_form') do %>
-<fieldset>  
-  <legend>Search By</legend>
-  <%= label_tag(:search_title, "Title:") %>
-  <%= search_field_tag(:search_title, params[:search_title]) %>
-  <br />
-  <%= label_tag(:search_tags, "Tags:") %>
-  <%= search_field_tag(:search_tags, params[:search_tags]) %>
-  <%= submit_tag("Search", :class => "submit") %>
-</fieldset>  
+  <fieldset>  
+    <legend>Search By</legend>
+	  <div class="field">
+      <%= label_tag(:search_title, "Title:") %>
+      <%= search_field_tag(:search_title, params[:search_title]) %>
+    </div>
+	  <div class="field">
+      <%= label_tag(:search_tags, "Tags:") %>
+      <%= search_field_tag(:search_tags, params[:search_tags]) %>
+    </div>
+    <div class="actions">
+      <%= submit_tag("Search", :class => "submit") %>
+    </div>
+  </fieldset>  
 <% end %>
 
 <h1>Listing Posts</h1>
