@@ -80,6 +80,10 @@ div.navigation {
 	height: 4em;
 }
 
+div.sub_navigation {
+	display: inline-block;
+}
+
 div.main_navigation {
 	float: left;
 	height: 4em;
@@ -100,12 +104,12 @@ div.navigation ul {
 	box-shadow: 2px 2px 2px rgba(0,0,0,0.75); 
 }
 
-div.sub_navigation ul {
-	background-color: #ccf;
+div.actions {
+	float: right;
 }
 
-div.sub_navigation ul.actions {
-	float: right;
+div.sub_navigation ul {
+	background-color: #ccf;
 }
 
 div.main_navigation ul li {
@@ -135,12 +139,12 @@ div.session_navigation ul li a, div.sub_navigation ul li a {
 	margin: 0;
 }
 
-div.main_navigation ul li.current a, div.session_navigation ul li.current {
-	background-color: rgba(150,150,255,0.60);
+div.navigation ul li.current a {
+	background-color: #66e;
     color: #000;
 }
 
-div.main_navigation ul li a:hover, div.session_navigation ul li a:hover, div.sub_navigation ul li a:hover {
+div.navigation ul li a:hover {
 	background-color: #66f;
     color: #000;
 }
@@ -206,14 +210,9 @@ h2.author {
 
 }
 
-label {
-	width: 16em;
-	font-weight: bold;
-	color: #000;
-}
-
 fieldset input, fieldset select{
 	width: 20em;
+    float: right;
 }
 
 textarea {
@@ -240,6 +239,7 @@ input.submit, button {
 }
 input.submit {
 	margin-left: 0.5em;
+	float: right;
 }
 
 
@@ -277,7 +277,7 @@ input.submit {
 	font-weight: bold;
     width: auto;
     margin-left: 0.6em
-    margin-right: none;
+    margin-right: 0;
 }
 
 div.submit {
@@ -309,7 +309,7 @@ fieldset legend {
 
 form {
 	margin-bottom: 3em;
-	width: 40em;
+	width: 38em;
 }
 
 
@@ -375,8 +375,8 @@ span.star_rating {
 
 div.listings ul {
 	list-style: none;
-	margin-left: none;
-    padding-left: none;
+	margin-left: 0;
+    padding-left: 0;
 }
 
 div.listings ul li:before {
@@ -418,6 +418,13 @@ form.search_form {
 label {
 	margin-right: 1em;
 	clear: left;
+
+	width: 16em;
+	font-weight: bold;
+	color: #000;
+}
+
+form.search_form label {
 }
 
 h3.commentor_name {
@@ -434,4 +441,20 @@ div.comment {
 }
 div.comment div.body {
 	margin-left: 2em;
+}
+
+form.search_form label{
+	font-size: small;
+	font-weight: normal;
+}
+
+form.search_form input {
+	font-size: small;
+	font-weight: normal;
+	margin: 0;
+	float: none;
+}
+
+form.search_form input.submit {
+	margin: 0;
 }

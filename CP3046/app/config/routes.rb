@@ -12,7 +12,7 @@ App::Application.routes.draw do
 
 		member do
 			get 'account'
-			get 'research'
+			get 'posts'
 		end
 	end
 

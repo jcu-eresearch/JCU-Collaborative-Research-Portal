@@ -1,13 +1,14 @@
-<ul class='navigation'>
-</ul>
+<% content_for :title do %>
+	<%= "Researchers" %>
+<% end %>
 
 <!-- Search Form -->
 <%= form_tag(researchers_path, :method => "get", :class => 'search_form') do %>
-<fieldset>  
-  <%= label_tag(:search, "Search by Name:") %>
-  <%= search_field_tag(:search, params[:search]) %>
-  <%= submit_tag("Search", :class => "submit") %>
-</fieldset>  
+	<fieldset>  
+		<%= label_tag(:search, "Search by Name:") %>
+		<%= search_field_tag(:search, params[:search]) %>
+		<%= submit_tag("Search", :class => "submit") %>
+	</fieldset>  
 <% end %>
 
 <h1>Listing Researchers</h1>
@@ -31,5 +32,3 @@
   </tr>
 <% end %>
 </table>
-
-<br />

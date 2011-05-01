@@ -1,5 +1,9 @@
-<div class='sub_navigation navigation'>
-	<ul class='actions'>
+<% content_for :title do %>
+	<%= "Posts" %>
+<% end %>
+
+<div class='sub_navigation navigation actions'>
+	<ul>
 		<li><%= link_to 'New Research Post', new_post_path %></li>
 	</ul>
 </div>
@@ -14,7 +18,7 @@
 </fieldset>  
 <% end %>
 
-<h1>Listing Research Posts</h1>
+<h1>Listing Posts</h1>
 
 <table>
   <tr>

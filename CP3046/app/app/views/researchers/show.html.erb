@@ -1,17 +1,27 @@
-<div class='sub_navigation navigation'>
-<% if @researcher == logged_in_researcher %>
-	<ul class='navigation sub_navigation'>
-		<li><%= link_to 'My Research', research_researcher_path(@researcher) %></li>
-	</ul>
-	<ul class='actions'>
-		<li><%= link_to 'Edit Profile', edit_researcher_path(@researcher) %></li>
-	</ul>
-<% else %>
-	<ul class='navigation sub_navigation'>
-		<li><%= link_to "#{@researcher.name}'s Research", research_researcher_path(@researcher) %></li>
-	</ul>
+<% content_for :title do %>
+	<%= "#{@researcher.name}'s Profile" %>
 <% end %>
-</div>
+
+<% if @researcher == logged_in_researcher %>
+	<div class='sub_navigation navigation'>
+		<ul class='navigation sub_navigation'>
+			<li class='current'><%= link_to 'My Profile', researcher_path(@researcher) %></li>
+			<li><%= link_to 'My Posts', posts_researcher_path(@researcher) %></li>
+		</ul>
+	</div>
+	<div class='sub_navigation navigation actions'>
+		<ul>
+			<li><%= link_to 'Edit Profile', edit_researcher_path(@researcher) %></li>
+		</ul>
+	</div>
+<% else %>
+	<div class='sub_navigation navigation'>
+		<ul class='navigation sub_navigation'>
+			<li class='current'><%= link_to "#{@researcher.name}'s Profile", researcher_path(@researcher) %></li>
+			<li><%= link_to "#{@researcher.name}'s Posts", posts_researcher_path(@researcher) %></li>
+		</ul>
+	</div>
+<% end %>
 
 <p>
   <b>JC Number:</b>
