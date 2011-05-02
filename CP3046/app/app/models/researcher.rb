@@ -30,8 +30,6 @@ class Researcher < ActiveRecord::Base
 		valid = true if jc_number =~ /jc\d+/
 		if valid
 			researcher = Researcher.find_or_create_by_jc_number({:jc_number => jc_number, :name => jc_number})
-      puts researcher.id
-      researcher
 		else
 			false
 		end

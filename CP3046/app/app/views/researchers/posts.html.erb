@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <link rel="alternate" type="application/rss+xml" href="<%= posts_researcher_path(@researcher, :rss) %>" title="Posts by <%= @researcher.name%> RSS Feed">
+<% end %>
+
 <% content_for :title do %>
 	<%= "#{@researcher.name}'s Posts" %>
 <% end %>
@@ -21,6 +25,11 @@
 			<li class='current'><%= link_to "#{@researcher.name}'s Posts", posts_researcher_path(@researcher) %></li>
 		</ul>
 	</div>
+  <div class='sub_navigation navigation feeds'>
+    <ul>
+      <li><%= link_to "#{@researcher.name}'s Posts RSS Feed", posts_researcher_path(@researcher, :rss) %></li>
+    </ul>
+  </div>
 <% end %>
 
 <h1><%= @researcher.name %> - Posts</h1>

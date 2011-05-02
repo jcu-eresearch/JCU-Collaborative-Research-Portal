@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <link rel="alternate" type="application/rss+xml" href="<%= account_researcher_path(@researcher, :rss) %>" title="<%= @researcher.name %>'s Personal RSS Feed">
+<% end %>
+
 <% content_for :title do %>
 	<%= "My Account" %>
 <% end %>

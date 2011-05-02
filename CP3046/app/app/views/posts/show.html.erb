@@ -1,10 +1,16 @@
 <% content_for :head do %>
-  <link rel="alternate" type="application/rss+xml" href="<%= post_url(@post, :rss) %>" title="Post: <%= @post.title %> RSS Feed">
+  <link rel="alternate" type="application/rss+xml" href="<%= post_path(@post, :rss) %>" title="Post: <%= @post.title %> RSS Feed">
 <% end %>
 
 <% content_for :title do %>
 	<%= "Post: #{@post.title}" %>
 <% end %>
+
+<div class='sub_navigation navigation feeds'>
+	<ul>
+    <li><%= link_to "Post RSS Feed", post_path(@post, :rss) %></li>
+	</ul>
+</div>
 
 <h1 class="title"><%= @post.title %></h1>
 <h2 class="author">Author: <%= @post.researcher.name %></h2>

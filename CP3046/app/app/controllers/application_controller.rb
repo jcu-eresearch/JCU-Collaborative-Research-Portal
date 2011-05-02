@@ -7,13 +7,14 @@ class ApplicationController < ActionController::Base
     
   helper_method :logged_in?
   helper_method :logged_in_researcher
+  helper_method :login_required_as_researcher
 
-  before_filter :login_required
+  before_filter :login_required_as_any_researcher
 
 
   private
 
-  def login_required
+  def login_required_as_any_researcher
     respond_to do |format|
       format.html do
         unless logged_in?
@@ -22,23 +23,41 @@ class ApplicationController < ActionController::Base
         end
       end
       format.xml do   
-        user = authenticate_with_http_basic do |login, password|
+        @current_researcher = authenticate_or_request_with_http_basic('researcher') do |login, password|
           Researcher.authenticate(login, password)
-        end
-        if user
-          @current_researcher = user
-        else
-          request_http_basic_authentication(request.fullpath)
         end
       end
       format.rss do   
-        user = authenticate_with_http_basic do |login, password|
+        @current_researcher = authenticate_or_request_with_http_basic('researcher') do |login, password|
           Researcher.authenticate(login, password)
         end
-        if user
-          @current_researcher = user
+      end
+    end
+  end
+
+  def login_required_as_researcher(expected_researcher, redirect_to_url=new_session_url)
+    respond_to do |format|
+      format.html do
+        if logged_in?
+          if logged_in_researcher != expected_researcher
+            alert = "You don't have permission to view that page"         
+            redirect_to(redirect_to_url, :alert=> alert)
+          end
         else
-          request_http_basic_authentication(request.fullpath)
+          notice = "Please log in"         
+          redirect_to(redirect_to_url, :notice => notice)
+        end
+      end
+      format.xml do   
+        authenticate_or_request_with_http_basic("researcher_#{expected_researcher.id}") do |login, password|
+          @current_researcher = Researcher.authenticate(login, password)
+          @current_researcher == expected_researcher
+        end
+      end
+      format.rss do   
+        authenticate_or_request_with_http_basic("researcher_#{expected_researcher.id}") do |login, password|
+          @current_researcher = Researcher.authenticate(login, password)
+          @current_researcher == expected_researcher
         end
       end
     end

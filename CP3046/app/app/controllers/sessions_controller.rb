@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_filter :login_required
+  skip_before_filter :login_required_as_any_researcher
 
   def new
   end
