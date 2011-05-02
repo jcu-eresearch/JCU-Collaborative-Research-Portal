@@ -10,4 +10,8 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  # verbatim, from ActiveController's own unit tests
+  def encode_credentials(username, password)
+    "Basic #{ActiveSupport::Base64.encode64("#{username}:#{password}")}"
+  end
 end

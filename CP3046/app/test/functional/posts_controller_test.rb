@@ -21,7 +21,6 @@ class PostsControllerTest < ActionController::TestCase
     assert_difference('Post.count') do
       post :create, { :post => @post.attributes}, { :jc_number => @researcher.to_param }
     end
-
     assert_redirected_to post_path(assigns(:post))
   end
 
@@ -29,5 +28,21 @@ class PostsControllerTest < ActionController::TestCase
     get :show, { :id => @post.to_param }, { :jc_number => @researcher.to_param }
     assert_response :success
   end
+  
+  test "shouldn't show post (rss) without http_auth provided" do
+    get :show, { :format => 'rss', :id => @post.to_param }, { :jc_number => @researcher.to_param }
+    assert_response :unauthorized
+  end
 
+  test "should show post (rss) with http_auth provided"  do
+    @request.env['HTTP_AUTHORIZATION'] = encode_credentials(@researcher.jc_number, 'one')
+    get :show, { :format => 'rss', :id => @post.to_param }
+    assert_response :success
+  end
+  
+  test "shouldn't show post (rss) with bad http_auth provided"  do
+    @request.env['HTTP_AUTHORIZATION'] = encode_credentials('foo', 'bar')
+    get :show, { :format => 'rss', :id => @post.to_param }
+    assert_response :unauthorized
+  end
 end
