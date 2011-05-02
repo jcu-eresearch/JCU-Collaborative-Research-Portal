@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
           end
         else
           notice = "Please log in"         
-          redirect_to(redirect_to_url, :notice => notice)
+          redirect_to(new_session_url, :notice => notice)
         end
       end
       format.xml do   
