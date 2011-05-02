@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
 
   before_filter :login_required_as_any_researcher
 
-
   private
 
   def login_required_as_any_researcher
@@ -95,5 +94,4 @@ class ApplicationController < ActionController::Base
       raise "Attempting to look up logged in researcher, when the user isn't logged in."
     end
   end
-
 end

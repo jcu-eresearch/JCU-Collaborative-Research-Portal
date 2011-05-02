@@ -1,18 +1,15 @@
 App::Application.routes.draw do
-	resources :groups, :except => [:update, :edit] do
-  end
+	resources :groups, :except => [:update, :edit]
 
 	# Posts can't be edited/updated or destroyed.
 	resources :posts, :except => [:destroy, :update, :edit] do
 		# Posts have comments (comments can only be created)
 		resources :comments, :only => [:new, :create] do
 		end
-
 	end
 
 	# A researcher cannot be created or destroyed.
 	resources :researchers, :except => [:destroy, :new, :create] do
-
 		member do
 			get 'account'
 			get 'posts'
@@ -23,8 +20,8 @@ App::Application.routes.draw do
 	# It can only be created, and destroyed.
 	resource :session, :only => [:new, :create, :destroy]
 
-	resource :textile, :only => [], do
-		post 'preview'
+  resource :textile, :only => [], do
+    post 'preview'
 	end
 
 	resource :markdown, :only => [], do
