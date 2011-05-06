@@ -1,0 +1,14 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  body: body_one 
+  researcher: one
+
+two:
+  body: body_two
+  researcher: one 
+
+three:
+  body: body_three
+  researcher: two
+
