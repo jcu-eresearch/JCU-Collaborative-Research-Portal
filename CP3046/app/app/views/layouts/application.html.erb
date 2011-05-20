@@ -11,7 +11,7 @@
 	</div>
 	<div class='session_navigation navigation'>
 		<ul class='actions'>
-			<li><%= link_to "Logout", :session, {:method => :delete} %></li>
+			<li><%= link_to "Logout: #{logged_in_researcher.name}", :session, {:method => :delete} %></li>
 		</ul>
 	</div>
 <% else %> 
