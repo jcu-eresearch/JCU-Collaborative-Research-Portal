@@ -7,6 +7,8 @@ class Researcher < ActiveRecord::Base
 	# A Researcher must have a name
 	validates :name, :presence => true
 
+  has_friendly_id :name, :use_slug => true
+
 	
 	# A researcher has an address.
 	# The researcher's address is dependent on the researcher.

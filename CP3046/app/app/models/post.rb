@@ -8,6 +8,8 @@ class Post < ActiveRecord::Base
   
   acts_as_taggable
   acts_as_taggable_on :tags
+  
+  has_friendly_id :title, :use_slug => true
 
 	def content_as_html
 	 	BlueCloth.new(content).to_html
