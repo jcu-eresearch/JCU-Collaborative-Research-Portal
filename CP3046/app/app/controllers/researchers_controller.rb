@@ -39,7 +39,6 @@ class ResearchersController < ApplicationController
       respond_to do |format|
         format.html # show.html.erb
         format.xml  { render :xml => @researcher }
-        format.rss  { render :layout => false }
       end
     end
   end
