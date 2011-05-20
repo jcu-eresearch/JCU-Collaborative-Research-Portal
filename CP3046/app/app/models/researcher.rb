@@ -27,7 +27,7 @@ class Researcher < ActiveRecord::Base
 	def self.authenticate(jc_number, pass)
 		# XXX Put in temporary code to randomly set whether the log in is valid
 		valid = false
-		valid = true if jc_number =~ /jc\d+/
+		valid = true if jc_number =~ /^jc\d+$/
 		if valid
 			researcher = Researcher.find_or_create_by_jc_number({:jc_number => jc_number, :name => jc_number})
 		else
