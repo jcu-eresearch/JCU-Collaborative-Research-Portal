@@ -3,9 +3,9 @@
 one:
   title: title_one 
   content: content_one
-  researcher: one
+  researcher: joe
 
 two:
   title: title_two 
   content: content_two
-  researcher: two
+  researcher: jane 

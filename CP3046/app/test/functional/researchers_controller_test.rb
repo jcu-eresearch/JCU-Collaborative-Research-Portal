@@ -2,8 +2,8 @@ require 'test_helper'
 
 class ResearchersControllerTest < ActionController::TestCase
   setup do
-    @researcher = researchers(:one)
-    @other_researcher = researchers(:two)
+    @researcher = researchers(:joe)
+    @other_researcher = researchers(:jane)
   end
 
   test "should get index" do

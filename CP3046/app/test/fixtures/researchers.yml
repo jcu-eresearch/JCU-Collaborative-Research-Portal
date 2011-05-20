@@ -1,11 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
+joe:
   name: Joe 
   title: Mr
   jc_number: jc1555 
 
-two:
+jane:
   name: Jane
   title: Mrs
   jc_number: jc2999

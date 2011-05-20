@@ -2,7 +2,7 @@ require 'test_helper'
 
 class GroupsControllerTest < ActionController::TestCase
   setup do
-    @researcher = researchers(:one)
+    @researcher = researchers(:joe)
     @group = groups(:one)
     @other_group = groups(:two)
   end

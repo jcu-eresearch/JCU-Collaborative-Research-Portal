@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PostsControllerTest < ActionController::TestCase
   setup do
-    @researcher = researchers(:one)
+    @researcher = researchers(:joe)
     @post = posts(:one)
   end
 
@@ -35,7 +35,7 @@ class PostsControllerTest < ActionController::TestCase
   end
 
   test "should show post (rss) with http_auth provided"  do
-    @request.env['HTTP_AUTHORIZATION'] = encode_credentials(@researcher.jc_number, 'one')
+    @request.env['HTTP_AUTHORIZATION'] = encode_credentials(@researcher.jc_number, 'pass')
     get :show, { :format => 'rss', :id => @post.to_param }
     assert_response :success
   end

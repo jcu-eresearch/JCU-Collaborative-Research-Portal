@@ -2,7 +2,7 @@ require 'test_helper'
 
 class MarkdownsControllerTest < ActionController::TestCase
   setup do
-    @researcher = researchers(:one)
+    @researcher = researchers(:joe)
   end
   
   test "should get preview" do
