@@ -93,4 +93,9 @@ class ResearchersControllerTest < ActionController::TestCase
     assert_redirected_to researcher_path(assigns(:researcher))
   end
 
+  test "should be able to view another researcer's profile" do
+    get :show, { :id => @other_researcher.to_param }, { :jc_number => @researcher.to_param }
+    assert_response :success
+  end
+
 end
