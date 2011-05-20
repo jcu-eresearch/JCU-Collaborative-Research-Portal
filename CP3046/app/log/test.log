@@ -9938,3 +9938,1925 @@ Completed 401 Unauthorized in 0ms
   Processing by ResearchersController#posts as RSS
   Parameters: {"id"=>"980190962"}
 Completed 401 Unauthorized in 0ms
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.6ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mResearcher Load (0.1ms)[0m  [1mSELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" IS NULL) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" = 'jc111') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "groups"
+  Processing by GroupsController#create as HTML
+  Parameters: {"group"=>{"created_at"=>nil, "name"=>"MyNewGroup", "updated_at"=>nil}}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups"."id" FROM "groups" WHERE ("groups"."name" = 'MyNewGroup') LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "groups" ("name", "created_at", "updated_at") VALUES ('MyNewGroup', '2011-05-06 01:35:13.044400', '2011-05-06 01:35:13.044400')[0m
+Redirected to http://test.host/groups/980190963
+Completed 302 Found in 21ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "groups"
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "groups"
+  Processing by GroupsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT * FROM "researchers" INNER JOIN "groups_researchers" ON "researchers".id = "groups_researchers".researcher_id WHERE ("groups_researchers".group_id = 980190962 )[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM "groups" WHERE ("groups"."id" = 980190962)
+Redirected to http://test.host/groups
+Completed 302 Found in 9ms
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "groups"[0m
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1
+  Processing by GroupsController#index as HTML
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups"
+Rendered layouts/_head.html.erb (3.0ms)
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 6.9ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1
+  Processing by GroupsController#new as HTML
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Rendered groups/_form.html.erb (6.4ms)
+Rendered layouts/_head.html.erb (2.5ms)
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Completed 200 OK in 29ms (Views: 22.3ms | ActiveRecord: 1.3ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1[0m
+  Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1[0m
+Rendered layouts/_head.html.erb (2.0ms)
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 1.3ms)
+  Processing by HomesController#index as HTML
+Rendered layouts/_head.html.erb (1.9ms)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  Processing by MarkdownsController#preview as HTML
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Rendered markdowns/_preview_markdown_output.html.erb (0.5ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.6ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"content"=>"content_one", "created_at"=>2011-05-06 01:35:12 UTC, "id"=>980190962, "researcher_id"=>980190962, "title"=>"title_one", "updated_at"=>2011-05-06 01:35:12 UTC}}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "content", "researcher_id", "created_at", "updated_at") VALUES ('title_one', 'content_one', 980190962, '2011-05-06 01:35:12.000000', '2011-05-06 01:35:12.000000')[0m
+Redirected to http://test.host/posts/980190963
+Completed 302 Found in 20ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  Processing by PostsController#index as HTML
+  [1m[36mResearcher Load (0.7ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE (title like '%%') LIMIT 20 OFFSET 0
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 298486374) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 980190962) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 100ms (Views: 97.0ms | ActiveRecord: 2.8ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  Processing by PostsController#new as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Rendered markdowns/_preview_markdown_input.html.erb (1.5ms)
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = NULL) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+Rendered posts/_form.html.erb (9.6ms)
+Rendered layouts/_head.html.erb (1.6ms)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.8ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 980190962) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 980190962)[0m
+Rendered markdowns/_preview_markdown_input.html.erb (0.8ms)
+Rendered layouts/_head.html.erb (1.6ms)
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 1.3ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  Processing by PostsController#show as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 980190962)[0m
+Completed 200 OK in 51ms (Views: 42.6ms | ActiveRecord: 1.3ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  Processing by PostsController#show as RSS
+  Parameters: {"id"=>"980190962"}
+Completed 401 Unauthorized in 0ms
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  Processing by PostsController#show as RSS
+  Parameters: {"id"=>"980190962"}
+Completed 401 Unauthorized in 0ms
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mAddress Load (0.2ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 980190962 AND "addresses".addressable_type = 'Researcher') LIMIT 1
+Rendered shared/_address_form.html.erb (39.5ms)
+Rendered researchers/_form.html.erb (61.9ms)
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 76ms (Views: 73.5ms | ActiveRecord: 1.9ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#index as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE (name like '%%') ORDER BY updated_at DESC LIMIT 20 OFFSET 0
+Rendered layouts/_head.html.erb (1.7ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 1.2ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#posts as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 980190962)[0m
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 1.1ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#account as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Rendered layouts/_head.html.erb (1.7ms)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.9ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#edit as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Redirected to http://test.host/researchers/298486374
+Completed 302 Found in 2ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Redirected to http://test.host/session/new
+Completed 302 Found in 1ms
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#account as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Redirected to http://test.host/researchers/298486374
+Completed 302 Found in 2ms
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#account as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 980190962)[0m
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 3.5ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 980190962)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 1.2ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"298486374"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 298486374)[0m
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 1.1ms)
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mAddress Load (0.1ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 980190962 AND "addresses".addressable_type = 'Researcher') LIMIT 1
+Rendered shared/_address.html.erb (0.7ms)
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 1.0ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#update as HTML
+  Parameters: {"researcher"=>{"created_at"=>2011-05-06 01:35:12 UTC, "email"=>nil, "id"=>980190962, "jc_number"=>"jc1555", "name"=>"Joe", "title"=>"Mr", "updated_at"=>2011-05-06 01:35:12 UTC}, "id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mResearcher Load (0.1ms)[0m  [1mSELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') AND ("researchers".id <> 980190962) LIMIT 1[0m
+Redirected to http://test.host/researchers/980190962
+Completed 302 Found in 5ms
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#account as RSS
+  Parameters: {"id"=>"298486374"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1[0m
+Completed 401 Unauthorized in 2ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#account as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Completed 401 Unauthorized in 1ms
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"298486374"}
+Completed 401 Unauthorized in 0ms
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"980190962"}
+Completed 401 Unauthorized in 0ms
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mResearcher Load (0.1ms)[0m  [1mSELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" IS NULL) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" = 'jc111') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.7ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "groups"
+  Processing by GroupsController#create as HTML
+  Parameters: {"group"=>{"created_at"=>nil, "name"=>"MyNewGroup", "updated_at"=>nil}}
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups"."id" FROM "groups" WHERE ("groups"."name" = 'MyNewGroup') LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "groups" ("name", "created_at", "updated_at") VALUES ('MyNewGroup', '2011-05-06 01:49:49.351509', '2011-05-06 01:49:49.351509')[0m
+Redirected to http://test.host/groups/980190963
+Completed 302 Found in 40ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "groups"
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "groups"
+  Processing by GroupsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.6ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT * FROM "researchers" INNER JOIN "groups_researchers" ON "researchers".id = "groups_researchers".researcher_id WHERE ("groups_researchers".group_id = 980190962 )[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM "groups" WHERE ("groups"."id" = 980190962)
+Redirected to http://test.host/groups
+Completed 302 Found in 8ms
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "groups"[0m
+  [1m[35mResearcher Load (55.5ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1
+  Processing by GroupsController#index as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups"
+Rendered layouts/_head.html.erb (2.9ms)
+  [1m[36mResearcher Load (0.6ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Completed 200 OK in 35ms (Views: 32.6ms | ActiveRecord: 63.9ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1
+  Processing by GroupsController#new as HTML
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Rendered groups/_form.html.erb (6.9ms)
+Rendered layouts/_head.html.erb (1.8ms)
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Completed 200 OK in 21ms (Views: 15.5ms | ActiveRecord: 1.3ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1[0m
+  Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1[0m
+Rendered layouts/_head.html.erb (2.5ms)
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 1.4ms)
+  Processing by HomesController#index as HTML
+Rendered layouts/_head.html.erb (1.7ms)
+Completed 200 OK in 9ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+  [1m[36mResearcher Load (0.5ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  Processing by MarkdownsController#preview as HTML
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Rendered markdowns/_preview_markdown_output.html.erb (0.5ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.7ms)
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"content"=>"content_one", "created_at"=>2011-05-06 01:49:49 UTC, "id"=>980190962, "researcher_id"=>980190962, "title"=>"title_one", "updated_at"=>2011-05-06 01:49:49 UTC}}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "content", "researcher_id", "created_at", "updated_at") VALUES ('title_one', 'content_one', 980190962, '2011-05-06 01:49:49.000000', '2011-05-06 01:49:49.000000')[0m
+Redirected to http://test.host/posts/980190963
+Completed 302 Found in 20ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  Processing by PostsController#index as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE (title like '%%') LIMIT 20 OFFSET 0
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 298486374) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 980190962) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+Rendered layouts/_head.html.erb (2.8ms)
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 2.6ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  Processing by PostsController#new as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Rendered markdowns/_preview_markdown_input.html.erb (2.0ms)
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = NULL) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+Rendered posts/_form.html.erb (10.3ms)
+Rendered layouts/_head.html.erb (2.5ms)
+Completed 200 OK in 23ms (Views: 18.7ms | ActiveRecord: 0.9ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 980190962) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 980190962)[0m
+Rendered markdowns/_preview_markdown_input.html.erb (0.8ms)
+Rendered layouts/_head.html.erb (1.6ms)
+Completed 200 OK in 67ms (Views: 65.0ms | ActiveRecord: 1.4ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  Processing by PostsController#show as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 980190962)[0m
+Completed 200 OK in 45ms (Views: 37.9ms | ActiveRecord: 1.3ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  Processing by PostsController#show as RSS
+  Parameters: {"id"=>"980190962"}
+Completed 401 Unauthorized in 0ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  Processing by PostsController#show as RSS
+  Parameters: {"id"=>"980190962"}
+Completed 401 Unauthorized in 0ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mAddress Load (0.2ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 980190962 AND "addresses".addressable_type = 'Researcher') LIMIT 1
+Rendered shared/_address_form.html.erb (3.0ms)
+Rendered researchers/_form.html.erb (22.8ms)
+Rendered layouts/_head.html.erb (1.7ms)
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 1.7ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#index as HTML
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE (name like '%%') ORDER BY updated_at DESC LIMIT 20 OFFSET 0
+Rendered layouts/_head.html.erb (1.6ms)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 1.1ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#posts as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 980190962)[0m
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 1.1ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#account as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 1.0ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#edit as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Redirected to http://test.host/researchers/298486374
+Completed 302 Found in 2ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Redirected to http://test.host/session/new
+Completed 302 Found in 1ms
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#account as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Redirected to http://test.host/researchers/298486374
+Completed 302 Found in 2ms
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#account as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 980190962)[0m
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 3.8ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 980190962)
+Completed 200 OK in 46ms (Views: 43.8ms | ActiveRecord: 1.2ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"298486374"}
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 298486374)[0m
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 1.0ms)
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mAddress Load (0.1ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 980190962 AND "addresses".addressable_type = 'Researcher') LIMIT 1
+Rendered shared/_address.html.erb (0.7ms)
+Rendered layouts/_head.html.erb (1.7ms)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 1.0ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#update as HTML
+  Parameters: {"researcher"=>{"created_at"=>2011-05-06 01:49:49 UTC, "email"=>nil, "id"=>980190962, "jc_number"=>"jc1555", "name"=>"Joe", "title"=>"Mr", "updated_at"=>2011-05-06 01:49:49 UTC}, "id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mResearcher Load (0.1ms)[0m  [1mSELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') AND ("researchers".id <> 980190962) LIMIT 1[0m
+Redirected to http://test.host/researchers/980190962
+Completed 302 Found in 5ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#account as RSS
+  Parameters: {"id"=>"298486374"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1[0m
+Completed 401 Unauthorized in 2ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#account as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Completed 401 Unauthorized in 1ms
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"298486374"}
+Completed 401 Unauthorized in 0ms
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"980190962"}
+Completed 401 Unauthorized in 0ms
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  Processing by TextilesController#preview as HTML
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Completed   in 1ms
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mResearcher Load (0.1ms)[0m  [1mSELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" IS NULL) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" = 'jc111') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "groups"
+  Processing by GroupsController#create as HTML
+  Parameters: {"group"=>{"created_at"=>nil, "name"=>"MyNewGroup", "updated_at"=>nil}}
+  [1m[36mResearcher Load (0.5ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups"."id" FROM "groups" WHERE ("groups"."name" = 'MyNewGroup') LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "groups" ("name", "created_at", "updated_at") VALUES ('MyNewGroup', '2011-05-06 01:50:59.498267', '2011-05-06 01:50:59.498267')[0m
+Redirected to http://test.host/groups/980190963
+Completed 302 Found in 21ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "groups"
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "groups"
+  Processing by GroupsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT * FROM "researchers" INNER JOIN "groups_researchers" ON "researchers".id = "groups_researchers".researcher_id WHERE ("groups_researchers".group_id = 980190962 )[0m
+  [1m[35mAREL (0.3ms)[0m  DELETE FROM "groups" WHERE ("groups"."id" = 980190962)
+Redirected to http://test.host/groups
+Completed 302 Found in 8ms
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "groups"[0m
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1
+  Processing by GroupsController#index as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups"
+Rendered layouts/_head.html.erb (2.6ms)
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Completed 200 OK in 24ms (Views: 16.7ms | ActiveRecord: 13.2ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1
+  Processing by GroupsController#new as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Rendered groups/_form.html.erb (4.9ms)
+Rendered layouts/_head.html.erb (1.6ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 1.1ms)
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1[0m
+  Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1[0m
+Rendered layouts/_head.html.erb (1.7ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 1.1ms)
+  Processing by HomesController#index as HTML
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  Processing by MarkdownsController#preview as HTML
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Rendered markdowns/_preview_markdown_output.html.erb (0.5ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.6ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"content"=>"content_one", "created_at"=>2011-05-06 01:50:59 UTC, "id"=>980190962, "researcher_id"=>980190962, "title"=>"title_one", "updated_at"=>2011-05-06 01:50:59 UTC}}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "posts" ("title", "content", "researcher_id", "created_at", "updated_at") VALUES ('title_one', 'content_one', 980190962, '2011-05-06 01:50:59.000000', '2011-05-06 01:50:59.000000')[0m
+Redirected to http://test.host/posts/980190963
+Completed 302 Found in 19ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  Processing by PostsController#index as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE (title like '%%') LIMIT 20 OFFSET 0
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 298486374) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 980190962) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 67ms (Views: 64.6ms | ActiveRecord: 2.4ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  Processing by PostsController#new as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Rendered markdowns/_preview_markdown_input.html.erb (1.4ms)
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = NULL) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+Rendered posts/_form.html.erb (9.0ms)
+Rendered layouts/_head.html.erb (1.6ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.8ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 980190962) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 980190962)[0m
+Rendered markdowns/_preview_markdown_input.html.erb (0.8ms)
+Rendered layouts/_head.html.erb (1.6ms)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 1.3ms)
+  [1m[35mResearcher Load (0.5ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  Processing by PostsController#show as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.7ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 980190962)[0m
+Completed 200 OK in 66ms (Views: 55.9ms | ActiveRecord: 1.9ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  Processing by PostsController#show as RSS
+  Parameters: {"id"=>"980190962"}
+Completed 401 Unauthorized in 0ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  Processing by PostsController#show as RSS
+  Parameters: {"id"=>"980190962"}
+Completed 401 Unauthorized in 0ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.6ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mAddress Load (0.2ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 980190962 AND "addresses".addressable_type = 'Researcher') LIMIT 1
+Rendered shared/_address_form.html.erb (47.7ms)
+Rendered researchers/_form.html.erb (76.5ms)
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 92ms (Views: 89.8ms | ActiveRecord: 2.3ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (2.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#index as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE (name like '%%') ORDER BY updated_at DESC LIMIT 20 OFFSET 0
+Rendered layouts/_head.html.erb (1.7ms)
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 3.2ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#posts as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 980190962)[0m
+Rendered layouts/_head.html.erb (2.7ms)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 1.2ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#account as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (1.0ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Rendered layouts/_head.html.erb (1.7ms)
+Completed 200 OK in 15ms (Views: 11.4ms | ActiveRecord: 1.9ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#edit as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Redirected to http://test.host/researchers/298486374
+Completed 302 Found in 2ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Redirected to http://test.host/session/new
+Completed 302 Found in 1ms
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#account as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Redirected to http://test.host/researchers/298486374
+Completed 302 Found in 2ms
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#account as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 980190962)[0m
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 3.7ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 980190962)
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 1.2ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"298486374"}
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 298486374)[0m
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 1.2ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mAddress Load (0.1ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 980190962 AND "addresses".addressable_type = 'Researcher') LIMIT 1
+Rendered shared/_address.html.erb (0.7ms)
+Rendered layouts/_head.html.erb (1.7ms)
+Completed 200 OK in 15ms (Views: 10.9ms | ActiveRecord: 1.1ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#update as HTML
+  Parameters: {"researcher"=>{"created_at"=>2011-05-06 01:50:59 UTC, "email"=>nil, "id"=>980190962, "jc_number"=>"jc1555", "name"=>"Joe", "title"=>"Mr", "updated_at"=>2011-05-06 01:50:59 UTC}, "id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mResearcher Load (0.1ms)[0m  [1mSELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') AND ("researchers".id <> 980190962) LIMIT 1[0m
+Redirected to http://test.host/researchers/980190962
+Completed 302 Found in 6ms
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#account as RSS
+  Parameters: {"id"=>"298486374"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  [1m[36mResearcher Load (0.8ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1[0m
+Completed 401 Unauthorized in 3ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#account as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Completed 401 Unauthorized in 1ms
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"298486374"}
+Completed 401 Unauthorized in 0ms
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"980190962"}
+Completed 401 Unauthorized in 0ms
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  Processing by TextilesController#preview as HTML
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Rendered textiles/_preview_textile_output.html.erb (0.6ms)
+Completed 200 OK in 14ms (Views: 3.7ms | ActiveRecord: 4.6ms)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mResearcher Load (0.1ms)[0m  [1mSELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" IS NULL) LIMIT 1[0m
+  [1m[35mResearcher Load (6.1ms)[0m  SELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" = 'jc111') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mResearcher Load (0.9ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "groups"
+  Processing by GroupsController#create as HTML
+  Parameters: {"group"=>{"created_at"=>nil, "name"=>"MyNewGroup", "updated_at"=>nil}}
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups"."id" FROM "groups" WHERE ("groups"."name" = 'MyNewGroup') LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "groups" ("name", "created_at", "updated_at") VALUES ('MyNewGroup', '2011-05-08 03:22:31.364757', '2011-05-08 03:22:31.364757')[0m
+Redirected to http://test.host/groups/980190963
+Completed 302 Found in 22ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "groups"
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "groups"
+  Processing by GroupsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT * FROM "researchers" INNER JOIN "groups_researchers" ON "researchers".id = "groups_researchers".researcher_id WHERE ("groups_researchers".group_id = 980190962 )[0m
+  [1m[35mAREL (0.3ms)[0m  DELETE FROM "groups" WHERE ("groups"."id" = 980190962)
+Redirected to http://test.host/groups
+Completed 302 Found in 46ms
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "groups"[0m
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.7ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1
+  Processing by GroupsController#index as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups"
+Rendered layouts/_head.html.erb (2.6ms)
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Completed 200 OK in 48ms (Views: 45.5ms | ActiveRecord: 8.7ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1
+  Processing by GroupsController#new as HTML
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Rendered groups/_form.html.erb (5.0ms)
+Rendered layouts/_head.html.erb (1.7ms)
+  [1m[35mResearcher Load (1.0ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Completed 200 OK in 17ms (Views: 14.3ms | ActiveRecord: 1.9ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1[0m
+  Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1[0m
+Rendered layouts/_head.html.erb (1.8ms)
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 1.3ms)
+  Processing by HomesController#index as HTML
+Rendered layouts/_head.html.erb (17.7ms)
+Completed 200 OK in 33ms (Views: 27.6ms | ActiveRecord: 0.0ms)
+  [1m[36mResearcher Load (10.1ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  Processing by MarkdownsController#preview as HTML
+  [1m[35mResearcher Load (1.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Rendered markdowns/_preview_markdown_output.html.erb (0.6ms)
+Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 11.2ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"content"=>"content_one", "created_at"=>2011-05-08 03:22:31 UTC, "id"=>980190962, "researcher_id"=>980190962, "title"=>"title_one", "updated_at"=>2011-05-08 03:22:31 UTC}}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "content", "researcher_id", "created_at", "updated_at") VALUES ('title_one', 'content_one', 980190962, '2011-05-08 03:22:31.000000', '2011-05-08 03:22:31.000000')[0m
+Redirected to http://test.host/posts/980190963
+Completed 302 Found in 22ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  Processing by PostsController#index as HTML
+  [1m[36mResearcher Load (0.5ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE (title like '%%') LIMIT 20 OFFSET 0
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 298486374) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 980190962) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+Rendered layouts/_head.html.erb (1.9ms)
+Completed 200 OK in 64ms (Views: 59.9ms | ActiveRecord: 3.1ms)
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  Processing by PostsController#new as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Rendered markdowns/_preview_markdown_input.html.erb (1.7ms)
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = NULL) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+Rendered posts/_form.html.erb (10.1ms)
+Rendered layouts/_head.html.erb (1.7ms)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 1.0ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 980190962) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 980190962)[0m
+Rendered markdowns/_preview_markdown_input.html.erb (0.9ms)
+Rendered layouts/_head.html.erb (1.6ms)
+Completed 200 OK in 65ms (Views: 62.1ms | ActiveRecord: 1.5ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  Processing by PostsController#show as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 980190962)[0m
+Completed 200 OK in 54ms (Views: 44.6ms | ActiveRecord: 1.4ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  Processing by PostsController#show as RSS
+  Parameters: {"id"=>"980190962"}
+Completed 401 Unauthorized in 0ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  Processing by PostsController#show as RSS
+  Parameters: {"id"=>"980190962"}
+Completed 401 Unauthorized in 0ms
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mAddress Load (0.2ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 980190962 AND "addresses".addressable_type = 'Researcher') LIMIT 1
+Rendered shared/_address_form.html.erb (3.2ms)
+Rendered researchers/_form.html.erb (24.7ms)
+Rendered layouts/_head.html.erb (2.5ms)
+Completed 200 OK in 39ms (Views: 37.2ms | ActiveRecord: 1.8ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#index as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE (name like '%%') ORDER BY updated_at DESC LIMIT 20 OFFSET 0
+Rendered layouts/_head.html.erb (1.7ms)
+Completed 200 OK in 14ms (Views: 11.4ms | ActiveRecord: 1.2ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#posts as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 980190962)[0m
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 1.1ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#account as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 1.0ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#edit as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Redirected to http://test.host/researchers/298486374
+Completed 302 Found in 2ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Redirected to http://test.host/session/new
+Completed 302 Found in 1ms
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#account as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Redirected to http://test.host/researchers/298486374
+Completed 302 Found in 2ms
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#account as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 980190962)[0m
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 3.6ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (38.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 980190962)
+Completed 200 OK in 50ms (Views: 9.7ms | ActiveRecord: 39.2ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"298486374"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 298486374)[0m
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 1.2ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (1.0ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mAddress Load (0.2ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 980190962 AND "addresses".addressable_type = 'Researcher') LIMIT 1
+Rendered shared/_address.html.erb (0.9ms)
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 19ms (Views: 15.4ms | ActiveRecord: 2.2ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#update as HTML
+  Parameters: {"researcher"=>{"created_at"=>2011-05-08 03:22:31 UTC, "email"=>nil, "id"=>980190962, "jc_number"=>"jc1555", "name"=>"Joe", "title"=>"Mr", "updated_at"=>2011-05-08 03:22:31 UTC}, "id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mResearcher Load (0.1ms)[0m  [1mSELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') AND ("researchers".id <> 980190962) LIMIT 1[0m
+Redirected to http://test.host/researchers/980190962
+Completed 302 Found in 7ms
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#account as RSS
+  Parameters: {"id"=>"298486374"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1[0m
+Completed 401 Unauthorized in 2ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#account as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Completed 401 Unauthorized in 1ms
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"298486374"}
+Completed 401 Unauthorized in 0ms
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"980190962"}
+Completed 401 Unauthorized in 0ms
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  Processing by TextilesController#preview as HTML
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Rendered textiles/_preview_textile_output.html.erb (0.7ms)
+Completed 200 OK in 9ms (Views: 4.1ms | ActiveRecord: 4.2ms)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mResearcher Load (0.1ms)[0m  [1mSELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" IS NULL) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" = 'jc111') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mResearcher Load (0.1ms)[0m  [1mSELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" IS NULL) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" = 'jc111') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1[0m
+  [1m[35mSQL (3.3ms)[0m  SELECT COUNT(*) FROM "groups"
+  Processing by GroupsController#create as HTML
+  Parameters: {"group"=>{"created_at"=>nil, "name"=>"MyNewGroup", "updated_at"=>nil}}
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups"."id" FROM "groups" WHERE ("groups"."name" = 'MyNewGroup') LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "groups" ("name", "created_at", "updated_at") VALUES ('MyNewGroup', '2011-05-08 03:24:16.508778', '2011-05-08 03:24:16.508778')[0m
+Redirected to http://test.host/groups/980190963
+Completed 302 Found in 20ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "groups"
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "groups"
+  Processing by GroupsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (5.9ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (10.1ms)[0m  [1mSELECT * FROM "researchers" INNER JOIN "groups_researchers" ON "researchers".id = "groups_researchers".researcher_id WHERE ("groups_researchers".group_id = 980190962 )[0m
+  [1m[35mAREL (0.3ms)[0m  DELETE FROM "groups" WHERE ("groups"."id" = 980190962)
+Redirected to http://test.host/groups
+Completed 302 Found in 47ms
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "groups"[0m
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1
+  Processing by GroupsController#index as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups"
+Rendered layouts/_head.html.erb (3.2ms)
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Completed 200 OK in 23ms (Views: 20.7ms | ActiveRecord: 25.7ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1
+  Processing by GroupsController#new as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Rendered groups/_form.html.erb (6.6ms)
+Rendered layouts/_head.html.erb (1.7ms)
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 1.2ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1[0m
+  Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1[0m
+Rendered layouts/_head.html.erb (1.7ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 1.2ms)
+  Processing by HomesController#index as HTML
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  Processing by MarkdownsController#preview as HTML
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Rendered markdowns/_preview_markdown_output.html.erb (0.6ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.6ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"content"=>"content_one", "created_at"=>2011-05-08 03:24:16 UTC, "id"=>980190962, "researcher_id"=>980190962, "title"=>"title_one", "updated_at"=>2011-05-08 03:24:16 UTC}}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "content", "researcher_id", "created_at", "updated_at") VALUES ('title_one', 'content_one', 980190962, '2011-05-08 03:24:16.000000', '2011-05-08 03:24:16.000000')[0m
+Redirected to http://test.host/posts/980190963
+Completed 302 Found in 19ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  Processing by PostsController#index as HTML
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE (title like '%%') LIMIT 20 OFFSET 0
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 298486374) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 980190962) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 74ms (Views: 71.5ms | ActiveRecord: 2.5ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  Processing by PostsController#new as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Rendered markdowns/_preview_markdown_input.html.erb (1.5ms)
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = NULL) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+Rendered posts/_form.html.erb (9.3ms)
+Rendered layouts/_head.html.erb (1.6ms)
+Completed 200 OK in 19ms (Views: 16.8ms | ActiveRecord: 0.9ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 980190962) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 980190962)[0m
+Rendered markdowns/_preview_markdown_input.html.erb (0.8ms)
+Rendered layouts/_head.html.erb (1.6ms)
+Completed 200 OK in 25ms (Views: 22.9ms | ActiveRecord: 1.3ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  Processing by PostsController#show as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 980190962)[0m
+Completed 200 OK in 46ms (Views: 38.3ms | ActiveRecord: 1.3ms)
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  Processing by PostsController#show as RSS
+  Parameters: {"id"=>"980190962"}
+Completed 401 Unauthorized in 0ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  Processing by PostsController#show as RSS
+  Parameters: {"id"=>"980190962"}
+Completed 401 Unauthorized in 0ms
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#show as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  [1m[35mAddress Load (0.2ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 298486374 AND "addresses".addressable_type = 'Researcher') LIMIT 1
+Rendered shared/_address.html.erb (0.7ms)
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 1.7ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mAddress Load (0.2ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 980190962 AND "addresses".addressable_type = 'Researcher') LIMIT 1[0m
+Rendered shared/_address_form.html.erb (3.0ms)
+Rendered researchers/_form.html.erb (53.7ms)
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 66ms (Views: 63.2ms | ActiveRecord: 1.1ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#index as HTML
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE (name like '%%') ORDER BY updated_at DESC LIMIT 20 OFFSET 0[0m
+Rendered layouts/_head.html.erb (1.6ms)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 1.2ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#posts as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 980190962)
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 17ms (Views: 14.6ms | ActiveRecord: 1.2ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#account as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Rendered layouts/_head.html.erb (1.7ms)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 1.0ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#edit as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Redirected to http://test.host/researchers/298486374
+Completed 302 Found in 2ms
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Redirected to http://test.host/session/new
+Completed 302 Found in 1ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#account as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Redirected to http://test.host/researchers/298486374
+Completed 302 Found in 1ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#account as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 980190962)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 3.4ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 980190962)[0m
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 1.0ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"298486374"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 298486374)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 1.0ms)
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 980190962 AND "addresses".addressable_type = 'Researcher') LIMIT 1[0m
+Rendered shared/_address.html.erb (0.1ms)
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 1.1ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#update as HTML
+  Parameters: {"researcher"=>{"created_at"=>2011-05-08 03:24:16 UTC, "email"=>nil, "id"=>980190962, "jc_number"=>"jc1555", "name"=>"Joe", "title"=>"Mr", "updated_at"=>2011-05-08 03:24:16 UTC}, "id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mResearcher Load (0.1ms)[0m  SELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') AND ("researchers".id <> 980190962) LIMIT 1
+Redirected to http://test.host/researchers/980190962
+Completed 302 Found in 5ms
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#account as RSS
+  Parameters: {"id"=>"298486374"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1
+Completed 401 Unauthorized in 2ms
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#account as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Completed 401 Unauthorized in 1ms
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"298486374"}
+Completed 401 Unauthorized in 0ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"980190962"}
+Completed 401 Unauthorized in 0ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  Processing by TextilesController#preview as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Rendered textiles/_preview_textile_output.html.erb (0.6ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 4.2ms)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mResearcher Load (0.1ms)[0m  [1mSELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" IS NULL) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" = 'jc111') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "groups"
+  Processing by GroupsController#create as HTML
+  Parameters: {"group"=>{"created_at"=>nil, "name"=>"MyNewGroup", "updated_at"=>nil}}
+  [1m[36mResearcher Load (1.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups"."id" FROM "groups" WHERE ("groups"."name" = 'MyNewGroup') LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "groups" ("name", "created_at", "updated_at") VALUES ('MyNewGroup', '2011-05-08 03:25:22.851480', '2011-05-08 03:25:22.851480')[0m
+Redirected to http://test.host/groups/980190963
+Completed 302 Found in 26ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "groups"
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "groups"
+  Processing by GroupsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT * FROM "researchers" INNER JOIN "groups_researchers" ON "researchers".id = "groups_researchers".researcher_id WHERE ("groups_researchers".group_id = 980190962 )[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM "groups" WHERE ("groups"."id" = 980190962)
+Redirected to http://test.host/groups
+Completed 302 Found in 10ms
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "groups"[0m
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1
+  Processing by GroupsController#index as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups"
+Rendered layouts/_head.html.erb (6.1ms)
+  [1m[36mResearcher Load (0.5ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Completed 200 OK in 50ms (Views: 47.5ms | ActiveRecord: 7.9ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1
+  Processing by GroupsController#new as HTML
+  [1m[36mResearcher Load (0.8ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Rendered groups/_form.html.erb (6.4ms)
+Rendered layouts/_head.html.erb (1.7ms)
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 1.6ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1[0m
+  Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1[0m
+Rendered layouts/_head.html.erb (1.8ms)
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Completed 200 OK in 12ms (Views: 8.1ms | ActiveRecord: 1.3ms)
+  Processing by HomesController#index as HTML
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  Processing by MarkdownsController#preview as HTML
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Rendered markdowns/_preview_markdown_output.html.erb (0.5ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.6ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"content"=>"content_one", "created_at"=>2011-05-08 03:25:22 UTC, "id"=>980190962, "researcher_id"=>980190962, "title"=>"title_one", "updated_at"=>2011-05-08 03:25:22 UTC}}
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "content", "researcher_id", "created_at", "updated_at") VALUES ('title_one', 'content_one', 980190962, '2011-05-08 03:25:22.000000', '2011-05-08 03:25:22.000000')[0m
+Redirected to http://test.host/posts/980190963
+Completed 302 Found in 20ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  Processing by PostsController#index as HTML
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE (title like '%%') LIMIT 20 OFFSET 0
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 298486374) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 980190962) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+Rendered layouts/_head.html.erb (1.9ms)
+Completed 200 OK in 78ms (Views: 74.2ms | ActiveRecord: 2.5ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  Processing by PostsController#new as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Rendered markdowns/_preview_markdown_input.html.erb (1.5ms)
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = NULL) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+Rendered posts/_form.html.erb (9.0ms)
+Rendered layouts/_head.html.erb (1.6ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.8ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 980190962) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 980190962)[0m
+Rendered markdowns/_preview_markdown_input.html.erb (0.8ms)
+Rendered layouts/_head.html.erb (2.3ms)
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 1.3ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  Processing by PostsController#show as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.5ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 980190962)[0m
+Completed 200 OK in 46ms (Views: 38.2ms | ActiveRecord: 1.4ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  Processing by PostsController#show as RSS
+  Parameters: {"id"=>"980190962"}
+Completed 401 Unauthorized in 0ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  Processing by PostsController#show as RSS
+  Parameters: {"id"=>"980190962"}
+Completed 401 Unauthorized in 0ms
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#show as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  [1m[35mAddress Load (0.2ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 298486374 AND "addresses".addressable_type = 'Researcher') LIMIT 1
+Rendered shared/_address.html.erb (0.8ms)
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 1.9ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mAddress Load (0.2ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 980190962 AND "addresses".addressable_type = 'Researcher') LIMIT 1[0m
+Rendered shared/_address_form.html.erb (3.1ms)
+Rendered researchers/_form.html.erb (54.7ms)
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 67ms (Views: 64.7ms | ActiveRecord: 1.2ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#index as HTML
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE (name like '%%') ORDER BY updated_at DESC LIMIT 20 OFFSET 0[0m
+Rendered layouts/_head.html.erb (1.7ms)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 1.2ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#posts as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 980190962)
+Rendered layouts/_head.html.erb (1.7ms)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 1.2ms)
+  [1m[36mResearcher Load (1.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#account as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Rendered layouts/_head.html.erb (1.7ms)
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 1.9ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#edit as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Redirected to http://test.host/researchers/298486374
+Completed 302 Found in 2ms
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Redirected to http://test.host/session/new
+Completed 302 Found in 1ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#account as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Redirected to http://test.host/researchers/298486374
+Completed 302 Found in 1ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#account as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 980190962)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 3.4ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 980190962)[0m
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 1.0ms)
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"298486374"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 298486374)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 1.0ms)
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 980190962 AND "addresses".addressable_type = 'Researcher') LIMIT 1[0m
+Rendered shared/_address.html.erb (0.1ms)
+Rendered layouts/_head.html.erb (1.7ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 1.0ms)
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#update as HTML
+  Parameters: {"researcher"=>{"created_at"=>2011-05-08 03:25:22 UTC, "email"=>nil, "id"=>980190962, "jc_number"=>"jc1555", "name"=>"Joe", "title"=>"Mr", "updated_at"=>2011-05-08 03:25:22 UTC}, "id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mResearcher Load (0.1ms)[0m  SELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') AND ("researchers".id <> 980190962) LIMIT 1
+Redirected to http://test.host/researchers/980190962
+Completed 302 Found in 5ms
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#account as RSS
+  Parameters: {"id"=>"298486374"}
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1
+Completed 401 Unauthorized in 2ms
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#account as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Completed 401 Unauthorized in 1ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"298486374"}
+Completed 401 Unauthorized in 0ms
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"980190962"}
+Completed 401 Unauthorized in 0ms
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  Processing by TextilesController#preview as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Rendered textiles/_preview_textile_output.html.erb (0.6ms)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 4.0ms)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mResearcher Load (0.1ms)[0m  [1mSELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" IS NULL) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" = 'jc111') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "groups"
+  Processing by GroupsController#create as HTML
+  Parameters: {"group"=>{"created_at"=>nil, "name"=>"MyNewGroup", "updated_at"=>nil}}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups"."id" FROM "groups" WHERE ("groups"."name" = 'MyNewGroup') LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "groups" ("name", "created_at", "updated_at") VALUES ('MyNewGroup', '2011-05-08 04:31:33.461819', '2011-05-08 04:31:33.461819')[0m
+Redirected to http://test.host/groups/980190963
+Completed 302 Found in 18ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "groups"
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "groups"
+  Processing by GroupsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT * FROM "researchers" INNER JOIN "groups_researchers" ON "researchers".id = "groups_researchers".researcher_id WHERE ("groups_researchers".group_id = 980190962 )[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM "groups" WHERE ("groups"."id" = 980190962)
+Redirected to http://test.host/groups
+Completed 302 Found in 8ms
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "groups"[0m
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1
+  Processing by GroupsController#index as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups"
+Rendered layouts/_head.html.erb (2.9ms)
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 6.8ms)
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1
+  Processing by GroupsController#new as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Rendered groups/_form.html.erb (6.8ms)
+Rendered layouts/_head.html.erb (1.8ms)
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 1.1ms)
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mGroup Load (0.1ms)[0m  SELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 298486374) LIMIT 1[0m
+  Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups" WHERE ("groups"."id" = 980190962) LIMIT 1[0m
+Rendered layouts/_head.html.erb (1.7ms)
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 1.2ms)
+  Processing by HomesController#index as HTML
+Rendered layouts/_head.html.erb (2.0ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  Processing by MarkdownsController#preview as HTML
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Rendered markdowns/_preview_markdown_output.html.erb (1.1ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.6ms)
+  [1m[36mResearcher Load (0.5ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+  Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"content"=>"content_one", "created_at"=>2011-05-08 04:31:33 UTC, "id"=>980190962, "researcher_id"=>980190962, "title"=>"title_one", "updated_at"=>2011-05-08 04:31:33 UTC}}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "posts" ("title", "content", "researcher_id", "created_at", "updated_at") VALUES ('title_one', 'content_one', 980190962, '2011-05-08 04:31:33.000000', '2011-05-08 04:31:33.000000')[0m
+Redirected to http://test.host/posts/980190963
+Completed 302 Found in 278ms
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "posts"
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  Processing by PostsController#index as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE (title like '%%') LIMIT 20 OFFSET 0
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 298486374) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 980190962) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+Rendered layouts/_head.html.erb (2.7ms)
+Completed 200 OK in 128ms (Views: 125.6ms | ActiveRecord: 2.9ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  Processing by PostsController#new as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Rendered markdowns/_preview_markdown_input.html.erb (1.5ms)
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = NULL) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+Rendered posts/_form.html.erb (9.3ms)
+Rendered layouts/_head.html.erb (3.5ms)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 1.0ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (32.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags".id = "taggings".tag_id WHERE (("taggings".taggable_id = 980190962) AND ("taggings".taggable_type = 'Post')) AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 980190962)[0m
+Rendered markdowns/_preview_markdown_input.html.erb (3.6ms)
+Rendered layouts/_head.html.erb (2.8ms)
+Completed 200 OK in 72ms (Views: 36.6ms | ActiveRecord: 34.4ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  Processing by PostsController#show as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.4ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE ("comments".post_id = 980190962)[0m
+Completed 200 OK in 80ms (Views: 67.5ms | ActiveRecord: 1.5ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  Processing by PostsController#show as RSS
+  Parameters: {"id"=>"980190962"}
+Completed 401 Unauthorized in 0ms
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts"."id" = 980190962) LIMIT 1[0m
+  Processing by PostsController#show as RSS
+  Parameters: {"id"=>"980190962"}
+Completed 401 Unauthorized in 0ms
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#show as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  [1m[35mAddress Load (0.2ms)[0m  SELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 298486374 AND "addresses".addressable_type = 'Researcher') LIMIT 1
+Rendered shared/_address.html.erb (0.8ms)
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 157ms (Views: 154.5ms | ActiveRecord: 2.1ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mAddress Load (0.2ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 980190962 AND "addresses".addressable_type = 'Researcher') LIMIT 1[0m
+Rendered shared/_address_form.html.erb (9.3ms)
+Rendered researchers/_form.html.erb (41.2ms)
+Rendered layouts/_head.html.erb (2.7ms)
+Completed 200 OK in 58ms (Views: 55.0ms | ActiveRecord: 1.3ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#index as HTML
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (1.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE (name like '%%') ORDER BY updated_at DESC LIMIT 20 OFFSET 0[0m
+Rendered layouts/_head.html.erb (1.7ms)
+Completed 200 OK in 21ms (Views: 16.9ms | ActiveRecord: 2.1ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#posts as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 980190962)
+Rendered layouts/_head.html.erb (1.7ms)
+Completed 200 OK in 39ms (Views: 35.0ms | ActiveRecord: 1.2ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#account as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.9ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#edit as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+Redirected to http://test.host/researchers/298486374
+Completed 302 Found in 2ms
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Redirected to http://test.host/session/new
+Completed 302 Found in 2ms
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (2.0ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#account as HTML
+  Parameters: {"id"=>"298486374"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Redirected to http://test.host/researchers/298486374
+Completed 302 Found in 2ms
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#account as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 980190962)
+Completed 200 OK in 26ms (Views: 16.8ms | ActiveRecord: 5.9ms)
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (3.5ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1[0m
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 980190962)[0m
+Completed 200 OK in 17ms (Views: 7.5ms | ActiveRecord: 4.4ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"298486374"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE ("posts".researcher_id = 298486374)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 1.1ms)
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.4ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mAddress Load (0.1ms)[0m  [1mSELECT "addresses".* FROM "addresses" WHERE ("addresses".addressable_id = 980190962 AND "addresses".addressable_type = 'Researcher') LIMIT 1[0m
+Rendered shared/_address.html.erb (0.1ms)
+Rendered layouts/_head.html.erb (1.8ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 1.2ms)
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#update as HTML
+  Parameters: {"researcher"=>{"created_at"=>2011-05-08 04:31:33 UTC, "email"=>nil, "id"=>980190962, "jc_number"=>"jc1555", "name"=>"Joe", "title"=>"Mr", "updated_at"=>2011-05-08 04:31:33 UTC}, "id"=>"980190962"}
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mResearcher Load (0.1ms)[0m  SELECT "researchers"."id" FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') AND ("researchers".id <> 980190962) LIMIT 1
+Redirected to http://test.host/researchers/980190962
+Completed 302 Found in 6ms
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#account as RSS
+  Parameters: {"id"=>"298486374"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."jc_number" = 'jc1555') LIMIT 1
+Completed 401 Unauthorized in 3ms
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+  [1m[35mResearcher Load (0.2ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1
+  Processing by ResearchersController#account as RSS
+  Parameters: {"id"=>"980190962"}
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Completed 401 Unauthorized in 1ms
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (7.8ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"298486374"}
+Completed 401 Unauthorized in 0ms
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  [1m[36mResearcher Load (0.2ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 298486374) LIMIT 1[0m
+  Processing by ResearchersController#posts as RSS
+  Parameters: {"id"=>"980190962"}
+Completed 401 Unauthorized in 0ms
+  [1m[35mResearcher Load (0.3ms)[0m  SELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1
+  Processing by TextilesController#preview as HTML
+  [1m[36mResearcher Load (0.3ms)[0m  [1mSELECT "researchers".* FROM "researchers" WHERE ("researchers"."id" = 980190962) LIMIT 1[0m
+Rendered textiles/_preview_textile_output.html.erb (0.5ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 11.9ms)
