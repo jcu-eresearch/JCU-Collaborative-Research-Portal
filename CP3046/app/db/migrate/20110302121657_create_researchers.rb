@@ -5,6 +5,7 @@ class CreateResearchers < ActiveRecord::Migration
       t.string :title
       t.string :email
       t.string :jc_number
+      t.boolean :moderator, :default => false
 
       t.timestamps
     end

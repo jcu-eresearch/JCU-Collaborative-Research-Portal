@@ -2,13 +2,16 @@
 
 one:
   body: body_one 
-  researcher: one
+  researcher: joe 
+  post: one
 
 two:
   body: body_two
-  researcher: one 
+  researcher: jane
+  post: one
 
 three:
   body: body_three
-  researcher: two
+  researcher: jane
+  post: two 
 

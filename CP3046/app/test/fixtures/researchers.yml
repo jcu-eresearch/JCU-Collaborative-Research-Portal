@@ -9,3 +9,9 @@ jane:
   name: Jane
   title: Mrs
   jc_number: jc2999
+
+moderator:
+  name: Lois
+  title: Professor
+  jc_number: jc1
+  moderator: true

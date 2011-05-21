@@ -1,4 +1,19 @@
 class PostsController < ApplicationController
+  before_filter :get_post, :only => [:destroy, :show]
+  before_filter :must_be_moderator, :only => [:destroy]
+
+  def get_post
+    @post = Post.find(params[:id])
+  end
+
+  def must_be_moderator
+    if @post
+      login_required_as_moderator(post_path(@post))
+    else
+      login_required_as_moderator
+    end
+  end
+
   # GET /posts
   # GET /posts.xml
   def index
@@ -22,15 +37,12 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.xml
   def show
-    @post = Post.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @post }
     format.rss  { render :layout => false }
     end
   end
-
 
   # GET /posts/new
   # GET /posts/new.xml
@@ -47,7 +59,7 @@ class PostsController < ApplicationController
   # POST /posts.xml
   def create
     @post = Post.new(params[:post])
-  @post.researcher = logged_in_researcher 
+    @post.researcher = logged_in_researcher 
 
     respond_to do |format|
       if @post.save
@@ -59,4 +71,14 @@ class PostsController < ApplicationController
       end
     end
   end
+  
+  def destroy
+    @post.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(posts_url) }
+      format.xml  { head :ok }
+    end
+  end
+
 end

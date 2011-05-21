@@ -5,6 +5,7 @@ class ResearchersController < ApplicationController
   # Instead, authenticate the user against the user that owns the page
   # Only allow researcher Bob to edit Bob's profile
   skip_before_filter :login_required_as_any_researcher, :only => [:account, :edit, :update]
+
   before_filter :only => [:account, :edit, :update] do |controller|
     login_required_as_researcher(@researcher, researcher_url(@researcher)) 
   end

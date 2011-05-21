@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   helper_method :logged_in?
   helper_method :logged_in_researcher
   helper_method :login_required_as_researcher
+  helper_method :login_required_as_moderator
 
   before_filter :login_required_as_any_researcher
 
@@ -57,6 +58,34 @@ class ApplicationController < ActionController::Base
         authenticate_or_request_with_http_basic("researcher_#{expected_researcher.id}") do |login, password|
           @current_researcher = Researcher.authenticate(login, password)
           @current_researcher == expected_researcher
+        end
+      end
+    end
+  end
+  
+  def login_required_as_moderator(redirect_to_url=new_session_url)
+    respond_to do |format|
+      format.html do
+        if logged_in?
+          unless logged_in_researcher.moderator
+            alert = "You don't have permission to view that page."
+            redirect_to(redirect_to_url, :alert=> alert)
+          end
+        else
+          notice = "Please log in"         
+          redirect_to(new_session_url, :notice => notice)
+        end
+      end
+      format.xml do   
+        authenticate_or_request_with_http_basic("researcher_moderator") do |login, password|
+          @current_researcher = Researcher.authenticate(login, password)
+          @current_researcher.moderator
+        end
+      end
+      format.rss do   
+        authenticate_or_request_with_http_basic("researcher_moderator") do |login, password|
+          @current_researcher = Researcher.authenticate(login, password)
+          @current_researcher.moderator
         end
       end
     end
