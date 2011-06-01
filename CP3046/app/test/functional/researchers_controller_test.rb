@@ -79,7 +79,7 @@ class ResearchersControllerTest < ActionController::TestCase
   
   test "should not get edit as not logged in" do
     get :edit, { :id => @researcher.to_param }
-    assert_redirected_to new_session_path
+    assert_redirected_to new_session_path(:forward_to => edit_researcher_path(@researcher_path))
   end
 
   test "should not get edit as logged in as different researcher" do

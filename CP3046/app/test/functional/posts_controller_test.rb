@@ -55,6 +55,17 @@ class PostsControllerTest < ActionController::TestCase
     assert_response :success
   end
   
+  test "shouldn't delete post as not logged in"  do
+    delete :destroy, { :id => @post.to_param }
+    assert_redirected_to new_session_path(:forward_to => post_path(@path))
+  end
+
+  test "shouldn't delete post (xml) with bad http_auth provided"  do
+    @request.env['HTTP_AUTHORIZATION'] = encode_credentials('foo', 'bar')
+    delete :destroy, { :format => 'xml', :id => @post.to_param }
+    assert_response :unauthorized
+  end
+  
   test "moderator (researcher) should delete post with session info provided" do
     assert_difference('Post.count', -1) do
       delete :destroy, { :id => @post.to_param }, { :jc_number => @moderator.to_param }

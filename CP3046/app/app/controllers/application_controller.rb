@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
       format.html do
         unless logged_in?
           notice = "Please log in"         
-          redirect_to(new_session_url, :notice => notice)
+          redirect_to new_session_url(:forward_to => request.fullpath), :notice => notice
         end
       end
       format.xml do   
@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
           end
         else
           notice = "Please log in"         
-          redirect_to(new_session_url, :notice => notice)
+          redirect_to new_session_url(:forward_to => request.fullpath), :notice => notice
         end
       end
       format.xml do   
@@ -73,7 +73,7 @@ class ApplicationController < ActionController::Base
           end
         else
           notice = "Please log in"         
-          redirect_to(new_session_url, :notice => notice)
+          redirect_to new_session_url(:forward_to => request.fullpath), :notice => notice
         end
       end
       format.xml do   

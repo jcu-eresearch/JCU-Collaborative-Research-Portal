@@ -1,3 +1,7 @@
+p {
+  line-height: 1.8em; 
+}
+
 body {
 	font-family: tahoma,verdana,helvetica,arial,sans-serif;
 	margin-left:  auto;
@@ -452,4 +456,12 @@ div.tags p span.tag_title {
 }
 div.tags p span.tag_list {
   font-style: italic;
+}
+
+div.question_answer p.question {
+  font-size: large;
+}
+
+div.question_answer p.answer {
+  color: #333;
 }

@@ -6,6 +6,8 @@
 <fieldset>  
   
   <p>        
+    <%= hidden_field_tag 'forward_to', params[:forward_to] %>
+
     <%= f.label :login, { :class => "required" } %>
     <%= text_field_tag :login, params[:login] %>
   </p> 
