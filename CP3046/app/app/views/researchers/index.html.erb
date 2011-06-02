@@ -32,7 +32,7 @@
   <tr class='<%= css_class %>'>
     <td><%= researcher.name %></td>
     <td><%= researcher.title %></td>
-    <td><%= researcher.email %></td>
+    <td><%= mail_to(researcher.email) %></td>
     <td><%= link_to 'Profile', researcher %></td>
   </tr>
 <% end %>

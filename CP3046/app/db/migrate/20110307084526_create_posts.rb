@@ -3,7 +3,7 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
       t.string :title
       t.text :content
-	  t.integer :researcher_id
+      t.integer :researcher_id
 
       t.timestamps
     end

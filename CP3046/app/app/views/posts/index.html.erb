@@ -43,6 +43,7 @@
 <table>
   <tr>
     <th>Title</th>
+    <th>Author</th>
     <th>Tags</th>
     <th></th>
   </tr>
@@ -52,6 +53,7 @@
   <% css_class = index.odd? ? "odd" : "even" %>
   <tr class='<%= css_class %>'>
     <td><%= post.title %></td>
+    <td><%= link_to post.researcher.name, researcher_path(post.researcher) %></td>
     <td><%= post.tag_list %></td>
     <td><%= link_to 'Show', post %></td>
   </tr>

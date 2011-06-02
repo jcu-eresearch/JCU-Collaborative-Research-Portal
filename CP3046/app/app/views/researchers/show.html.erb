@@ -24,13 +24,8 @@
 <% end %>
 
 <p>
-  <b>JC Number:</b>
-  <%= @researcher.jc_number %>
-</p>
-
-<p>
   <b>Email:</b>
-  <%= @researcher.email%>
+  <%= mail_to(@researcher.email) %>
 </p>
 
 <p>

@@ -46,6 +46,6 @@ class Researcher < ActiveRecord::Base
   def self.search(search, page)
     paginate :per_page => self.per_page, :page => page,
       :conditions => ['name like ?', "%#{search}%"],
-      :order => 'updated_at DESC'
+      :order => 'name ASC'
   end
 end
