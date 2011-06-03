@@ -1,6 +1,4 @@
 App::Application.routes.draw do
-  resources :basics
-
 	resources :groups, :except => [:update, :edit]
 
 	# Posts can't be edited/updated

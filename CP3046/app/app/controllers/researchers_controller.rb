@@ -1,15 +1,18 @@
 class ResearchersController < ApplicationController
   before_filter :get_researcher, :except => [:index]
-	
+  
   # Don't use the standard authentication on the account, edit or update pages.
-  # Instead, authenticate the user against the user that owns the page
-  # Only allow researcher Bob to edit Bob's profile
   skip_before_filter :login_required_as_any_researcher, :only => [:account, :edit, :update]
 
+  # Instead...
+
+  # Authenticate the user against the user that owns the page
+  # Only allow researcher Bob to edit Bob's profile
   before_filter :only => [:account, :edit, :update] do |controller|
     login_required_as_researcher(@researcher, researcher_url(@researcher)) 
   end
 
+  # Get the researcher from params
   def get_researcher
     @researcher = Researcher.find(params[:id])
   end
@@ -45,34 +48,36 @@ class ResearchersController < ApplicationController
   end
   
   # GET /researchers/1/account
+  # GET /researchers/1/account.rss
   def account
-		respond_to do |format|
-		  format.html { render :layout => 'account' } # account.html.erb
-		  format.rss  { render :layout => false }
-		end
+    respond_to do |format|
+      format.html { render :layout => 'account' } # account.html.erb
+      format.rss  { render :layout => false }
+    end
   end
   
   # GET /researchers/1/posts
-	def posts
-		if @researcher == logged_in_researcher
-			respond_to do |format|
-				format.html { render :layout => 'account' } # posts.html.erb
-		    format.rss  { render :layout => false }
-			end
-		else
-			respond_to do |format|
-				format.html # research.html.erb
-		    format.rss  { render :layout => false }
-			end
-		end
-	end
+  # GET /researchers/1/posts.rss
+  def posts
+    if @researcher == logged_in_researcher
+      respond_to do |format|
+        format.html { render :layout => 'account' } # posts.html.erb
+        format.rss  { render :layout => false }
+      end
+    else
+      respond_to do |format|
+        format.html # research.html.erb
+        format.rss  { render :layout => false }
+      end
+    end
+  end
 
   # GET /researchers/1/edit
-	def edit
+  def edit
     respond_to do |format|
       format.html { render :layout => 'account' } # edit.html.erb
     end
-	end
+  end
   
   # PUT /researchers/1
   # PUT /researchers/1.xml

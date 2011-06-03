@@ -1,9 +1,12 @@
 class SessionsController < ApplicationController
   skip_before_filter :login_required_as_any_researcher
 
+  
+  # GET /session/new
   def new
   end
 
+  # POST /session
   def create
     forward_to = params[:forward_to]
     researcher = Researcher.authenticate(params[:login], params[:password])
@@ -25,6 +28,7 @@ class SessionsController < ApplicationController
     end
   end
 
+  # DELETE /session/1
   def destroy
     reset_session
     notice = "You've been logged out."

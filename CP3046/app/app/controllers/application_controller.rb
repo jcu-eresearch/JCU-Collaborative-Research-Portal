@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  # Check if the user is logged in as any researcher (any valid user).
+  # - If the user isn't logged in as a researcher
+  #   - format .html => redirects the user
+  #   - format .xml/.rss => requests HTTP_BASIC_AUTH
   def login_required_as_any_researcher
     respond_to do |format|
       format.html do
@@ -35,6 +39,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # Check if the user is logged in as a specific researcher.
+  # - If the user isn't logged in as the specific researcher
+  #   - format .html => redirects the user
+  #   - format .xml/.rss => requests HTTP_BASIC_AUTH
   def login_required_as_researcher(expected_researcher, redirect_to_url=new_session_url)
     respond_to do |format|
       format.html do
@@ -63,6 +71,10 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  # Check if the user is logged as a user with moderator privelages.
+  # - If the user isn't logged in as a moderator:
+  #   - format .html => redirects the user
+  #   - format .xml/.rss => requests HTTP_BASIC_AUTH
   def login_required_as_moderator(redirect_to_url=new_session_url)
     respond_to do |format|
       format.html do
@@ -91,6 +103,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # Returns true if the user is logged in, returns false otherwise
+  #
+  # Session specific, can't be used for HTTP_BASIC_AUTH checks
   def logged_in?
     session_id = session[:jc_number]
     if session_id
@@ -111,13 +126,16 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # Returns the currently logged in researcher
+  #
+  # Raises if there is no logged in researcher
   def logged_in_researcher
-  	# Use cache if @current_researcher is already set
-  	if @current_researcher
+    # Use cache if @current_researcher is already set
+    if @current_researcher
       return @current_researcher
     end
 
-  	if logged_in?
+    if logged_in?
       @current_researcher
     else
       raise "Attempting to look up logged in researcher, when the user isn't logged in."
