@@ -1,3 +1,6 @@
+# Handles the creation and deletion of groups 
+#
+# *TODO* - Groups are not yet fully implemented. Need to add code to authenticate user as moderator, before allowing the deletion of groups with members.
 class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.xml

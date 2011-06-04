@@ -56,6 +56,7 @@ GEM
       rack (>= 1.0.0)
     rack-test (0.5.7)
       rack (>= 1.0)
+    railroady (1.0.2)
     rails (3.0.3)
       actionmailer (= 3.0.3)
       actionpack (= 3.0.3)
@@ -90,6 +91,7 @@ DEPENDENCIES
   bluecloth (~> 2.0)
   friendly_id (~> 3.2.1)
   paperclip (~> 2.3)
+  railroady
   rails (= 3.0.3)
   rake (= 0.8.7)
   sqlite3-ruby

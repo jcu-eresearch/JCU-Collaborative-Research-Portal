@@ -1,3 +1,8 @@
+# Shared controller resource.
+#
+# Ensures users are logged in before they _hit_ route specific controllers
+# 
+# Provides user authentication helper methods
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
 

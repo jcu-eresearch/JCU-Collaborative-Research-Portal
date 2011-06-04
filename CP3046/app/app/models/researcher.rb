@@ -1,3 +1,11 @@
+# A Researcher has:
+# name::          The name of the researcher 
+# jc_number::     A jc_number (the researcher's login) - must be unique, can't change
+# moderator::     Whether or not the Researcher is a moderator (true/false)
+# posts::         The Researcher's Posts
+# address::       The Researcher's street address 
+# email::         The Researcher's email address 
+# title::         The Researcher's title (e.g Senior Lecturer) 
 class Researcher < ActiveRecord::Base
   # A researcher must have a jc number, and that jc number must be unique among all researchers.
   # The jc_number can't change.
@@ -9,6 +17,7 @@ class Researcher < ActiveRecord::Base
   # A Researcher must have a name.
   validates :name, :presence => true
 
+  # Use the researcher's name the url (to_param) path to the researcher.
   has_friendly_id :name, :use_slug => true
 
   
@@ -21,7 +30,6 @@ class Researcher < ActiveRecord::Base
   has_many :posts
   has_and_belongs_to_many :groups
 
-  # TODO: 
   # At this point, we need to check against the ldap to see if this 
   # username/password is valid
   #
@@ -31,8 +39,10 @@ class Researcher < ActiveRecord::Base
   #   - If the user/pass doesn't match an existing researcher's user_id, 
   #     create a new researcher, and return it.
   # - Else, the user/pass is invalid: return false
+  #
+  # TODO: Hook this method into JCU's LDAP
   def self.authenticate(jc_number, pass)
-    # XXX Put in temporary code to randomly set whether the log in is valid
+    # XXX Put in temporary code to set whether the log in is valid or not based on regex
     valid = false
     valid = true if jc_number =~ /^jc\d+$/
     if valid
@@ -42,13 +52,17 @@ class Researcher < ActiveRecord::Base
     end
   end
   
+  # How many researchers to show per page (for pagination)
   def self.per_page
     20
   end
 
-  def self.search(search, page)
+  # Search the researchers.
+  # search_name::     Optionally search for posts by title
+  # page::            Optionally set which page you were up to - for pagination, when there is multiple pages of results
+  def self.search(search_name, page)
     paginate :per_page => self.per_page, :page => page,
-      :conditions => ['name like ?', "%#{search}%"],
+      :conditions => ['name like ?', "%#{search_name}%"],
       :order => 'name ASC'
   end
 end

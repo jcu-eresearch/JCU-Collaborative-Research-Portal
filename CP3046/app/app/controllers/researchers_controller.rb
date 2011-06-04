@@ -1,3 +1,4 @@
+# Handles all researcher interaction
 class ResearchersController < ApplicationController
   before_filter :get_researcher, :except => [:index]
   

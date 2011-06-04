@@ -1,11 +1,17 @@
+# Handles all posts interaction
 class PostsController < ApplicationController
   before_filter :get_post, :only => [:destroy, :show]
+  # User must be a moderator to destroy a post
   before_filter :must_be_moderator, :only => [:destroy]
 
+  
+  # Get the post from params
   def get_post
     @post = Post.find(params[:id])
   end
 
+  # Validates the user as a moderator.
+  # Selects appropriate redirect path based on current page.
   def must_be_moderator
     if @post
       login_required_as_moderator(post_path(@post))
@@ -16,6 +22,7 @@ class PostsController < ApplicationController
 
   # GET /posts
   # GET /posts.xml
+  # GET /posts.rss
   def index
     respond_to do |format|
       format.html { 
@@ -36,11 +43,12 @@ class PostsController < ApplicationController
   
   # GET /posts/1
   # GET /posts/1.xml
+  # GET /posts/1.rss
   def show
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @post }
-    format.rss  { render :layout => false }
+      format.rss  { render :layout => false }
     end
   end
 
@@ -72,6 +80,8 @@ class PostsController < ApplicationController
     end
   end
   
+  # DELETE /posts/1
+  # DELETE /posts/1.xml
   def destroy
     @post.destroy
 

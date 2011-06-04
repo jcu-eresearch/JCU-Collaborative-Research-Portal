@@ -1,9 +1,14 @@
+# Logs in and out users for HTML interaction
+#
+# If session/create validates a user, the user info
+# is storred in the HTML session.
 class SessionsController < ApplicationController
   skip_before_filter :login_required_as_any_researcher
 
   
   # GET /session/new
   def new
+      # new.html.erb
   end
 
   # POST /session

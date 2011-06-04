@@ -1,3 +1,8 @@
+# Handles the creation and deletion of comments
+#
+# Any researcher may create a comment
+#
+# Only a moderator may delete a comment
 class CommentsController < ApplicationController
 
   before_filter :get_comment, :only => [:destroy]
@@ -34,11 +39,15 @@ class CommentsController < ApplicationController
     @comment.researcher = logged_in_researcher
 
     if @comment.save
-      format.html { redirect_to post_path(@post), :notice => "Comment was successfully added." }
-      format.xml  { render :xml => @comment, :status => :created, :location => @comment}
+      respond_to do |format|
+        format.html { redirect_to post_path(@post), :notice => "Comment was successfully added." }
+        format.xml  { render :xml => @comment, :status => :created, :location => @comment}
+      end
     else
-      format.html { redirect_to post_path(@post), :alert => "Failed to add comment: #{@comment.errors.full_messages.join(', ')}" }
-      format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
+      respond_to do |format|
+        format.html { redirect_to post_path(@post), :alert => "Failed to add comment: #{@comment.errors.full_messages.join(', ')}" }
+        format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
+      end 
     end
   end
 

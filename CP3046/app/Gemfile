@@ -36,3 +36,7 @@ gem "friendly_id", "~> 3.2.1"
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+group :development, :test do
+  gem 'railroady'
+end
