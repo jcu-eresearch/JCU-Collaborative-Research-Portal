@@ -10,7 +10,7 @@ class Post < ActiveRecord::Base
   validates :researcher, :presence => true
   validates :title, :presence => true
   validates :content, :presence => true
-  has_many :comments
+  has_many :comments, :dependent => :destroy
   
   acts_as_taggable
   acts_as_taggable_on :tags
