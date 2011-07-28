@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110520011719) do
+ActiveRecord::Schema.define(:version => 20110728114100) do
 
   create_table "addresses", :force => true do |t|
     t.string   "line1"
@@ -56,9 +56,12 @@ ActiveRecord::Schema.define(:version => 20110520011719) do
     t.string   "title"
     t.string   "email"
     t.string   "jc_number"
-    t.boolean  "moderator",  :default => false
+    t.boolean  "moderator",                  :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "profile_image_file_name"
+    t.string   "profile_image_content_type"
+    t.integer  "profile_image_file_size"
   end
 
   create_table "slugs", :force => true do |t|

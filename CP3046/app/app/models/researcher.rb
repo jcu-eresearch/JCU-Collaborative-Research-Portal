@@ -30,6 +30,11 @@ class Researcher < ActiveRecord::Base
   has_many :posts
   has_and_belongs_to_many :groups
 
+  has_attached_file :profile_image, :styles => {
+    :thumb => "100x100#",
+    :small => "400x400>" 
+  }
+
   # At this point, we need to check against the ldap to see if this 
   # username/password is valid
   #

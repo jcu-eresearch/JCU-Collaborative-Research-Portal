@@ -1,7 +1,8 @@
 <%= render :partial => 'layouts/head' %>
 
+<div class='navigation'>
 <% if logged_in? %>
-	<div class='main_navigation navigation'>
+	<div class='main_navigation'>
 		<ul>
 			<li><%= link_to "Home", home_path %></li>
 			<li><%= link_to "My Account", account_researcher_path(logged_in_researcher) %></li>
@@ -9,23 +10,24 @@
 			<li><%= link_to "Researchers", researchers_path %></li>
 		</ul>
 	</div>
-	<div class='session_navigation navigation'>
+	<div class='session_navigation'>
 		<ul class='actions'>
 			<li><%= link_to "Logout: #{logged_in_researcher.name}", session_path(:method => :delete) %></li>
 		</ul>
 	</div>
 <% else %> 
-	<div class='main_navigation navigation'>
+	<div class='main_navigation'>
 		<ul>
 			<li><%= link_to "Home", home_path %></li>
 		</ul>
 	</div>
-	<div class='session_navigation navigation'>
+	<div class='session_navigation'>
 		<ul class='actions'>
 			<li><%= link_to 'Login', new_session_path %></li>
 		</ul>
 	</div>
 <% end %>
+</div>
 
 
 <%= yield %>

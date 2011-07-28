@@ -2,6 +2,18 @@ p {
   line-height: 1.8em; 
 }
 
+div.navigation {
+/*
+  -moz-box-shadow: 2px 2px 2px rgba(0,0,0,0.75); 
+  -webkit-box-shadow: 2px 2px 2px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.75); 
+  background-image: -moz-linear-gradient(top, #ff9, #ffc); 
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #ff9),color-stop(1, #ffc)); 
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffff99, endColorstr=#ffffcc);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffff99, endColorstr=#ffffcc)";
+*/
+}
+
 h1, h2, h3 {
   line-height: 1.4em; 
 }
@@ -108,7 +120,7 @@ div.session_navigation {
 div.navigation ul {
 	background-color: #99f;
 	display: inline-block;
-    padding: 0.5em 0.8em 0.5em 0.8em;
+  padding: 0.5em 0.8em 0.5em 0.8em;
 	margin-top: 0;
 	margin-bottom: 0.6em;
 	box-shadow: 2px 2px 2px rgba(0,0,0,0.75); 
@@ -401,12 +413,12 @@ th {
 	padding: 0.7em;
 }
 
-tr.odd {
-	background-color: #fefcaf; 
+tr:nth-child(odd) { 
+  background-color:#fefcaf; 
 }
 
-tr.even {
-	background-color: #dddfff;
+tr:nth-child(even) { 
+  background-color:#dddfff; 
 }
 
 td.num {
