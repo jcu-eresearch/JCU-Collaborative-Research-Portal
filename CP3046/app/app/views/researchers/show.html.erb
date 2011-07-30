@@ -22,23 +22,30 @@
 		</ul>
 	</div>
 <% end %>
+<div class='profile'>
 
-<p>
-  <b>Email:</b>
-  <%= mail_to(@researcher.email) %>
-</p>
+  <div class='profile_image align_right'>
+    <%= image_tag @researcher.profile_image.url(:small) %>
+  </div>
 
-<p>
-  <b>Name:</b>
-  <%= @researcher.name %>
-</p>
+  <p>
+    <b>Title:</b>
+    <%= @researcher.title %>
+  </p>
 
-<p>
-  <b>Title:</b>
-  <%= @researcher.title %>
-</p>
+  <p>
+    <b>Name:</b>
+    <%= @researcher.name %>
+  </p>
 
-<p>
-  <b>Address:</b>
-  <%= render :partial => 'shared/address', :locals => {:address => @researcher.address } %>
-</p>
+  <p>
+    <b>Email:</b>
+    <%= mail_to(@researcher.email) %>
+  </p>
+
+  <p>
+    <b>Address:</b>
+    <%= render :partial => 'shared/address', :locals => {:address => @researcher.address } %>
+  </p>
+
+</div>

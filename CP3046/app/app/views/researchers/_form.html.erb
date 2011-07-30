@@ -1,4 +1,4 @@
-<%= form_for(@researcher) do |f| %>
+<%= form_for(@researcher, :html => { :multipart => true }) do |f| %>
   <fieldset>
 	  <% @researcher.build_address unless @researcher.address %>
 	  <% if @researcher.errors.any? %>
@@ -12,6 +12,15 @@
 		  </ul>
 		</div>
 	  <% end %>
+
+    <div class='profile_image align_right'>
+      <%= image_tag @researcher.profile_image.url(:small) %>
+    </div>
+
+    <div class="field">
+		<%= f.label :profile_image %><br />
+    <%= f.file_field :profile_image %>
+    </div>
 
 	  <div class="field">
 		<%= f.label :name %><br />

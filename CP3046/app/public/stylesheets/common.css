@@ -2,6 +2,10 @@ p {
   line-height: 1.8em; 
 }
 
+.profile_image { 
+  margin: 0.3em 1em 0.3em 0.3em;
+}
+
 div.navigation {
 /*
   -moz-box-shadow: 2px 2px 2px rgba(0,0,0,0.75); 
@@ -114,6 +118,13 @@ div.main_navigation {
 div.session_navigation {
 	height: 4em;
 	text-align: right;
+}
+
+.align_right {
+  float: right;
+}
+.align_left {
+  float: left;
 }
 
 
@@ -458,7 +469,11 @@ div.comment {
 	border-bottom: dotted 1px #aaa;
 }
 div.comment div.body {
-	margin-left: 2em;
+	margin-left: 4.5em;
+}
+
+.clearer {
+  clear: both;
 }
 
 div.tags p {

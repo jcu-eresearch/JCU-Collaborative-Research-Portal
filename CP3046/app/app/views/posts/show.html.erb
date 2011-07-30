@@ -12,13 +12,17 @@
 	</ul>
 </div>
 
+
 <h1 class="title"><%= @post.title %></h1>
 <p class="author"><strong>Author:</strong> <%= link_to @post.researcher.name, researcher_path(@post.researcher) %></p>
-
+<div class='profile_image align_left'>
+  <%= image_tag @post.researcher.profile_image.url(:thumb) %>
+</div>
 
 <div class="content">
   <%= raw @post.content_as_html %>
 </div>
+<div class='clearer'></div>
 
 <div class="tags">
   <p><span class='tag_title'>Tags</span>: <span class='tag_list'><%= @post.tag_list %></span></p>
@@ -27,10 +31,18 @@
 <h2>Comments</h2>
 <% @post.comments.each do |comment| %>
 	<div class='comment'>
-	<p class="commentor_name"><%= link_to comment.researcher.name, researcher_path(comment.researcher)%></p>
+
+
+    <div class='profile_image align_left'>
+      <%= image_tag comment.researcher.profile_image.url(:micro) %>
+    </div>
+    <p class="commentor_name"><%= link_to comment.researcher.name, researcher_path(comment.researcher)%></p>
+    
+
 		<div class='body'>
 			<%= raw comment.body_as_html %>
 		</div>
+    <div class='clearer'></div>
 	</div>
 
 <% end %>
