@@ -2,8 +2,8 @@ p {
   line-height: 1.8em; 
 }
 
-.profile_image { 
-  margin: 0.3em 1em 0.3em 0.3em;
+div.post .profile_image { 
+  margin: 0em 1em 0em 0em;
 }
 
 div.navigation {

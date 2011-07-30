@@ -34,15 +34,14 @@ class Researcher < ActiveRecord::Base
   has_attached_file :profile_image, :default_url => "/images/:class/:attachment/missing/missing_:style.jpg", :styles => {
     :micro => "40x40#",
     :thumb => "100x100#",
-    :small => "400x400>" 
+    :small => "250x250>" 
   }
 
   # profile image must be a jpeg
   validates_attachment_content_type :profile_image, :content_type => 'image/jpeg'
 
   # profile image must be less than 1MB 
-  # only validate the profile image size if it has been set, don't complain about unset images.
-  validates_attachment_size :profile_image, :less_than=>1.megabyte, :unless => Proc.new { |imports| !imports.profile_image_file_name.blank? }
+  validates_attachment_size :profile_image, :less_than=>1.megabyte
 
   # username/password is valid
   #
