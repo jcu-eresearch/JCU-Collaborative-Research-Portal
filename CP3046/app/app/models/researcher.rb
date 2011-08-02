@@ -38,7 +38,7 @@ class Researcher < ActiveRecord::Base
   }
 
   # profile image must be a jpeg
-  validates_attachment_content_type :profile_image, :content_type => 'image/jpeg'
+    validates_attachment_content_type :profile_image, :content_type => 'image/pjpeg'
 
   # profile image must be less than 1MB 
   validates_attachment_size :profile_image, :less_than=>1.megabyte
