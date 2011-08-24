@@ -19,6 +19,33 @@ class ApplicationController < ActionController::Base
 
   private
 
+  # Returns true if the user is logged in to the CAS.
+  # else, returns false.
+  # This method is only appropriate for html format requests.
+  # If the user is logged into the CAS, this method also sets the @current_researcher
+  # If the user isn't logged into the CAS, this method will set the redirect paths.
+  # Nothing should run after this method if the validate cas returns false.
+  def validate_cas
+    if CASClient::Frameworks::Rails::Filter.filter(self)
+      set_logged_in_cas_user_if_logged_in
+      return true
+    else
+      return false
+    end
+  end
+
+  
+  # If the user is logged into the cas, this method
+  # sets the @current_researcher variable to the appropriate value
+  def set_logged_in_cas_user_if_logged_in
+      if jc_number = session[:cas_user]
+        # If the user is auth'd set the current_researcher now.
+        @current_researcher = Researcher.find_or_create_by_jc_number({:jc_number => jc_number, :name => jc_number})
+      else
+        nil
+      end
+  end
+
   # Check if the user is logged in as any researcher (any valid user).
   # - If the user isn't logged in as a researcher
   #   - format .html => redirects the user
@@ -26,10 +53,7 @@ class ApplicationController < ActionController::Base
   def login_required_as_any_researcher
     respond_to do |format|
       format.html do
-        unless logged_in?
-          notice = "Please log in"         
-          redirect_to new_session_url(:forward_to => request.fullpath), :notice => notice
-        end
+        validate_cas
       end
       format.xml do   
         @current_researcher = authenticate_or_request_with_http_basic('researcher') do |login, password|
@@ -51,14 +75,12 @@ class ApplicationController < ActionController::Base
   def login_required_as_researcher(expected_researcher, redirect_to_url=new_session_url)
     respond_to do |format|
       format.html do
-        if logged_in?
+        if validate_cas
+          # Auth user against CAS
           if logged_in_researcher != expected_researcher
             alert = "You don't have permission to view that page"         
             redirect_to(redirect_to_url, :alert=> alert)
           end
-        else
-          notice = "Please log in"         
-          redirect_to new_session_url(:forward_to => request.fullpath), :notice => notice
         end
       end
       format.xml do   
@@ -83,14 +105,11 @@ class ApplicationController < ActionController::Base
   def login_required_as_moderator(redirect_to_url=new_session_url)
     respond_to do |format|
       format.html do
-        if logged_in?
+        if validate_cas
           unless logged_in_researcher.moderator
             alert = "You don't have permission to view that page."
             redirect_to(redirect_to_url, :alert=> alert)
           end
-        else
-          notice = "Please log in"         
-          redirect_to new_session_url(:forward_to => request.fullpath), :notice => notice
         end
       end
       format.xml do   
@@ -108,42 +127,19 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # Returns true if the user is logged in, returns false otherwise
-  #
-  # Session specific, can't be used for HTTP_BASIC_AUTH checks
+  # The user is logged in if current_researcher is set.
   def logged_in?
-    session_id = session[:jc_number]
-    if session_id
-      begin
-        @current_researcher = Researcher.find(session_id)
-        if @current_researcher
-          return true
-        else
-          session[:jc_number] = nil
-          return false
-        end
-      rescue
-        session[:jc_number] = nil
-        return false
-      end
-    else
-      return false
-    end
+    not @current_researcher.nil?
   end
 
   # Returns the currently logged in researcher
   #
   # Raises if there is no logged in researcher
   def logged_in_researcher
-    # Use cache if @current_researcher is already set
-    if @current_researcher
-      return @current_researcher
+    if @current_researcher.nil?
+      raise "Trying to access the logged_in_researcher when the user isn't logged in. This should not happen."
     end
 
-    if logged_in?
-      @current_researcher
-    else
-      raise "Attempting to look up logged in researcher, when the user isn't logged in."
-    end
+    return @current_researcher
   end
 end

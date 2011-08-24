@@ -18,7 +18,7 @@ App::Application.routes.draw do
 
   # A session can't be updated
   # It can only be created, and destroyed.
-  resource :session, :only => [:new, :create, :destroy]
+  resource :session, :only => [:new, :destroy]
 
   resource :textile, :only => [], do
     post 'preview'
