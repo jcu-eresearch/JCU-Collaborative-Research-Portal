@@ -57,7 +57,7 @@ class PostsControllerTest < ActionController::TestCase
   
   test "shouldn't delete post as not logged in"  do
     delete :destroy, { :id => @post.to_param }
-    assert_redirected_to new_session_path(:forward_to => post_path(@path))
+    assert_redirected_to_login(post_path(@path))
   end
 
   test "shouldn't delete post (xml) with bad http_auth provided"  do

@@ -47,7 +47,7 @@ class ResearchersControllerTest < ActionController::TestCase
   
   test "should not get other researcher's account" do
     get :account, { :id => @other_researcher.to_param }, { :jc_number => @researcher.to_param }
-	assert_redirected_to researcher_path(@other_researcher)
+    assert_redirected_to researcher_path(@other_researcher)
   end
   
   test "shouldn't show account (rss) without http_auth provided" do
@@ -79,7 +79,7 @@ class ResearchersControllerTest < ActionController::TestCase
   
   test "should not get edit as not logged in" do
     get :edit, { :id => @researcher.to_param }
-    assert_redirected_to new_session_path(:forward_to => edit_researcher_path(@researcher_path))
+    assert_redirected_to_login(edit_researcher_path(@researcher))
   end
 
   test "should not get edit as logged in as different researcher" do

@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
   # If the user is logged into the cas, this method
   # sets the @current_researcher variable to the appropriate value
   def set_logged_in_cas_user_if_logged_in
-      if jc_number = session[:cas_user]
+      if jc_number = session[:jc_number]
         # If the user is auth'd set the current_researcher now.
         @current_researcher = Researcher.find_or_create_by_jc_number({:jc_number => jc_number, :name => jc_number})
       else
