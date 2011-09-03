@@ -13,7 +13,6 @@ class Post < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   
   acts_as_taggable
-  acts_as_taggable_on :tags
   
   # Use the title of the post as the url (to_param) path to the post.
   has_friendly_id :title, :use_slug => true

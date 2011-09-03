@@ -19,6 +19,9 @@ class Researcher < ActiveRecord::Base
 
   # Use the researcher's name the url (to_param) path to the researcher.
   has_friendly_id :name, :use_slug => true
+  
+  acts_as_taggable_on :liked_tags
+  acts_as_taggable_on :disliked_tags
 
   
   # A researcher has an address.
