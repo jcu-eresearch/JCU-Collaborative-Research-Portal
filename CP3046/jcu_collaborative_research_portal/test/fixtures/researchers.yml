@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  jc_number: MyString
+  title: MyString
+  moderator: false
+  email: MyString
+  slug: MyString
+
+two:
+  name: MyString
+  jc_number: MyString
+  title: MyString
+  moderator: false
+  email: MyString
+  slug: MyString

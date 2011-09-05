@@ -95,7 +95,6 @@ DEPENDENCIES
   paperclip (~> 2.3)
   railroady
   rails (= 3.0.3)
-  rake (= 0.8.7)
   rubycas-client
   sqlite3-ruby
   will_paginate (~> 3.0.pre2)
