@@ -1,0 +1,23 @@
+<% content_for :head do %>
+  <link rel="alternate" type="application/rss+xml" href="<%= account_researcher_path(@researcher, :rss) %>" title="<%= @researcher.name %>'s Personal RSS Feed">
+<% end %>
+
+<% content_for :title do %>
+	<%= "My Account" %>
+<% end %>
+
+<div class='sub_navigation navigation'>
+	<ul class='links'>
+		<li><%= link_to 'My Profile', researcher_path(@researcher) %>               </li>
+		<li><%= link_to 'My Posts', posts_researcher_path(@researcher) %>           </li>
+		<li><!-- TODO - View Notification Preferences -->                           </li>
+		<li><!-- TODO - My Followed Researchers -->                                 </li>
+		<li><!-- TODO - My Groups -->                                               </li>
+	</ul>
+</div>
+
+<div class='sub_navigation navigation feeds'>
+	<ul>
+    <li><%= link_to "My Personal RSS Feed", account_researcher_path(@researcher, :rss) %></li>
+	</ul>
+</div>

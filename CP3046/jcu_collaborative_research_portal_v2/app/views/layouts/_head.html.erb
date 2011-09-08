@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) %> - JCU</title>
+
+  <script type="text/javascript">
+    var markdown_preview_url = "<%= preview_markdown_path %>"
+    var textile_preview_url = "<%= preview_textile_path %>"
+  </script>
+
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= yield(:head) %>
+</head>
+<body>
+
+<% if alert %>
+  <p class='ui-state-error'>
+    <span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span> 
+    <%= alert %>
+  </p>
+<% end %>
+
+<% if notice %>
+  <p class='ui-state-highlight'>
+    <span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+    <%= notice %>
+  </p>
+<% end %>

@@ -1,0 +1,61 @@
+<% content_for :head do %>
+  <link rel="alternate" type="application/rss+xml" href="<%= posts_path :rss %>" title="Posts RSS Feed">
+<% end %>
+
+<% content_for :title do %>
+	<%= "Posts" %>
+<% end %>
+
+<div class='sub_navigation navigation feeds'>
+	<ul>
+    <li><%= link_to "Posts RSS Feed", posts_path(:rss) %></li>
+	</ul>
+</div>
+
+<div class='sub_navigation navigation actions'>
+	<ul>
+		<li><%= link_to 'New Post', new_post_path %></li>
+	</ul>
+</div>
+
+
+
+<!-- Search Form -->
+<%= form_tag(posts_path, :method => "get", :class => 'search_form') do %>
+  <fieldset>  
+    <legend>Search By</legend>
+	  <div class="field">
+      <%= label_tag(:search_title, "Title:") %>
+      <%= search_field_tag(:search_title, params[:search_title]) %>
+    </div>
+	  <div class="field">
+      <%= label_tag(:search_tags, "Tags:") %>
+      <%= search_field_tag(:search_tags, params[:search_tags]) %>
+    </div>
+    <div class="actions">
+      <%= submit_tag("Search", :class => "submit") %>
+    </div>
+  </fieldset>  
+<% end %>
+
+<h1>Listing Posts</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Tags</th>
+    <th></th>
+  </tr>
+
+<%= will_paginate @posts %>
+<% @posts.each_with_index do |post, index| %>
+  <% css_class = index.odd? ? "odd" : "even" %>
+  <tr class='<%= css_class %>'>
+    <td><%= post.title %></td>
+    <td><%= link_to post.researcher.name, researcher_path(post.researcher) %></td>
+    <td><%= post.tag_list %></td>
+    <td><%= link_to 'Show', post %></td>
+  </tr>
+<% end %>
+</table>

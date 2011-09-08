@@ -1,0 +1,65 @@
+<% content_for :head do %>
+  <link rel="alternate" type="application/rss+xml" href="<%= post_path(@post, :rss) %>" title="Post: <%= @post.title %> RSS Feed">
+<% end %>
+
+<% content_for :title do %>
+	<%= "Post: #{@post.title}" %>
+<% end %>
+
+<div class='sub_navigation navigation feeds'>
+	<ul>
+    <li><%= link_to "Post RSS Feed", post_path(@post, :rss) %></li>
+	</ul>
+</div>
+
+
+<h1 class="title"><%= @post.title %></h1>
+<div class='post'>
+  <p class="author"><strong>Author:</strong> <%= link_to @post.researcher.name, researcher_path(@post.researcher) %></p>
+  <div class='profile_image align_left'>
+    <%= image_tag @post.researcher.profile_image.url(:thumb) %>
+  </div>
+
+  <div class="content">
+    <%= raw @post.content_as_html %>
+  </div>
+  <div class='clearer'></div>
+
+  <div class="tags">
+    <p><span class='tag_title'>Tags</span>: <span class='tag_list'><%= @post.tag_list %></span></p>
+  </div>
+</div>
+
+<h2>Comments</h2>
+<div class='comments'>
+  <% @post.comments.each do |comment| %>
+    <div class='comment'>
+
+
+      <div class='profile_image align_left'>
+        <%= image_tag comment.researcher.profile_image.url(:micro) %>
+      </div>
+      <p class="commentor_name"><%= link_to comment.researcher.name, researcher_path(comment.researcher)%></p>
+      
+
+      <div class='body'>
+        <%= raw comment.body_as_html %>
+      </div>
+      <div class='clearer'></div>
+    </div>
+
+  <% end %>
+</div>
+
+<%= form_for([@post, @post.comments.build]) do |f| %>
+	<fieldset>  
+    <legend>Add A Comment</legend>
+		<div class="field">
+			<%= f.label :body, "Comment"%><br />
+			<%= f.text_area :body, :class => "markdown_input" %>
+		  <div class="markdown_preview"></div>
+		</div>
+			<%= f.submit 'Comment', :class => "submit" %>
+		</div>
+	</fieldset>  
+<% end %>

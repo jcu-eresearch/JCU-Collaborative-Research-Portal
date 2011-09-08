@@ -1,0 +1,50 @@
+<%= form_for(@researcher, :html => { :multipart => true }) do |f| %>
+  <fieldset>
+	  <% @researcher.build_address unless @researcher.address %>
+	  <% if @researcher.errors.any? %>
+    <div class='ui-state-error'>
+      <p class='ui-corner-all'>
+        <span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span> 
+        <%= pluralize(@researcher.errors.count, "error") %> prohibited this researcher from being saved:
+      </p>
+
+		  <ul>
+		  <% @researcher.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		  <% end %>
+		  </ul>
+		</div>
+	  <% end %>
+
+    <div class='profile_image'>
+      <%= image_tag @researcher.profile_image.url(:small) %>
+    </div>
+
+    <div class="field">
+		<%= f.label :profile_image %><br />
+    <%= f.file_field :profile_image %>
+    </div>
+
+	  <div class="field">
+		<%= f.label :name %><br />
+		<%= f.text_field :name %>
+	  </div>
+	  <div class="field">
+		<%= f.label :title %><br />
+		<%= f.text_field :title %>
+	  </div>
+	  
+	  <div class="field">
+		<%= f.label :email %><br />
+		<%= f.text_field :email %>
+	  </div>
+
+	  <%= f.fields_for :address do |address_fields| %>
+		<%= render :partial => 'shared/address_form', :locals => {:f => address_fields} %>
+	  <% end %>
+
+	  <div class="actions">
+		<%= f.submit :class => "submit" %>
+	  </div>
+  </fieldset>
+<% end %>

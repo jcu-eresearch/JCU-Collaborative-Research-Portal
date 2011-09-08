@@ -1,0 +1,36 @@
+<%= form_for(@post) do |f| %>
+  <fieldset>
+  <% if @post.errors.any? %>
+    <div class='ui-state-error'>
+      <p class='ui-corner-all'>
+        <span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span> 
+        <%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:
+      </p>
+
+		  <ul>
+		  <% @post.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		  <% end %>
+		  </ul>
+		</div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content, :class => 'markdown_input' %>
+		  <div class="markdown_preview"></div>
+  </div>
+  <div id="model_tags" class="field">
+    <%= f.label :tag_list %><br />
+    <%= f.text_field :tag_list %>     
+  </div>
+  <div class="actions">
+    <%= f.submit :class => "submit" %>
+  </div>
+
+<% end %>
+</fieldset>
