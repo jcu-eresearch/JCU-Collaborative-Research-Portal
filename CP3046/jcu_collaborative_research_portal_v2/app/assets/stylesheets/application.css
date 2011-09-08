@@ -7,9 +7,6 @@
  *= require_tree . 
 */
 
-div.navigation {
-}
-
 h1, h2, h3 {
   line-height: 1.4em; 
 }
@@ -119,23 +116,25 @@ div.session_navigation {
   float: left;
 }
 
-
 div.navigation ul {
+  /*
 	background-color: #99f;
+*/
 	display: inline-block;
   padding: 0.5em 0.8em 0.5em 0.8em;
 	margin-top: 0;
 	margin-bottom: 0.6em;
-	box-shadow: 2px 2px 2px rgba(0,0,0,0.75); 
 }
 
 div.actions {
 	float: right;
 }
 
+/*
 div.sub_navigation ul {
 	background-color: #ccf;
 }
+*/
 
 div.main_navigation ul li {
   margin: 0;
@@ -165,13 +164,10 @@ div.session_navigation ul li a, div.sub_navigation ul li a {
 }
 
 div.navigation ul li.current a {
+  /*
 	background-color: #66e;
   color: #000;
-}
-
-div.navigation ul li a:hover {
-	background-color: #66f;
-  color: #000;
+  */
 }
 
 .system_message {

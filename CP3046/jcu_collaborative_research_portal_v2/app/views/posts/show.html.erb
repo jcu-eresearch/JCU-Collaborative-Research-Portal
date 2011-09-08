@@ -8,14 +8,14 @@
 
 <div class='sub_navigation navigation feeds'>
 	<ul>
-    <li><%= link_to "Post RSS Feed", post_path(@post, :rss) %></li>
+    <li><%= link_to "Post RSS Feed", post_path(@post, :rss), :class => 'ui-state-default ui-corner-all hover-button' %></li>
 	</ul>
 </div>
 
 <% if logged_in_researcher.moderator or @post.researcher == logged_in_researcher %>
   <div class='sub_navigation navigation actions'>
     <ul>
-      <li><%= link_to 'Delete', @post, confirm: 'Are you sure?', method: :delete %></li>
+      <li><%= link_to 'Delete', @post, confirm: 'Are you sure?', method: :delete, :class => 'ui-state-default ui-corner-all hover-button' %></li>
     </ul>
   </div>
 <% end %>
