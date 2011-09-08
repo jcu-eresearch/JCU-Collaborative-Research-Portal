@@ -19,7 +19,8 @@ end
 gem 'jquery-rails'
 
 # CAS Gems
-gem 'rubycas-client'
+#gem 'rubycas-client'
+gem 'rubycas-client-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'

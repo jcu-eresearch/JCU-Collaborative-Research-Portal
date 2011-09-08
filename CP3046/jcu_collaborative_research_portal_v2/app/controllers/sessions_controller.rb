@@ -5,7 +5,7 @@
 class SessionsController < ApplicationController
 
   # Don't require the user to have logged in.
-  before_filter CASClient::Frameworks::Rails::GatewayFilter
+  before_filter RubyCAS::GatewayFilter
   skip_before_filter :login_required_as_any_researcher
   before_filter :set_logged_in_cas_user_if_logged_in
 
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
       redirect_to(account_researcher_path(logged_in_researcher), :notice => notice)
     else
       # If the user isn't logged in, redirect them to the login page for the cas 
-      CASClient::Frameworks::Rails::Filter.redirect_to_cas_for_authentication(self)
+      RubyCAS::Filter.redirect_to_cas_for_authentication(self)
     end
   end
 
@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
   def destroy
     if logged_in?
       # Log the user out of the CAS
-      CASClient::Frameworks::Rails::Filter.logout(self)
+      RubyCAS::Filter.logout(self)
     else
       alert = "You are already logged out"         
       redirect_to(homes_path, :alert=> alert)

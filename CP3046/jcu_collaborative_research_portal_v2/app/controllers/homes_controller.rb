@@ -6,7 +6,7 @@ class HomesController < ApplicationController
   # You don't need to be logged in to view the home pages
   skip_before_filter :login_required_as_any_researcher
   
-  before_filter CASClient::Frameworks::Rails::GatewayFilter
+  before_filter RubyCAS::GatewayFilter
   before_filter :set_logged_in_cas_user_if_logged_in
   
   # GET /home

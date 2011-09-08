@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   # Validates the user as a moderator or the owner of the post.
   def must_be_moderator_or_poster
-    login_required_as_moderator_or_researcher(post_path(@post), @post.researcher)
+    login_required_as_moderator_or_researcher(@post.researcher, post_path(@post))
   end
   
   # GET /posts
@@ -90,7 +90,7 @@ class PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to posts_url }
+      format.html { redirect_to(posts_url, :notice => "Post (#{@post.title}) was successfully deleted.") }
       format.xml  { head :ok }
       format.json { head :ok }
     end

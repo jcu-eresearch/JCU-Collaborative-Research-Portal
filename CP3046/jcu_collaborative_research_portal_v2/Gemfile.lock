@@ -95,6 +95,9 @@ GEM
     rdoc (3.9.4)
     rubycas-client (2.2.1)
       activesupport
+    rubycas-client-rails (0.1.0)
+      rails (>= 3.0.0)
+      rubycas-client (>= 2.2.0)
     sass (3.1.7)
     sass-rails (3.1.0)
       actionpack (~> 3.1.0)
@@ -130,7 +133,7 @@ DEPENDENCIES
   jquery-rails
   paperclip (~> 2.4)
   rails (= 3.1.0)
-  rubycas-client
+  rubycas-client-rails
   sass-rails (~> 3.1.0)
   sqlite3
   turn

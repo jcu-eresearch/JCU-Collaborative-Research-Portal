@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
   
   # Validates the user as either a moderator or the owner of the comment.
   def must_be_moderator_or_commentor
-    login_required_as_moderator_or_researcher(post_path(@post), @comment.researcher)
+    login_required_as_moderator_or_researcher(@comment.researcher, post_path(@post))
   end
 
 
@@ -49,7 +49,7 @@ class CommentsController < ApplicationController
     @comment.destroy
 
     respond_to do |format|
-      format.html { redirect_to(post_url(@post)) }
+      format.html { redirect_to(post_url(@post), :notice => "Comment was removed") }
       format.xml  { head :ok }
       format.json { head :ok }
     end

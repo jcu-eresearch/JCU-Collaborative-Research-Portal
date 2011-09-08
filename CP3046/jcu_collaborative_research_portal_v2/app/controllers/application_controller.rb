@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   # If the user isn't logged into the CAS, this method will set the redirect paths.
   # Nothing should run after this method if the validate cas returns false.
   def validate_cas
-    if CASClient::Frameworks::Rails::Filter.filter(self)
+    if RubyCAS::Filter.filter(self)
       set_logged_in_cas_user_if_logged_in
       return true
     else
@@ -139,6 +139,37 @@ class ApplicationController < ActionController::Base
         authenticate_or_request_with_http_basic("researcher_moderator") do |login, password|
           @current_researcher = Researcher.authenticate(login, password)
           @current_researcher.moderator
+        end
+      end
+    end
+  end
+  
+  def login_required_as_moderator_or_researcher(expected_researcher, redirect_to_url=new_session_url)
+    respond_to do |format|
+      format.html do
+        if validate_cas
+          unless logged_in_researcher == expected_researcher or logged_in_researcher.moderator 
+            alert = "You don't have permission to view that page."
+            redirect_to(redirect_to_url, :alert=> alert)
+          end
+        end
+      end
+      format.xml do   
+        authenticate_or_request_with_http_basic("researcher_moderator_or_researcher_#{expected_researcher.id}") do |login, password|
+          @current_researcher = Researcher.authenticate(login, password)
+          @current_researcher.moderator or @current_researcher == expected_researcher 
+        end
+      end
+      format.json do   
+        authenticate_or_request_with_http_basic("researcher_moderator_or_researcher_#{expected_researcher.id}") do |login, password|
+          @current_researcher = Researcher.authenticate(login, password)
+          @current_researcher.moderator or @current_researcher == expected_researcher 
+        end
+      end
+      format.rss do   
+        authenticate_or_request_with_http_basic("researcher_moderator_or_researcher_#{expected_researcher.id}") do |login, password|
+          @current_researcher = Researcher.authenticate(login, password)
+          @current_researcher.moderator or @current_researcher == expected_researcher 
         end
       end
     end

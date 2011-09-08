@@ -12,6 +12,14 @@
 	</ul>
 </div>
 
+<% if logged_in_researcher.moderator or @post.researcher == logged_in_researcher %>
+  <div class='sub_navigation navigation actions'>
+    <ul>
+      <li><%= link_to 'Delete', @post, confirm: 'Are you sure?', method: :delete %></li>
+    </ul>
+  </div>
+<% end %>
+
 
 <h1 class="title"><%= @post.title %></h1>
 <div class='post'>
@@ -45,6 +53,14 @@
       <div class='body'>
         <%= raw comment.body_as_html %>
       </div>
+
+      <% if logged_in_researcher.moderator or comment.researcher == logged_in_researcher %>
+        <div class='sub_navigation navigation actions'>
+          <ul>
+            <li><%= link_to 'Delete', post_comment_path(@post, comment), confirm: 'Are you sure?', method: :delete %></li>
+          </ul>
+        </div>
+      <% end %>
       <div class='clearer'></div>
     </div>
 
