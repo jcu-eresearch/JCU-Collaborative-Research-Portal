@@ -2,15 +2,15 @@
 
 <div class='main_navigation navigation'>
 	<ul>
-		<li><%= link_to "Home", home_path %></li>
-		<li><%= link_to "My Account", account_researcher_path(logged_in_researcher) %></li>
-		<li><%= link_to "Posts", posts_path %></li>
-		<li class='current'><%= link_to "Researchers", researchers_path %></li>
+		<li><%= link_to "Home", home_path, :class => 'ui-state-default ui-corner-all hover-button' %></li>
+		<li><%= link_to "My Account", account_researcher_path(logged_in_researcher), :class => 'ui-state-default ui-corner-all hover-button' %></li>
+		<li><%= link_to "Posts", posts_path, :class => 'ui-state-default ui-corner-all hover-button' %></li>
+		<li class='current'><%= link_to "Researchers", researchers_path , :class => 'ui-state-default ui-corner-all ui-state-hover' %></li>
 	</ul>
 </div>
 <div class='session_navigation navigation'>
 	<ul class='actions'>
-    <li><%= link_to "Logout: #{logged_in_researcher.name}", :session, {:method => :delete} %></li>
+    <li><%= link_to "Logout: #{logged_in_researcher.name}", :session, :method => :delete, :class => 'ui-state-default ui-corner-all hover-button ui-priority-secondary' %></li>
 	</ul>
 </div>
 
