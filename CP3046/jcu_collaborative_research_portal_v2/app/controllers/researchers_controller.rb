@@ -57,7 +57,7 @@ class ResearchersController < ApplicationController
   # GET /researchers/1/account.rss
   def account
     respond_to do |format|
-      format.html { render :layout => 'account' } # account.html.erb
+      format.html { redirect_to @researcher }
       format.rss  { render :layout => false }
     end
   end

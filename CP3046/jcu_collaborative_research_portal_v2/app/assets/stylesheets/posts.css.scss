@@ -2,6 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-div.post .profile_image { 
-  margin: 0em 1em 0em 0em;
+h3.commentor_name {
+	color: #339;
 }
+
+div.comment {
+  margin: 0.5em 0 4em 0.2em;
+	padding-left: 1em;
+	padding-bottom: 0.5em;
+	border-left: dotted 1px #aaa;
+	border-bottom: dotted 1px #aaa;
+}
+div.comment div.body, div.post div.content, div.post div.tags {
+	margin-left: 100px;
+}
+
+div.tags p {
+  margin-top: 2em;
+  font-size: small;
+  margin-bottom: 2em;
+}
+
+div.tags p span.tag_title {
+  font-weight: bold;
+}
+div.tags p span.tag_list {
+  font-style: italic;
+}
+

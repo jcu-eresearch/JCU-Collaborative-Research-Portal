@@ -18,6 +18,8 @@ $(document).ready(function() {
     // Find all the markdown textareas
     $('.markdown_input').each( function(i) {
       var text_area = this;
+      $('<div class="ui-widget ui-widget-content markdown_preview"></div>').hide().insertAfter(text_area);
+
       // Watch for keypress events in the textarea (throttle the call-back)
       $(this).keypress(throttle(function() {
         // On key press, send the markdown content to the ajax markdown processor
@@ -32,13 +34,13 @@ $(document).ready(function() {
             // Find the preview area for the markdown textarea, and change its html
             // to be the output of the markdown process
             // Also, highlight the area, to let the user know that it has changed.
-            $(text_area).siblings('.markdown_preview').html(obj).effect("highlight");
+            $(text_area).siblings('.markdown_preview').html("<p class='ui-widget-shadow markdown_preview_prompt'>Preview</p>" + obj).effect("highlight");
           },
           error: function() {
             // On error,
             // Find the preview area for the markdown textarea, and change its html
             // to be a nice error message explaining that the preview couldn't be generated
-            $(text_area).siblings('.markdown_preview').html("<div class='system_message'><p class='error ui-state-error'>Failed to generate preview</p></div>");
+            $(text_area).siblings('.markdown_preview').html("<div class='system_message'><p class='error ui-state-error'>Failed to generate preview</p></div>").effect("highlight");
           }
         })
       }));

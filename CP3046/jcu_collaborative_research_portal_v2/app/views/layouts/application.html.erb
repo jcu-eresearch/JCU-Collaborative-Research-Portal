@@ -1,29 +1,29 @@
 <%= render :partial => 'layouts/head' %>
 
-<div class='navigation'>
+<div class='navigation ui-widget-header ui-helper-clearfix'>
 <% if logged_in? %>
 	<div class='main_navigation'>
 		<ul>
-      <li><%= link_to "Home", home_path, :class => 'ui-state-default ui-corner-all hover-button' %></li>
-      <li><%= link_to "My Account", account_researcher_path(logged_in_researcher), :class => 'ui-state-default ui-corner-all hover-button' %></li>
-      <li><%= link_to "Posts", posts_path, :class => 'ui-state-default ui-corner-all hover-button' %></li>
-      <li><%= link_to "Researchers", researchers_path, :class => 'ui-state-default ui-corner-all hover-button' %></li>
+      <li><%= link_to "Home", home_path, :class => 'ui-state-default hover-button' %></li>
+      <li><%= link_to "My Account", account_researcher_path(logged_in_researcher), :class => 'ui-state-default hover-button' %></li>
+      <li><%= link_to "Posts", posts_path, :class => 'ui-state-default hover-button' %></li>
+      <li><%= link_to "Researchers", researchers_path, :class => 'ui-state-default hover-button' %></li>
 		</ul>
 	</div>
 	<div class='session_navigation'>
 		<ul class='actions'>
-      <li><%= link_to "Logout: #{logged_in_researcher.name}", :session, :method => :delete, :class => 'ui-state-default ui-corner-all hover-button ui-priority-secondary' %></li>
+      <li><%= link_to "Logout: #{logged_in_researcher.name}", :session, :method => :delete, :class => 'ui-state-default hover-button ui-priority-secondary ui-corner-bl' %></li>
 		</ul>
 	</div>
 <% else %> 
 	<div class='main_navigation'>
 		<ul>
-      <li><%= link_to "Home", home_path, :class => 'ui-state-default ui-corner-all hover-button' %></li>
+      <li><%= link_to "Home", home_path, :class => 'ui-state-default hover-button' %></li>
 		</ul>
 	</div>
 	<div class='session_navigation'>
 		<ul class='actions'>
-      <li><%= link_to "Login", new_session_path, :class => 'ui-state-default ui-corner-all hover-button' %></li>
+      <li><%= link_to "Login", new_session_path, :class => 'ui-state-default hover-button ui-corner-bl' %></li>
 		</ul>
 	</div>
 <% end %>

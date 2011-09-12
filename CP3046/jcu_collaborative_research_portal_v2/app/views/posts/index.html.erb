@@ -22,8 +22,8 @@
 
 <!-- Search Form -->
 <%= form_tag(posts_path, :method => "get", :class => 'search_form') do %>
-  <fieldset>  
-    <legend>Search By</legend>
+  <fieldset class="ui-widget ui-widget-content">  
+    <legend class="ui-widget ui-widget-header">Search By</legend>
 	  <div class="field">
       <%= label_tag(:search_title, "Title:") %>
       <%= search_field_tag(:search_title, params[:search_title]) %>
@@ -33,7 +33,7 @@
       <%= search_field_tag(:search_tags, params[:search_tags]) %>
     </div>
     <div class="actions">
-      <%= submit_tag("Search", :class => "submit") %>
+      <%= submit_tag("Search", :class => "submit hover-button ui-state-default") %>
     </div>
   </fieldset>  
 <% end %>

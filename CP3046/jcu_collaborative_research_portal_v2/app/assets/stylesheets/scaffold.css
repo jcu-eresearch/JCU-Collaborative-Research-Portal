@@ -1,4 +1,4 @@
-body { background-color: #fff; color: #333; }
+/* body { background-color: #fff; color: #333; } */
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -12,13 +12,16 @@ pre {
   font-size: 11px;
 }
 
+/*
 a { color: #000; }
 a:visited { color: #666; }
 a:hover { color: #fff; background-color:#000; }
+*/
 
 div.field, div.actions {
 }
 
+/*
 #notice, .notice {
   color: green;
 }
@@ -26,6 +29,7 @@ div.field, div.actions {
 #alert, .alert {
   color: red;
 }
+*/
 
 .field_with_errors label:after {
   color: #a00;
