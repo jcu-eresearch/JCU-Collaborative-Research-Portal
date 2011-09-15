@@ -139,16 +139,11 @@ button.show_hide_button, button.show_hide_button span {
 
 
 
-h1, h2, h3 {
-	font-family: 
-	sans-serif;
-}
-
 h1 {
-	color: #2929ff;
+	color: #0909ff;
 	margin-bottom: 1em;
   padding-bottom: 0.2em;
-  border-bottom: 3px solid #7aaf9c;
+  border-bottom: 3px solid #9aafac;
 }
 
 h2 {
@@ -294,11 +289,11 @@ th {
 }
 
 tr:nth-child(odd) { 
-  background-color:#fefcaf; 
+  background-color:#ccf; 
 }
 
 tr:nth-child(even) { 
-  background-color:#dddfff; 
+  background-color:#ccc; 
 }
 
 td.num {

@@ -16,19 +16,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %>
+    <%= f.label :title, :class => "ui-widget-header" %>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :content %>
+    <%= f.label :content, :class => "ui-widget-header" %>
     <%= f.text_area :content, :class => 'markdown_input' %>
   </div>
   <div id="model_tags" class="field">
-    <%= f.label :tag_list %>
+    <%= f.label :tag_list, :class => "ui-widget-header" %>
     <%= f.text_field :tag_list %>     
   </div>
   <div class="actions">
-    <%= f.submit :class => "submit ui-state-default button-hover" %>
+    <%= f.submit :class => "submit ui-state-default hover-button" %>
   </div>
 
 <% end %>

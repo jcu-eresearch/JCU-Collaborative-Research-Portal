@@ -25,11 +25,11 @@
   <fieldset class="ui-widget ui-widget-content">  
     <legend class="ui-widget ui-widget-header">Search By</legend>
 	  <div class="field">
-      <%= label_tag(:search_title, "Title:") %>
+      <%= label_tag(:search_title, "Title:", :class => "ui-widget-header") %>
       <%= search_field_tag(:search_title, params[:search_title]) %>
     </div>
 	  <div class="field">
-      <%= label_tag(:search_tags, "Tags:") %>
+      <%= label_tag(:search_tags, "Tags:", :class => "ui-widget-header") %>
       <%= search_field_tag(:search_tags, params[:search_tags]) %>
     </div>
     <div class="actions">
@@ -43,19 +43,17 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Author</th>
     <th>Tags</th>
-    <th></th>
+    <th>Author</th>
   </tr>
 
 <%= will_paginate @posts %>
 <% @posts.each_with_index do |post, index| %>
   <% css_class = index.odd? ? "odd" : "even" %>
   <tr class='<%= css_class %>'>
-    <td><%= post.title %></td>
-    <td><%= link_to post.researcher.name, researcher_path(post.researcher) %></td>
+    <td><%= link_to post.title, post %></td>
     <td><%= post.tag_list %></td>
-    <td><%= link_to 'Show', post %></td>
+    <td><%= link_to post.researcher.name, researcher_path(post.researcher) %></td>
   </tr>
 <% end %>
 </table>
