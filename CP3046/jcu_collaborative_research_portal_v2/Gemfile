@@ -32,8 +32,9 @@ gem 'will_paginate', '~> 3.0.0'
 gem "paperclip", "~> 2.4"
 gem "friendly_id", "~> 4.0.0.beta8"
 gem 'acts-as-taggable-on', '~>2.1.0'
-# gem "RedCloth"
+#gem "RedCloth"
 gem 'bluecloth', "~> 2.0"
+gem "ruby-ldap", "~> 0.9.11"
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
