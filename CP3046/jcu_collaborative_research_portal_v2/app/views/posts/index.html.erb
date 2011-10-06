@@ -6,16 +6,18 @@
 	<%= "Posts" %>
 <% end %>
 
-<div class='sub_navigation navigation feeds'>
-	<ul>
-    <li><%= link_to "Posts RSS Feed", posts_path(:rss) %></li>
-	</ul>
-</div>
+<div class='navigation'>
+  <div class='sub_navigation'>
+    <ul>
+      <li><%= link_to "Posts RSS Feed", posts_path(:rss), :class => "ui-state-default ui-corner-all hover-button ui-priority-secondary" %></li>
+    </ul>
+  </div>
 
-<div class='sub_navigation navigation actions'>
-	<ul>
-		<li><%= link_to 'New Post', new_post_path %></li>
-	</ul>
+  <div class='sub_navigation actions'>
+		<ul class='actions'>
+      <li><%= link_to 'New Post', new_post_path, :class => "ui-state-default ui-corner-all hover-button" %></li>
+    </ul>
+  </div>
 </div>
 
 

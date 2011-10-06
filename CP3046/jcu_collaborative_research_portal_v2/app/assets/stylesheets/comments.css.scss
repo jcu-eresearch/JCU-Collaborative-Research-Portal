@@ -3,9 +3,35 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 div.comment .profile_image { 
-  margin: 0em 0.5em 0em 0em;
+  margin: 0em 0.3em 0em 0em;
 }
 
-div.comments div.sub_navigation ul li a {
+div.comments div.sub_navigation * {
 	padding: 0;
+  margin: 0;
 }
+
+.commentor_name {
+	color: #339;
+}
+div.comment {
+  margin: 0.5em 0 4em 0.2em;
+	padding-left: 1em;
+	padding-bottom: 0.5em;
+
+  border-left: 2px dashed #ccc;
+  border-bottom: 2px dashed #ccc;
+}
+
+div.post div.content {
+	margin-left: 110px;
+} 
+
+div.post div.tags {
+  clear: both;
+}
+
+div.comment div.body, div.comment .commentor_name {
+	margin-left: 55px;
+}
+

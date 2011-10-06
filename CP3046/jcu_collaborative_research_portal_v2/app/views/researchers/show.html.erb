@@ -3,32 +3,33 @@
 <% end %>
 
 <% if @researcher == logged_in_researcher %>
-	<div class='sub_navigation navigation'>
-		<ul class='navigation sub_navigation'>
-		  <li class='current'><%= link_to 'My Profile', researcher_path(@researcher), :class => 'ui-state-default ui-corner-all ui-state-hover' %></li>
-		  <li><%= link_to 'My Posts', posts_researcher_path(@researcher), :class => 'ui-state-default ui-corner-all hover-button' %></li>
-		</ul>
-	</div>
-  <div class='sub_navigation navigation feeds'>
-    <ul>
-      <li><%= link_to 'My Personal RSS Feed', account_researcher_path(@researcher, :rss), :class => 'ui-state-default ui-corner-all hover-button ui-priority-secondary' %>           </li>
-    </ul>
-  </div>
-	<div class='sub_navigation navigation actions'>
-		<ul>
-		  <li><%= link_to 'Edit Profile', edit_researcher_path(@researcher), :class => 'ui-state-default ui-corner-all hover-button' %></li>
-		</ul>
+	<div class='navigation'>
+    <div class='sub_navigation'>
+      <ul>
+        <li class='current'><%= link_to 'My Profile', researcher_path(@researcher), :class => 'ui-state-default ui-corner-all ui-state-hover' %></li>
+        <li><%= link_to 'My Posts', posts_researcher_path(@researcher), :class => 'ui-state-default ui-corner-all hover-button' %></li>
+        <li><%= link_to 'My Personal RSS Feed', account_researcher_path(@researcher, :rss), :class => 'ui-state-default ui-corner-all hover-button ui-priority-secondary' %>           </li>
+      </ul>
+    </div>
+    <div class='sub_navigation actions'>
+      <ul>
+        <li><%= link_to 'Edit Profile', edit_researcher_path(@researcher), :class => 'ui-state-default ui-corner-all hover-button' %></li>
+      </ul>
+    </div>
 	</div>
 <% else %>
-	<div class='sub_navigation navigation'>
-		<ul class='navigation sub_navigation'>
-		  <li class='current'><%= link_to "#{@researcher.name}'s Profile", researcher_path(@researcher), :class => 'ui-state-default ui-corner-all ui-state-hover' %></li>
-		  <li><%= link_to "#{@researcher.name}'s Posts", posts_researcher_path(@researcher), :class => 'ui-state-default ui-corner-all hover-button' %></li>
-		</ul>
+	<div class='navigation'>
+    <div class='sub_navigation'>
+      <ul class='navigation sub_navigation'>
+        <li class='current'><%= link_to "#{@researcher.name}'s Profile", researcher_path(@researcher), :class => 'ui-state-default ui-corner-all ui-state-hover' %></li>
+        <li><%= link_to "#{@researcher.name}'s Posts", posts_researcher_path(@researcher), :class => 'ui-state-default ui-corner-all hover-button' %></li>
+      </ul>
+    </div>
 	</div>
 <% end %>
-<div class='profile'>
+<div class='clearer'></div>
 
+<div class='profile'>
   <div class='profile_image align_right'>
     <%= image_tag @researcher.profile_image.url(:small) %>
   </div>

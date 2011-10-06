@@ -38,7 +38,7 @@ class Researcher < ActiveRecord::Base
   has_many :posts
 
   # A researcher can have a profile_image
-  has_attached_file :profile_image, :default_url => "/images/:class/:attachment/missing/missing_:style.jpg", :styles => {
+  has_attached_file :profile_image, :default_url => "/assets/:class/:attachment/missing/missing_:style.jpg", :styles => {
     :micro => "40x40#",
     :thumb => "100x100#",
     :small => "250x250>" 

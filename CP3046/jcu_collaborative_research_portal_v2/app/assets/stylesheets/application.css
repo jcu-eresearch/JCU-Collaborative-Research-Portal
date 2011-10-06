@@ -39,7 +39,7 @@ div.rating {
 }
 
 div.navigation {
-	margin: 0 0 0.5em 0;
+	margin: 0 0 0.3em 0;
   width: 100%;
 }
 
@@ -74,7 +74,7 @@ div.navigation ul li {
 
 div.actions {
 	float: right;
-  clear: both;
+  clear: right;
 }
 
 div.main_navigation {
@@ -90,7 +90,7 @@ div.navigation ul li a {
   text-decoration: none;
 }
 
-div.main_navigation ul, div.navigation ul li a {
+div.main_navigation ul, div.sub_navigation ul, div.navigation ul li a {
   padding: 0.6em;
   margin: 0.3em 0 0.3em 0;
 }
@@ -106,21 +106,6 @@ div.session_navigation ul li a{
 .system_message {
   padding: 0.2em;
 }
-
-/*
-.error {
-	color: red;
-	font-weight: bold;
-	background-color: #ffaeac;
-	padding: 0.2em;
-}
-
-.info {
-	color: #040;
-	background-color: #ceffcc;
-	padding: 0.2em;
-}
-*/
 
 .warning {
 	background-color: #ff6;
@@ -140,18 +125,17 @@ button.show_hide_button, button.show_hide_button span {
 
 
 h1 {
-	color: #0909ff;
+	color: #00f;
 	margin-bottom: 1em;
-  padding-bottom: 0.2em;
   border-bottom: 3px solid #9aafac;
 }
 
 h2 {
 	margin-top: 1em;
-	color: #5969ff;
+	color: #00f;
 	margin-bottom: 1em;
   padding-bottom: 0.2em;
-  border-bottom: 2px dotted #7aaf9c;
+  border-bottom: 2px solid #ccc;
 }
 
 h2.author {
@@ -181,6 +165,7 @@ input.submit {
 }
 
 fieldset {
+	margin-top: 1em;
 	margin-bottom: 1em;
 }
 
@@ -345,9 +330,6 @@ form, .markdown_preview {
 
 }
 
-
-
 .clearer {
   clear: both;
 }
-

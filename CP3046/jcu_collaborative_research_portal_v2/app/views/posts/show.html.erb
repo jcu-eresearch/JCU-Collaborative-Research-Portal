@@ -6,19 +6,22 @@
 	<%= "Post: #{@post.title}" %>
 <% end %>
 
-<div class='sub_navigation navigation feeds'>
-	<ul>
-    <li><%= link_to "Post RSS Feed", post_path(@post, :rss), :class => 'ui-state-default ui-corner-all hover-button' %></li>
-	</ul>
-</div>
-
-<% if logged_in_researcher.moderator or @post.researcher == logged_in_researcher %>
-  <div class='sub_navigation navigation actions'>
+<div class='navigation'>
+  <div class='sub_navigation feeds'>
     <ul>
-      <li><%= link_to 'Delete Post', @post, confirm: 'Are you sure you want to delete this post?', method: :delete, :class => 'ui-state-default ui-corner-all hover-button' %></li>
+      <li><%= link_to "Post RSS Feed", post_path(@post, :rss), :class => 'ui-state-default ui-corner-all hover-button ui-priority-secondary' %></li>
     </ul>
   </div>
-<% end %>
+
+  <% if logged_in_researcher.moderator or @post.researcher == logged_in_researcher %>
+    <div class='sub_navigation actions'>
+      <ul>
+        <li><%= link_to 'Delete Post', @post, confirm: 'Are you sure you want to delete this post?', method: :delete, :class => 'ui-state-default ui-corner-all hover-button' %></li>
+      </ul>
+    </div>
+  <% end %>
+</div>
+<div class='clearer'></div>
 
 
 <h1 class="title"><%= @post.title %></h1>
@@ -42,13 +45,13 @@
 <div class='comments'>
   <% @post.comments.each do |comment| %>
     <div class='comment'>
-
-
       <% if logged_in_researcher.moderator or comment.researcher == logged_in_researcher %>
-        <div class='sub_navigation navigation actions align_right'>
-          <ul>
-            <li><%= link_to 'Delete Comment', post_comment_path(@post, comment), confirm: 'Are you sure you want to delete this comment?', method: :delete, :class => 'ui-state-default ui-corner-all ui-icon ui-icon-trash' %></li>
-          </ul>
+        <div class='navigation'>
+          <div class='sub_navigation actions'>
+            <ul>
+              <li><%= link_to 'Delete Comment', post_comment_path(@post, comment), confirm: 'Are you sure you want to delete this comment?', method: :delete, :class => 'ui-state-default ui-corner-all ui-icon ui-icon-trash' %></li>
+            </ul>
+          </div>
         </div>
       <% end %>
       <div class='profile_image align_left'>
@@ -68,14 +71,13 @@
 </div>
 
 <%= form_for([@post, @post.comments.build]) do |f| %>
-	<fieldset>  
-    <legend>Add A Comment</legend>
+  <fieldset class="ui-widget ui-widget-content">  
+    <legend class="ui-widget ui-widget-header">Add A Comment</legend>
 		<div class="field">
-			<%= f.label :body, "Comment"%><br />
+			<%= f.label :body, "Comment", :class => 'ui-widget-header'%><br />
 			<%= f.text_area :body, :class => "markdown_input" %>
-		  <div class="markdown_preview"></div>
 		</div>
-			<%= f.submit 'Comment', :class => "submit" %>
+      <%= f.submit "Comment", :class => "submit hover-button ui-state-default" %>
 		</div>
 	</fieldset>  
 <% end %>
