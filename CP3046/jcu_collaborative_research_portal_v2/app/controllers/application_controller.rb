@@ -27,8 +27,7 @@ class ApplicationController < ActionController::Base
   # Nothing should run after this method if the validate cas returns false.
   def validate_cas
     if RubyCAS::Filter.filter(self)
-      set_logged_in_cas_user_if_logged_in
-      return true
+      return set_logged_in_cas_user_if_logged_in
     else
       return false
     end
@@ -42,7 +41,7 @@ class ApplicationController < ActionController::Base
         # If the user is auth'd set the current_researcher now.
         @current_researcher = Researcher.find_or_create_by_jc_number({:jc_number => jc_number, :name => jc_number})
       else
-        nil
+        false 
       end
   end
 
@@ -187,6 +186,9 @@ class ApplicationController < ActionController::Base
     if @current_researcher.nil?
       raise "Trying to access the logged_in_researcher when the user isn't logged in. This should not happen."
     end
+
+    logger.debug("Current Researcher: #{@current_researcher.inspect}")
+    logger.debug("Current Researcher: #{@current_researcher.errors.inspect}")
 
     return @current_researcher
   end

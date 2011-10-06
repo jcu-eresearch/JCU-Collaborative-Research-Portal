@@ -9,6 +9,9 @@
 class Researcher < ActiveRecord::Base
   extend FriendlyId
 
+  # Before a user is created, even before validation, attempt to prefill their user-details.
+  before_create :prefill_user_details_from_ldap
+
   # How many researchers to show per page (for pagination)
   self.per_page = 20
 
@@ -79,5 +82,32 @@ class Researcher < ActiveRecord::Base
     paginate :per_page => self.per_page, :page => page,
       :conditions => ['name like ?', "%#{search_name}%"],
       :order => 'name ASC'
+  end
+
+  def prefill_user_details_from_ldap
+    logger.debug "About to prefill data for #{self.jc_number}..."
+
+    begin
+      conn = LDAP::Conn.new(LDAP_HOSTNAME, LDAP::LDAP_PORT)
+      conn.bind(LDAP_BASE) do
+        filter = "uid=#{self.jc_number}"
+        conn.search(LDAP_BASE, LDAP::LDAP_SCOPE_SUBTREE, filter) do |entry|
+          
+          if self.name == self.jc_number
+            self.name = ( entry.get_values('cn').first rescue self.jc_number ).to_s
+          end
+
+          self.email = ( entry.get_values('mail').first rescue '' ).to_s
+
+          self.title ||= ( entry.get_values('title').join('; ') rescue '' ).to_s
+
+          logger.debug "Prefilled user details for #{self.jc_number}: #{[name, email, title].compact.join(', ')}"
+        end
+      end
+    rescue LDAP::ResultError => err
+       logger.error "Failed to prefil user details for #{self.jc_number}. Error: #{err.inspect}"
+    end
+   
+    true
   end
 end
