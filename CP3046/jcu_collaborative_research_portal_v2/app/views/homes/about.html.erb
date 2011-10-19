@@ -1,12 +1,15 @@
 <% content_for :title do %>
-	<%= "About" %>
+  <%= "About" %>
 <% end %>
-<div class='sub_navigation navigation'>
-	<ul>
-		<li><%= link_to 'About', about_home_path, :class => 'ui-state-default ui-corner-all ui-state-hover' %></li>
-		<li><%= link_to 'Support', support_home_path, :class => 'ui-state-default ui-corner-all hover-button' %></li>
-	</ul>
-</div>
+<% content_for :navigation do %>
+  <div class='sub_navigation'>
+    <ul>
+      <li class='current'><%= link_to 'About', about_home_path  %></li>
+      <li><%= link_to 'Support', support_home_path %></li>
+    </ul>
+  </div>
+<% end %>
+
 <h1>About</h1>
 <div class="question_answer">
   <div class="question">

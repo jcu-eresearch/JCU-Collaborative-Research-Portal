@@ -6,16 +6,18 @@
 	<%= "My Account" %>
 <% end %>
 
-<div class='sub_navigation navigation'>
-	<ul class='links'>
-		<li><%= link_to 'My Profile', researcher_path(@researcher), :class => 'ui-state-default ui-corner-all hover-button' %>               </li>
-		<li><%= link_to 'My Posts', posts_researcher_path(@researcher), :class => 'ui-state-default ui-corner-all hover-button' %>           </li>
-		<li><!-- TODO - View Notification Preferences -->                           </li>
-	</ul>
-</div>
+<% content_for :navigation %>
+  <div class='sub_navigation'>
+    <ul class='links'>
+      <li><%= link_to 'My Profile', researcher_path(@researcher) %>               </li>
+      <li><%= link_to 'My Posts', posts_researcher_path(@researcher) %>           </li>
+      <li><!-- TODO - View Notification Preferences -->                           </li>
+    </ul>
+  </div>
 
-<div class='sub_navigation navigation feeds'>
-	<ul>
-		<li><%= link_to 'My Personal RSS Feed', account_researcher_path(@researcher, :rss), :class => 'ui-state-default ui-corner-all hover-button ui-priority-secondary' %>           </li>
-	</ul>
-</div>
+  <div class='sub_navigation feeds'>
+    <ul>
+      <li><%= link_to 'My Personal RSS Feed', account_researcher_path(@researcher, :rss), :class => 'ui-priority-secondary' %>           </li>
+    </ul>
+  </div>
+<% end %>

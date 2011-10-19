@@ -13,22 +13,21 @@ h1, h2, h3 {
 
 body {
   margin-top: 0;
-	font-family: tahoma,verdana,helvetica,arial,sans-serif;
-	margin-left:  auto;
-	margin-right: auto;
+  font-family: tahoma,verdana,helvetica,arial,sans-serif;
+  margin-left:  auto;
+  margin-right: auto;
   padding-left: 1em;
   padding-right: 1em;
-	min-width: 600px;
+  min-width: 600px;
 }
 
 div.body_background {
 /*    background: url('../images/background.jpg');  */
-	width: 1000px;
-	background-repeat: no-repeat;
-	background-color: #dbbe76;
-	padding-bottom: 1.5em;
+  width: 1000px;
+  background-repeat: no-repeat;
+  background-color: #dbbe76;
+  padding-bottom: 1.5em;
 }
-    
 
 img {
   max-width: 100%;
@@ -39,21 +38,23 @@ div.rating {
 }
 
 div.navigation {
-	margin: 0 0 0.3em 0;
+  margin: 0 0 0.3em 0;
   width: 100%;
+  float: left;
 }
 
 div.sub_navigation {
-	display: inline-block;
+  display: inline-block;
   float: left;
 }
 
 div.main_navigation {
   float: left;
+  font-size: large;
 }
 
 div.session_navigation {
-	text-align: right;
+  text-align: right;
 }
 
 .align_right {
@@ -73,21 +74,41 @@ div.navigation ul li {
 }
 
 div.actions {
-	float: right;
+  float: right;
   clear: right;
 }
 
-div.main_navigation {
-  font-size: large;
-}
-
 div.session_navigation ul li, div.sub_navigation ul li {
-	text-align: left; 
+  text-align: left; 
   font-size: smaller;
 }
 
-div.navigation ul li a {
+input.submit, div.navigation ul li a {
   text-decoration: none;
+  background: #f6f6f6 url(images/ui-bg_highlight-soft_100_f6f6f6_1x100.png) 50% 50% repeat-x; 
+  border: 1px solid #dddddd; 
+  font-weight: bold;
+  color: #0073ea;
+  -moz-border-radius-topleft: 2px; -webkit-border-top-left-radius: 2px; -khtml-border-top-left-radius: 2px; border-top-left-radius: 2px;
+  -moz-border-radius-topright: 2px; -webkit-border-top-right-radius: 2px; -khtml-border-top-right-radius: 2px; border-top-right-radius: 2px;
+  -moz-border-radius-bottomleft: 2px; -webkit-border-bottom-left-radius: 2px; -khtml-border-bottom-left-radius: 2px; border-bottom-left-radius: 2px;
+  -moz-border-radius-bottomright: 2px; -webkit-border-bottom-right-radius: 2px; -khtml-border-bottom-right-radius: 2px; border-bottom-right-radius: 2px;
+}
+
+/* Only round the bottom left corner of the session navigation button */
+div.navigation div.session_navigation ul li a {
+  -moz-border-radius-topleft: 0; -webkit-border-top-left-radius: 0; -khtml-border-top-left-radius: 0; border-top-left-radius: 0;
+  -moz-border-radius-topright: 0; -webkit-border-top-right-radius: 0; -khtml-border-top-right-radius: 0; border-top-right-radius: 0;
+  -moz-border-radius-bottomleft: 2px; -webkit-border-bottom-left-radius: 2px; -khtml-border-bottom-left-radius: 2px; border-bottom-left-radius: 2px;
+  -moz-border-radius-bottomright: 0; -webkit-border-bottom-right-radius: 0; -khtml-border-bottom-right-radius: 0; border-bottom-right-radius: 0;
+}
+
+input.submit:hover, div.navigation ul li.current a, div.navigation ul li a:hover {
+  color: #ffffff; text-decoration: none;
+  border: 1px solid #0073ea; 
+  background: #0073ea url(images/ui-bg_highlight-soft_25_0073ea_1x100.png) 50% 50% repeat-x; 
+  font-weight: bold; 
+  color: #ffffff;
 }
 
 div.main_navigation ul, div.sub_navigation ul, div.navigation ul li a {
@@ -108,80 +129,71 @@ div.session_navigation ul li a{
 }
 
 .warning {
-	background-color: #ff6;
+  background-color: #ff6;
 }
 
 h3.preview_toggle_heading{
-	display: inline-block;
-	color: #365ccf;
-	border-bottom: 1px dotted #36f;
+  display: inline-block;
+  color: #365ccf;
+  border-bottom: 1px dotted #36f;
 }
 
 button.show_hide_button, button.show_hide_button span {
-	display: inline-block !important;
-	vertical-align: middle;
+  display: inline-block !important;
+  vertical-align: middle;
 }
 
 
 
 h1 {
-	color: #00f;
-	margin-bottom: 1em;
+  color: #00f;
+  margin-bottom: 1em;
   border-bottom: 3px solid #9aafac;
 }
 
 h2 {
-	margin-top: 1em;
-	color: #00f;
-	margin-bottom: 1em;
+  margin-top: 1em;
+  color: #00f;
+  margin-bottom: 1em;
   padding-bottom: 0.2em;
   border-bottom: 2px solid #ccc;
 }
 
 h2.author {
-	font-size: small; 
+  font-size: small; 
 
 }
 
 fieldset input, fieldset select{
   float: right;
-	width: 60%;
+  width: 60%;
+}
+
+div.field {
+  clear: both;
 }
 
 textarea {
   width: 100%;
-	min-width: 100%;
-	min-height: 20em;
-}
-
-fieldset, fieldset legend, input.submit, button {
-}
-
-fieldset, fieldset legend {
-}
-
-input.submit {
-  margin: 0.4em 0 0.4em 0;
+  min-width: 100%;
+  min-height: 20em;
 }
 
 fieldset {
-	margin-top: 1em;
-	margin-bottom: 1em;
+  margin-top: 1em;
+  margin-bottom: 0em;
 }
 
 fieldset p {
-	margin: 0.6em;
-}
-
-input.submit, fieldset, button {
+  margin: 0.6em;
 }
 
 input.submit {
-	cursor: pointer;
-	font-weight: bold;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 110%;
   width: auto;
-  margin-left: 0.6em;
-  margin-right: 0;
+  margin: 0.0em 0.8em 0.4em 0.4em;
 }
 
 div.submit {
@@ -192,15 +204,16 @@ div.submit {
 input.submit:hover, button:hover {
 }
 
-fieldset div, input.submit {
+legend {
+  font-weight: bolder;
+  font-size: 140% !important;
+  padding: 0.2em 0 0.2em 0;
+  clear: both;
 }
 
-fieldset legend {
-	padding: 0.4em;
-	margin: 0.1em;
-	font-weight: bolder;
+fieldset {
+  border: none;
 }
-
 
 
 div.preview {
@@ -210,6 +223,7 @@ div.preview {
 
 div.markdown_preview {
   padding: 0.2em 0.3em 0.2em 0.4em;
+  margin-bottom: 1em;
 }
 
 div.listing div.content {
@@ -256,13 +270,13 @@ span.star_rating {
 }
 
 div.listings ul {
-	list-style: none;
-	margin-left: 0;
+  list-style: none;
+  margin-left: 0;
     padding-left: 0;
 }
 
 div.listings ul li:before {
-	content: "\00BB \0020";
+  content: "\00BB \0020";
 }
 
 
@@ -270,56 +284,89 @@ table {
 }
 
 th {
-	padding: 0.7em;
+  padding: 0.7em;
 }
 
 tr:nth-child(odd) { 
-  background-color:#ccf; 
+  background-color:#ddf; 
 }
 
 tr:nth-child(even) { 
-  background-color:#ccc; 
+  background-color:#eee; 
 }
 
 td.num {
-	text-align: right;
+  text-align: right;
 }
 td.position {
-	text-align: center;
+  text-align: center;
 }
 td {
-	padding: 0.7em;
+  padding: 0.7em;
 }
 
 form.search_form {
-	font-size: small;
+  font-size: small;
 }
 
+form, div.navigation_wrapper, div.profile {
 
-label {
-	margin-right: 4em;
-  float: left;
-	clear: left;
+  background-image: linear-gradient(bottom, rgb(255,255,255) 10%, rgb(230,235,235) 89%);
+  background-image: -o-linear-gradient(bottom, rgb(255,255,255) 10%, rgb(230,235,235) 89%);
+  background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 10%, rgb(230,235,235) 89%);
+  background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 10%, rgb(230,235,235) 89%);
+  background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 10%, rgb(230,235,235) 89%);
+
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.1, rgb(255,255,255)),
+    color-stop(0.89, rgb(230,235,235))
+  );
+  border: 1px solid #dddddd; 
+  color: #444444; 
+
+  margin-bottom: 1em;
+}
+
+span.label, label {
+  margin-right: 2em;
+  clear: left;
   margin-bottom: 0.4em;
 
-	min-width: 7em;
+  min-width: 8em;
   display: inline-block;
-	font-weight: bold;
+  font-weight: bold;
+  border: 1px solid #dddddd;
+  background: #dddddd url(images/ui-bg_highlight-soft_50_dddddd_1x100.png) 50% 50% repeat-x;
+  color: #444444; 
+  font-weight: bold;
 }
 
+label {
+  float: left;
+}
+span.label {
+  margin-left: 1em;
+}
+ 
 .markdown_preview_container {
   margin-left: 0.1em;
 }
 
 form, .markdown_preview {
-	width: 38em;
+  width: 36em;
   clear: both;
+}
+
+.markdown_preview {
+  width: 100%;
 }
 
 .markdown_preview {
   opacity: 0.7em;
   min-height: 4em;
-  margin-bottom: 2em;
 }
 
 .markdown_preview_prompt {

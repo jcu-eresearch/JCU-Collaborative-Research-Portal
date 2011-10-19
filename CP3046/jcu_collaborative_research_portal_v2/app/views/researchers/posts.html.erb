@@ -6,30 +6,29 @@
 	<%= "#{@researcher.name}'s Posts" %>
 <% end %>
 
-<div class='navigation'>
+<% content_for :navigation do %>
   <% if @researcher == logged_in_researcher %>
     <div class='sub_navigation'>
       <ul>
-        <li><%= link_to "My Profile", researcher_path(@researcher), :class => 'ui-state-default ui-corner-all hover-button' %></li>
-        <li class='current'><%= link_to "My Posts", posts_researcher_path(@researcher), :class => 'ui-state-default ui-corner-all ui-state-hover' %></li>
+        <li><%= link_to "My Profile", researcher_path(@researcher) %></li>
+        <li class='current'><%= link_to "My Posts", posts_researcher_path(@researcher) %></li>
       </ul>
     </div>
     <div class='sub_navigation actions'>
       <ul>
-        <li><%= link_to 'New Post', new_post_path, :class => "ui-state-default ui-corner-all hover-button" %></li>
+        <li><%= link_to 'New Post', new_post_path %></li>
       </ul>
     </div>
   <% else%>
     <div class='sub_navigation'>
       <ul>
-        <li><%= link_to "#{@researcher.name}'s Profile", researcher_path(@researcher), :class => "ui-state-default ui-corner-all hover-button" %></li>
-        <li class='current'><%= link_to "#{@researcher.name}'s Posts", posts_researcher_path(@researcher), :class => 'ui-state-default ui-corner-all ui-state-hover' %></li>
-        <li><%= link_to "#{@researcher.name}'s Posts RSS Feed", posts_researcher_path(@researcher, :rss), :class => "ui-state-default ui-corner-all hover-button ui-priority-secondary" %></li>
+        <li><%= link_to "#{@researcher.name}'s Profile", researcher_path(@researcher) %></li>
+        <li class='current'><%= link_to "#{@researcher.name}'s Posts", posts_researcher_path(@researcher) %></li>
+        <li><%= link_to "#{@researcher.name}'s Posts RSS Feed", posts_researcher_path(@researcher, :rss), :class => "ui-priority-secondary" %></li>
       </ul>
     </div>
   <% end %>
-</div>
-<div class='clearer'></div>
+<% end %>
 
 <h1><%= @researcher.name %> - Posts</h1>
 
@@ -39,10 +38,8 @@
   </tr>
 
 <% @researcher.posts.each_with_index do |post, index| %>
-  <% css_class = index.odd? ? "odd" : "even" %>
-  <tr class='<%= css_class %>'>
+  <tr>
     <td><%= link_to post.title, post%></td>
   </tr>
 <% end %>
 </table>
-

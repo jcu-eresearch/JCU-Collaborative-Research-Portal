@@ -1,5 +1,5 @@
-<%= form_for(@post, :html => { :class => 'ui-widget' } ) do |f| %>
-  <fieldset class='ui-widget ui-widget-content'>
+<%= form_for(@post) do |f| %>
+  <fieldset>
   <% if @post.errors.any? %>
     <div class='ui-state-error'>
       <p class=''>
@@ -16,20 +16,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title, :class => "ui-widget-header" %>
+    <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :content, :class => "ui-widget-header" %>
+    <%= f.label :content %>
     <%= f.text_area :content, :class => 'markdown_input' %>
   </div>
   <div id="model_tags" class="field">
-    <%= f.label :tag_list, :class => "ui-widget-header" %>
+    <%= f.label :tag_list %>
     <%= f.text_field :tag_list %>     
   </div>
+
+  </fieldset>
+
   <div class="actions">
-    <%= f.submit :class => "submit ui-state-default hover-button" %>
+    <%= f.submit :class => "submit" %>
+  </div>
+  <div class="clearer">
   </div>
 
 <% end %>
-</fieldset>

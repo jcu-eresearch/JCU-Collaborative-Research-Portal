@@ -6,38 +6,40 @@
 	<%= "Posts" %>
 <% end %>
 
-<div class='navigation'>
+
+<% content_for :navigation do %>
   <div class='sub_navigation'>
     <ul>
-      <li><%= link_to "Posts RSS Feed", posts_path(:rss), :class => "ui-state-default ui-corner-all hover-button ui-priority-secondary" %></li>
+      <li><%= link_to "Posts RSS Feed", posts_path(:rss), :class => "ui-priority-secondary" %></li>
     </ul>
   </div>
 
   <div class='sub_navigation actions'>
-		<ul class='actions'>
-      <li><%= link_to 'New Post', new_post_path, :class => "ui-state-default ui-corner-all hover-button" %></li>
+    <ul class='actions'>
+      <li><%= link_to 'New Post', new_post_path %></li>
     </ul>
   </div>
-</div>
+<%end%>
 
 
 
 <!-- Search Form -->
 <%= form_tag(posts_path, :method => "get", :class => 'search_form') do %>
-  <fieldset class="ui-widget ui-widget-content">  
-    <legend class="ui-widget ui-widget-header">Search By</legend>
+  <fieldset>
+    <legend>Search By</legend>
 	  <div class="field">
-      <%= label_tag(:search_title, "Title:", :class => "ui-widget-header") %>
+      <%= label_tag(:search_title, "Title:") %>
       <%= search_field_tag(:search_title, params[:search_title]) %>
     </div>
 	  <div class="field">
-      <%= label_tag(:search_tags, "Tags:", :class => "ui-widget-header") %>
+      <%= label_tag(:search_tags, "Tags:") %>
       <%= search_field_tag(:search_tags, params[:search_tags]) %>
     </div>
-    <div class="actions">
-      <%= submit_tag("Search", :class => "submit hover-button ui-state-default") %>
-    </div>
   </fieldset>  
+  <div class="actions">
+    <%= submit_tag("Search", :class => "submit") %>
+  </div>
+  <div class="clearer"></div>
 <% end %>
 
 <h1>Listing Posts</h1>
@@ -51,8 +53,7 @@
 
 <%= will_paginate @posts %>
 <% @posts.each_with_index do |post, index| %>
-  <% css_class = index.odd? ? "odd" : "even" %>
-  <tr class='<%= css_class %>'>
+  <tr>
     <td><%= link_to post.title, post %></td>
     <td><%= post.tag_list %></td>
     <td><%= link_to post.researcher.name, researcher_path(post.researcher) %></td>

@@ -40,7 +40,7 @@ class ResearchersController < ApplicationController
   def show
     if @researcher == logged_in_researcher
       respond_to do |format|
-        format.html { render :layout => 'account' } # account.html.erb
+        format.html { render :layout => 'account' }
         format.xml  { render :xml => @researcher }
         format.json { render :json => @researcher }
       end
@@ -58,6 +58,8 @@ class ResearchersController < ApplicationController
   def account
     respond_to do |format|
       format.html { redirect_to @researcher }
+      format.xml  { render :xml => @researcher }
+      format.json { render :json => @researcher }
       format.rss  { render :layout => false }
     end
   end
@@ -106,6 +108,22 @@ class ResearchersController < ApplicationController
       else
         format.html { render action: "edit" }
         format.json { render json: @researcher.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def posts
+    if @researcher == logged_in_researcher
+      respond_to do |format|
+        format.html { render :layout => 'account' } 
+        format.xml  { render :xml => @researcher }
+        format.json { render :json => @researcher }
+      end
+    else
+      respond_to do |format|
+        format.html # posts.html.erb
+        format.xml  { render :xml => @researcher }
+        format.json { render :json => @researcher }
       end
     end
   end

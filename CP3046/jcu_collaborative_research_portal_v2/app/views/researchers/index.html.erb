@@ -4,16 +4,17 @@
 
 <!-- Search Form -->
 <%= form_tag(researchers_path, :method => "get", :class => 'search_form') do %>
-  <fieldset class="ui-widget ui-widget-content">  
-    <legend class="ui-widget ui-widget-header">Search By</legend>
+  <fieldset>  
+    <legend>Search By</legend>
 	  <div class="field">
-      <%= label_tag(:search_name, "Name:", :class => "ui-widget-header") %>
+      <%= label_tag(:search_name, "Name:") %>
       <%= search_field_tag(:search_name, params[:search_name]) %>
     </div>
-    <div class="actions">
-      <%= submit_tag("Search", :class => "submit hover-button ui-state-default") %>
-    </div>
   </fieldset>  
+  <div class="actions">
+    <%= submit_tag("Search", :class => "submit") %>
+  </div>
+  <div class="clearer"></div>
 <% end %>
 
 <h1>Listing Researchers</h1>
@@ -27,8 +28,7 @@
 
 <%= will_paginate @researchers %>
 <% @researchers.each_with_index do |researcher, index| %>
-  <% css_class = index.odd? ? "odd" : "even" %>
-  <tr class='<%= css_class %>'>
+  <tr>
     <td><%= link_to researcher.name, researcher %></td>
     <td><%= researcher.title %></td>
     <td><%= mail_to(researcher.email) %></td>

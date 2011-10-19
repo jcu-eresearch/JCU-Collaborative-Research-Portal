@@ -1,12 +1,16 @@
 <% content_for :title do %>
 	<%= "Edit Profile" %>
 <% end %>
-<div class='sub_navigation navigation'>
-	<ul class='navigation sub_navigation'>
-		<li class='current'><%= link_to 'My Profile', researcher_path(@researcher) %></li>
-		<li><%= link_to 'My Posts', posts_researcher_path(@researcher) %></li>
-	</ul>
-</div>
+
+<% content_for :navigation do %>
+  <div class='sub_navigation'>
+    <ul class='navigation sub_navigation'>
+      <li class='current'><%= link_to 'My Profile', researcher_path(@researcher) %></li>
+      <li><%= link_to 'My Posts', posts_researcher_path(@researcher) %></li>
+    </ul>
+  </div>
+<% end %>
+
 <h1>Editing Profile</h1>
 
 <%= render 'form' %>
