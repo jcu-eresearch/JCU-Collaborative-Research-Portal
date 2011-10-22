@@ -11,6 +11,8 @@ JcuCollaborativeResearchPortal::Application.routes.draw do
     member do
       get 'account'
       get 'posts'
+      put 'like_tag'
+      put 'dislike_tag'
     end
   end
 
