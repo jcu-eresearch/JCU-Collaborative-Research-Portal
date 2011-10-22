@@ -55,7 +55,7 @@
 <% @posts.each_with_index do |post, index| %>
   <tr>
     <td><%= link_to post.title, post %></td>
-    <td><%= post.tag_list %></td>
+    <td><%= post.tag_list.sort.join(', ') %></td>
     <td><%= link_to post.researcher.name, researcher_path(post.researcher) %></td>
   </tr>
 <% end %>

@@ -16,8 +16,11 @@ class Post < ActiveRecord::Base
   validates :content, :presence => true
   has_many :comments, :dependent => :destroy
   
+
   acts_as_taggable
   
+  before_validation :downcase_tags
+
   # Use the title of the post as the url (to_param) path to the post.
   friendly_id :title, :use => :slugged
 
@@ -25,6 +28,12 @@ class Post < ActiveRecord::Base
   # Return the content converted from markdown, to html.
   def content_as_html
     BlueCloth.new(content).to_html
+  end
+
+  def downcase_tags
+    tag_list.each do |tag|
+      tag.downcase!
+    end
   end
 
   # Search the posts.

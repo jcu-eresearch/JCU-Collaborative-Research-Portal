@@ -11,9 +11,10 @@ class Researcher < ActiveRecord::Base
 
   # Before a user is created, even before validation, attempt to prefill their user-details.
   before_create :prefill_user_details_from_ldap
-  before_create :prefill_user_details_from_ldap
 
+  before_validation :downcase_tags
   validate :liked_tags_cant_also_be_disliked
+  
 
   # How many researchers to show per page (for pagination)
   self.per_page = 20
@@ -33,7 +34,6 @@ class Researcher < ActiveRecord::Base
   
   acts_as_taggable_on :liked_tags
   acts_as_taggable_on :disliked_tags
-
   
   # A researcher has an address.
   # The researcher's address is dependent on the researcher.
@@ -55,11 +55,17 @@ class Researcher < ActiveRecord::Base
 
   # profile image must be less than 1MB 
   validates_attachment_size :profile_image, :less_than=>1.megabyte, :message => "too large, must be less than 1 megabyte in size."
-
+  
   def liked_tags_cant_also_be_disliked
     # perform an intersection.
     unless ( both_liked_and_disliked_tags = ( liked_tag_list & disliked_tag_list ) ).empty?
       errors[:base] << ("The following tags are both liked and disliked: #{both_liked_and_disliked_tags.join(', ')}.")
+    end
+  end
+  
+  def downcase_tags
+    (liked_tag_list + disliked_tag_list).each do |tag|
+      tag.downcase!
     end
   end
 

@@ -3,7 +3,7 @@
 
   <%
     # Sort the tags alphabetically
-    tags = tags.sort { |a, b| a.to_s.downcase <=> b.to_s.downcase }
+    tags = tags.sort { |a, b| a.to_s <=> b.to_s }
   %>
 
   <% tags.each do |tag| %>
