@@ -34,9 +34,8 @@
   </div>
   <div class='clearer'></div>
 
-  <div class="tags">
-    <p><span class='tag_title'>Tags</span>: <span class='tag_list'><%= @post.tag_list %></span></p>
-  </div>
+  <%= render :partial => 'researchers/tag_adjuster', :locals => { :researcher => @post.researcher, :tags => @post.tags } %>
+
 </div>
 
 <h2>Comments</h2>

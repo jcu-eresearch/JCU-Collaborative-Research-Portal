@@ -1,0 +1,48 @@
+<% if tags %>
+
+  <div class='tags_adjuster'>
+
+  <% tags.each do |tag| %>
+
+    <div class='tag_adjuster'>
+
+
+        <%= button_to "like",    
+          {
+            :action => :like_tag,
+            :controller => :researchers,
+            :id => researcher.id, 
+            :tag => tag.to_s,
+            :form => { "data-type" => 'json' },
+          }, 
+          :method => :put,
+          :remote => true,
+          :form_class => "tag_form like_tag_form #{researcher.liked_tags.include?(tag) ? 'current' : 'not_current'}",
+          :class => "tag_submit like_tag_submit ui-icon ui-icon-circle-plus",
+          :disable_with => 'loading...',
+        %>
+
+        <%= button_to "dislike",
+          {
+            :action => :dislike_tag,
+            :controller => :researchers,
+            :id => researcher.id,
+            :tag => tag.to_s,
+            :form => { "data-type" => 'json' },
+          },
+          :method => :put,
+          :remote => true,
+          :form_class => "tag_form dislike_tag_form #{researcher.disliked_tags.include?(tag) ? 'current' : 'not_current'}",
+          :class => "tag_submit dislike_tag_submit ui-icon ui-icon-circle-minus", 
+          :disable_with => 'loading...',
+        %>
+        <p><span class='label'><%= tag %></span></p>
+        
+
+    </div>
+
+  <% end %>
+
+  </div>
+
+<% end %>

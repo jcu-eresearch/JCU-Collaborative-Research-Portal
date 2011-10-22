@@ -8,3 +8,45 @@ form div.profile_image {
   margin-top: 0.2em;
   margin-bottom: 0.8em;
 }
+
+div.tags_adjuster form {
+  border: none;
+  clear: none;
+  background: none;
+}
+div.tags_adjuster form input {
+  background-color: none;
+  border: none;
+  background-color: #f6f6f6;
+  cursor: pointer;
+  margin-right: 0.3em;
+}
+
+div.tags_adjuster form * {
+  float: left;
+}
+
+div.tags_adjuster form.current input.like_tag_submit {
+  background-color: #0c9;
+  background-color: rgba(0, 255, 190, 0.1);
+}
+
+div.tags_adjuster form.current input.dislike_tag_submit {
+  background-color: #623;
+  background-color: rgba(200, 150, 170, 0.1);
+}
+
+form.current {
+}
+
+div.tags_adjuster form.not_current {
+  opacity: 0.3;
+}
+
+div.tags_adjuster form.not_current:hover {
+  opacity: 1;
+}
+
+div.tags_adjuster form.current {
+  opacity: 1;
+}

@@ -8,7 +8,7 @@ class ResearchersController < ApplicationController
 
   # Authenticate the user against the user that owns the page
   # Only allow researcher Bob to edit Bob's profile
-  before_filter :only => [:account, :edit, :update] do |controller|
+  before_filter :only => [:account, :edit, :update, :like_tag, :dislike_tag] do |controller|
     login_required_as_researcher(@researcher, researcher_url(@researcher)) 
   end
 
@@ -92,6 +92,54 @@ class ResearchersController < ApplicationController
       else
         format.html { render action: "new" }
         format.json { render json: @researcher.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PUT /researchers/1/like_tag.json
+  # PUT /researchers/1/like_tag
+  def like_tag 
+    @researcher = Researcher.find(params[:id])
+    tag = params[:tag]
+    respond_to do |format|
+      if tag
+        @researcher.liked_tag_list.add(tag)
+        @researcher.disliked_tag_list.remove(tag)
+        if @researcher.save
+          format.json { render json: { :success => "Researcher was successfully updated. Liked tag: #{tag}" } }
+          format.html { redirect_to @researcher, notice: "Researcher was successfully updated. Liked tag: #{tag}" }
+        else
+          format.json { render json: @researcher.errors, status: :unprocessable_entity }
+          format.html { redirect_to @researcher, alert: "Failed to like tag: #{tag.inspect}. Error: #{@researcher.errors.full_messages.join(', ')}" }
+        end
+      else
+        @researcher.errors.add(:liked_tags, "Can't like tag, as no tag was provided")
+        format.json { render json: @researcher.errors, status: :unprocessable_entity }
+        format.html { redirect_to @researcher, alert: "Failed to like tag. Error: #{@researcher.errors.full_messages.join(', ')}" }
+      end
+    end
+  end
+  
+  # PUT /researchers/1/dislike_tag.json
+  # PUT /researchers/1/dislike_tag
+  def dislike_tag 
+    @researcher = Researcher.find(params[:id])
+    tag = params[:tag]
+    respond_to do |format|
+      if tag
+        @researcher.disliked_tag_list.add(tag)
+        @researcher.liked_tag_list.remove(tag)
+        if @researcher.save
+          format.json { render json: { :success => "Researcher was successfully updated. Disliked tag: #{tag}" } }
+          format.html { redirect_to @researcher, notice: "Researcher was successfully updated. Disliked tag: #{tag}" }
+        else
+          format.json { render json: @researcher.errors, status: :unprocessable_entity }
+          format.html { redirect_to @researcher, alert: "Failed to dislike tag: #{tag.inspect}. Error: #{@researcher.errors.full_messages.join(', ')}" }
+        end
+      else
+        @researcher.errors.add(:disliked_tags, "Can't dislike tag, as no tag was provided")
+        format.json { render json: @researcher.errors, status: :unprocessable_entity }
+        format.html { redirect_to @researcher, alert: "Failed to dislike tag. Error: #{@researcher.errors.full_messages.join(', ')}" }
       end
     end
   end
