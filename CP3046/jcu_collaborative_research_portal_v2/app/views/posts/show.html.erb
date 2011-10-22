@@ -43,6 +43,7 @@
 <div class='comments'>
   <% @post.comments.each do |comment| %>
     <div class='comment'>
+      <a id="<%= comment.id %>"></a>
       <% if logged_in_researcher.moderator or comment.researcher == logged_in_researcher %>
         <div class='sub_navigation actions'>
           <ul>
@@ -78,3 +79,20 @@
   </div>
   <div class="clearer"></div>
 <% end %>
+
+<h2>Similar Posts</h2>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Tags</th>
+      <th>Author</th>
+    </tr>
+
+  <% @post.find_related_tags(:limit => Post::RELATED_ITEM_LIMIT).each_with_index do |post, index| %>
+    <tr>
+      <td><%= link_to post.title, post %></td>
+      <td><%= post.tag_list.sort.join(', ') %></td>
+      <td><%= link_to post.researcher.name, researcher_path(post.researcher) %></td>
+    </tr>
+  <% end %>
+</table>

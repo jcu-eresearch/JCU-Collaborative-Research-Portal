@@ -8,6 +8,8 @@
 # title::         The Researcher's title (e.g Senior Lecturer) 
 class Researcher < ActiveRecord::Base
   extend FriendlyId
+  
+  RELATED_ITEM_LIMIT = 20 # Only show up to this many similar researchers
 
   # Before a user is created, even before validation, attempt to prefill their user-details.
   before_create :prefill_user_details_from_ldap

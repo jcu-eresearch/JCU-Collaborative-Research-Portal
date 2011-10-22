@@ -60,7 +60,30 @@ class ResearchersController < ApplicationController
       format.html { redirect_to @researcher }
       format.xml  { render :xml => @researcher }
       format.json { render :json => @researcher }
-      format.rss  { render :layout => false }
+      format.rss  { 
+        @display_posts = {}
+
+        for post in Post.all(:limit => RSS_ITEM_LIMIT, :order => "created_at DESC") 
+          commented_on_post = false
+          commented_on_post = post.comments.select { |comment| comment.researcher == @researcher }.any?
+
+          # Always show a post if you have liked one of its tags.
+          # Show any post which doesn't have a tag that you have specifically disliked.
+          # Always show a post I have commented on
+          if ( (@researcher.liked_tag_list & post.tag_list).any? or (@researcher.disliked_tag_list & post.tag_list).empty? or commented_on_post )
+            @display_posts[post] = []
+          end
+
+          # Show the comments for this post if I have either commented on it,
+          # or I am the author of the post 
+          if ( commented_on_post or ( post.researcher == @researcher ) )
+            @display_posts[post] ||= []
+            @display_posts[post] += post.comments(:limit => RSS_ITEM_LIMIT, :order => "created_at DESC")
+          end
+        end
+
+        render :layout => false 
+      }
     end
   end
 

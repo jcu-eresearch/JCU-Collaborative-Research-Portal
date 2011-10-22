@@ -6,6 +6,8 @@
 # tags::                    The Post can be tagged (acts_as_taggable)
 class Post < ActiveRecord::Base
   extend FriendlyId
+  
+  RELATED_ITEM_LIMIT = 20 # Only show up to this many similar researchers
 
   # How many posts to show per page (for pagination)
   self.per_page = 20
@@ -15,7 +17,6 @@ class Post < ActiveRecord::Base
   validates :title, :presence => true
   validates :content, :presence => true
   has_many :comments, :dependent => :destroy
-  
 
   acts_as_taggable
   

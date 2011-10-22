@@ -4,6 +4,8 @@
 # 
 # Provides user authentication helper methods
 class ApplicationController < ActionController::Base
+  RSS_ITEM_LIMIT = 100 # Only show up to this many items in an RSS feed request
+
   helper :all # include all helpers, all the time
 
   # See ActionController::RequestForgeryProtection for details

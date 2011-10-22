@@ -24,7 +24,7 @@ class PostsController < ApplicationController
       }
     
       format.rss  { 
-        @posts = Post.all
+        @posts = Post.all(:limit => RSS_ITEM_LIMIT, :order => "created_at DESC")
         render :layout => false 
       }
 

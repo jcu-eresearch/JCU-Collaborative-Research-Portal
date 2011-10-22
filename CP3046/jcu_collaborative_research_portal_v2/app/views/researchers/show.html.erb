@@ -27,6 +27,7 @@
 <% end %>
 
 
+<h1>Profile</h1>
 <div class='profile'>
   <div class='profile_image align_right'>
     <%= image_tag @researcher.profile_image.url(:small) %>
@@ -46,7 +47,31 @@
     <span class='label'>Email:</span>
     <%= mail_to(@researcher.email) %>
   </p>
+  
 
   <%= render :partial => 'shared/address', :locals => {:address => @researcher.address } %>
 
+  <p>
+    <span class='label'>Liked Tags:</span>
+    <%= @researcher.liked_tag_list.sort().join(', ') %>
+  </p>
+
 </div>
+  
+<h2>Researchers with Similar Interests</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Title</th>
+    <th>Email</th>
+  </tr>
+
+<% @researcher.find_related_liked_tags(:limit => Researcher::RELATED_ITEM_LIMIT).each_with_index do |researcher, index| %>
+  <tr>
+    <td><%= link_to researcher.name, researcher %></td>
+    <td><%= researcher.title %></td>
+    <td><%= mail_to(researcher.email) %></td>
+  </tr>
+<% end %>
+</table>
