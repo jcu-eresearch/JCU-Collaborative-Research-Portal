@@ -144,11 +144,15 @@ button.show_hide_button, button.show_hide_button span {
 }
 
 
+form.forget_tag_form.current {
+  display: none;
+}
 
 h1 {
   color: #00f;
   margin-bottom: 1em;
   border-bottom: 3px solid #9aafac;
+  margin-top: 1em;
 }
 
 h2 {

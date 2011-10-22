@@ -37,6 +37,7 @@
       <%= f.label :email %>
       <%= f.text_field :email %>
 	  </div>
+	  
   </fieldset>
 
   <%= f.fields_for :address do |address_fields| %>
@@ -47,4 +48,6 @@
     <%= f.submit :class => "submit" %>
   </div>
   <div class="clearer"></div>
+
 <% end %>
+

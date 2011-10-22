@@ -8,7 +8,7 @@ class ResearchersController < ApplicationController
 
   # Authenticate the user against the user that owns the page
   # Only allow researcher Bob to edit Bob's profile
-  before_filter :only => [:account, :edit, :update, :like_tag, :dislike_tag] do |controller|
+  before_filter :only => [:account, :edit, :update, :like_tag, :dislike_tag, :forget_tag] do |controller|
     login_required_as_researcher(@researcher, researcher_url(@researcher)) 
   end
 
@@ -116,6 +116,30 @@ class ResearchersController < ApplicationController
         @researcher.errors.add(:liked_tags, "Can't like tag, as no tag was provided")
         format.json { render json: @researcher.errors, status: :unprocessable_entity }
         format.html { redirect_to @researcher, alert: "Failed to like tag. Error: #{@researcher.errors.full_messages.join(', ')}" }
+      end
+    end
+  end
+  
+  # PUT /researchers/1/forget_tag.json
+  # PUT /researchers/1/forget_tag
+  def forget_tag
+    @researcher = Researcher.find(params[:id])
+    tag = params[:tag]
+    respond_to do |format|
+      if tag
+        @researcher.liked_tag_list.remove(tag)
+        @researcher.disliked_tag_list.remove(tag)
+        if @researcher.save
+          format.json { render json: { :success => "Researcher was successfully updated. Forgot tag: #{tag}" } }
+          format.html { redirect_to @researcher, notice: "Researcher was successfully updated. Forgot tag: #{tag}" }
+        else
+          format.json { render json: @researcher.errors, status: :unprocessable_entity }
+          format.html { redirect_to @researcher, alert: "Failed to forget tag: #{tag.inspect}. Error: #{@researcher.errors.full_messages.join(', ')}" }
+        end
+      else
+        @researcher.errors[:base] << "Can't forget tag, as no tag was provided"
+        format.json { render json: @researcher.errors, status: :unprocessable_entity }
+        format.html { redirect_to @researcher, alert: "Failed to forget tag. Error: #{@researcher.errors.full_messages.join(', ')}" }
       end
     end
   end

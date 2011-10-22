@@ -1,4 +1,5 @@
 <% if tags %>
+  <% tags.sort! %>
 
   <div class='tags_adjuster'>
 
@@ -6,7 +7,7 @@
 
     <div class='tag_adjuster'>
 
-
+        <div class='tag_options'>
         <%= button_to "like",    
           {
             :action => :like_tag,
@@ -18,7 +19,7 @@
           :method => :put,
           :remote => true,
           :form_class => "tag_form like_tag_form #{researcher.liked_tags.include?(tag) ? 'current' : 'not_current'}",
-          :class => "tag_submit like_tag_submit ui-icon ui-icon-circle-plus",
+          :class => "tag_submit like_tag_submit",
           :disable_with => 'loading...',
         %>
 
@@ -33,12 +34,30 @@
           :method => :put,
           :remote => true,
           :form_class => "tag_form dislike_tag_form #{researcher.disliked_tags.include?(tag) ? 'current' : 'not_current'}",
-          :class => "tag_submit dislike_tag_submit ui-icon ui-icon-circle-minus", 
+          :class => "tag_submit dislike_tag_submit", 
           :disable_with => 'loading...',
         %>
+        
+        <%= button_to "forget",
+          {
+            :action => :forget_tag,
+            :controller => :researchers,
+            :id => researcher.id,
+            :tag => tag.to_s,
+            :form => { "data-type" => 'json' },
+          },
+          :method => :put,
+          :remote => true,
+          :form_class => "tag_form forget_tag_form #{(researcher.disliked_tags + researcher.liked_tags).include?(tag) ? 'not_current' : 'current'}",
+          :class => "tag_submit forget_tag_submit", 
+          :disable_with => 'loading...',
+        %>
+        </div>
+        
         <p><span class='label'><%= tag %></span></p>
         
-
+       
+        
     </div>
 
   <% end %>

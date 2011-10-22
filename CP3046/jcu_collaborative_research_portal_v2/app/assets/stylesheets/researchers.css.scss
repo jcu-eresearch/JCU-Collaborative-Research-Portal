@@ -28,22 +28,26 @@ div.tags_adjuster form * {
 
 div.tags_adjuster form.current input.like_tag_submit {
   background-color: #0c9;
-  background-color: rgba(0, 255, 190, 0.1);
+  background-color: rgba(0, 255, 190, 0.7);
 }
 
 div.tags_adjuster form.current input.dislike_tag_submit {
   background-color: #623;
-  background-color: rgba(200, 150, 170, 0.1);
+  background-color: rgba(255, 120, 130, 0.7);
 }
 
 form.current {
 }
 
 div.tags_adjuster form.not_current {
-  opacity: 0.3;
+  opacity: 0.7;
 }
 
 div.tags_adjuster form.not_current:hover {
+  opacity: 1;
+}
+
+div.tags_adjuster form.current {
   opacity: 1;
 }
 

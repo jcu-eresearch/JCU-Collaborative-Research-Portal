@@ -11,6 +11,9 @@
   </div>
 <% end %>
 
-<h1>Editing Profile</h1>
+<h1>Edit Profile</h1>
 
 <%= render 'form' %>
+
+<h1>Edit Notification Preferences</h1>
+<%= render :partial => 'researchers/tag_adjuster', :locals => { :researcher => @researcher, :tags => (@researcher.liked_tags + @researcher.disliked_tags ) } %>

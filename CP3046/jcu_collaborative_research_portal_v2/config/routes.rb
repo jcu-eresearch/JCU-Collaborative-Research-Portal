@@ -13,6 +13,7 @@ JcuCollaborativeResearchPortal::Application.routes.draw do
       get 'posts'
       put 'like_tag'
       put 'dislike_tag'
+      put 'forget_tag'
     end
   end
 
