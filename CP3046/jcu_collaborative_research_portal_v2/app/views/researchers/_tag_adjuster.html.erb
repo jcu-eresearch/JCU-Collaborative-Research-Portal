@@ -1,7 +1,10 @@
 <% if tags %>
-  <% tags.sort! %>
-
   <div class='tags_adjuster'>
+
+  <%
+    # Sort the tags alphabetically
+    tags = tags.sort { |a, b| a.to_s.downcase <=> b.to_s.downcase }
+  %>
 
   <% tags.each do |tag| %>
 
