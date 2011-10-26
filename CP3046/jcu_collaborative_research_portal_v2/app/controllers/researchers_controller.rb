@@ -78,7 +78,8 @@ class ResearchersController < ApplicationController
           # or I am the author of the post 
           if ( commented_on_post or ( post.researcher == @researcher ) )
             @display_posts[post] ||= []
-            @display_posts[post] += post.comments(:limit => RSS_ITEM_LIMIT, :order => "created_at DESC")
+            post_comments = post.comments(:limit => RSS_ITEM_LIMIT, :order => "created_at DESC")
+            @display_posts[post] += post_comments.select { |comment| comment.researcher != @researcher }
           end
         end
 
