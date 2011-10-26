@@ -17,10 +17,18 @@
 
 <h2>Setting Up The Notification System</h2>
 <p>Notifications are provided through RSS feeds.</p>
-<p>Your personal RSS feed is customized based on your liked and disliked post tags.</p>
+<p>Your personal RSS feed is customized based on your liked and disliked post tags. A link to your RSS feed is available from your profile page.</p>
+<%= image_tag("installation/notification_link.png") %>
 
-<h3>Windows</h3>
+<p>To access your personalised RSS feed, you need a feed reader. We provide installation instructons for RSS feed readers below.</p>
+<p>
+  Jump to:
+  <%= link_to "Windows", :anchor => "notification_setup_windows" %>,
+  <%= link_to "Mac OS X", :anchor => "notification_setup_mac_os_x" %>
+</p>
+
 <a id="notification_setup_windows"></a>
+<h3>Windows</h3>
 
 <h4>Omea Reader</h4>
 <p class='ui-state-highlight'><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>This guide is written based on Omea Reader version 2.2</p>
@@ -40,8 +48,8 @@
 </ol>
 
 
-<h3>Mac OS X</h3>
 <a id="notification_setup_mac_os_x"></a>
+<h3>Mac OS X</h3>
 <h4>RSS Growler</h4>
 <p class='ui-state-highlight'><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>This guide is written based on Growl version 1.2.2 and on RSS Growler version 1.3</p>
 <ol>
