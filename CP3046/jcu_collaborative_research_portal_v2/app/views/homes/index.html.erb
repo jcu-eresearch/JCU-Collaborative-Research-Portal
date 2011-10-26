@@ -8,17 +8,20 @@
     </ul>
   </div>
 <% end %>
-<h1>Home</h1>
-<div class="question_answer">
-  <div class="question">
-    <h2>What is the purpose of this site?</h2>
-  </div>
-  <div class="answer">
-    <p>
-      The goal of this site is to create a more collaborative research environment at JCU. One which will foster the 
-      creation of new research ideas. We hope that this site, and use of the associated notification system, 
-      will help produce an environment which allows you, the staff, to easily find peers with similar research interests, 
-      share/receive feedback on research ideas, and find research ideas that interest you. 
-    </p>
-  </div>
+<h1>JCU Collaborative Academic Portal</h1>
+  <h2>What is the Purpose of this Site?</h2>
+  <p>
+    The goal of this site is to create a more collaborative research environment at JCU. One which will foster the 
+    creation of new research ideas. We hope that this site, and use of the associated notification system, 
+    will help produce an environment which allows you, the staff, to easily find peers with similar research interests, 
+    share/receive feedback on research ideas, and find research ideas that interest you. 
+  </p>
+  <h2>Getting Started</h2>
+  <p>
+    To get started, simply <%= link_to "login", new_session_path %>. Once you've logged in, you'll be taken to your account page. Please take a moment to setup your account.
+    You'll also be able to see other <%= link_to "researchers", researchers_path %> using the site, as well as <%= link_to "view posts", posts_path %> made to the site.
+  </p>
+  <p>
+    For assistance in setting up your custom notifications, please see our <%= link_to "support page", support_home_path %>.
+  </p>
 </div>
