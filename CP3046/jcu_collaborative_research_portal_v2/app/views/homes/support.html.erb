@@ -9,6 +9,7 @@
     </ul>
   </div>
 <% end %>
+<div class='install_guide'>
 <h1>Support</h1>
 <h2>Getting Started</h2>
 <p>
@@ -24,7 +25,7 @@
 <h4>Omea Reader</h4>
 <p class='ui-state-highlight'><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>This guide is written based on Omea Reader version 2.2</p>
 <ol>
-  <li>Download Omea Reader from <%= link_to 'http://www.jetbrains.com/omea/download/reader.html' %></li>
+  <li>Download Omea Reader from <%= link_to 'http://www.jetbrains.com/omea/download/reader.html', 'http://www.jetbrains.com/omea/download/reader.html' %></li>
   <li>Install Omea Reader using the downloaded .exe</li>
   <li>Run Omea Reader</li>
   <li>Press the <strong>subscribe</strong> button</li>
@@ -42,20 +43,18 @@
 <h3>Mac OS X</h3>
 <a id="notification_setup_mac_os_x"></a>
 <h4>RSS Growler</h4>
-<p class='ui-state-highlight'><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>This guide is written based on Growl version 2.2</p>
+<p class='ui-state-highlight'><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>This guide is written based on Growl version 1.2.2 and on RSS Growler version 1.3</p>
 <ol>
-  <li>Download Omea Reader from <%= link_to 'http://www.jetbrains.com/omea/download/reader.html' %></li>
-  <li>Install Omea Reader using the downloaded .exe</li>
-  <li>Run Omea Reader</li>
-  <li>Press the <strong>subscribe</strong> button</li>
-  <li>Enter the URL of your personal account's RSS feed, your jc number and password</li>
-  <%= image_tag("installation/omea/rss_feed_subscribe.png") %>
-  <li>Right click your new Posts folder, and choose notify me</li>
-  <%= image_tag("installation/omea/rss_feed_notify.png") %>
-  <li>Choose your preferred notification options, then press OK</li>
-  <%= image_tag("installation/omea/rss_feed_notify_options.png") %>
-  <p><span class='ui-state-highlight'><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>If you select <strong>Show Desktop Alert</strong>, Omea Reader will show notifications when new posts are made matching your notification preferences</span></p>
-  <%= image_tag("installation/omea/rss_feed_notify_alert.png") %>
+  <li>Download Growl from <%= link_to 'http://growl.info/downloads', 'http://growl.info/downloads' %></li>
+  <li>Install Growl</li>
+  <li>Download RSS Growler from <%= link_to 'http://osiris.laya.com/projects/RSSGrowler/', 'http://osiris.laya.com/projects/RSSGrowler/' %></li>
+  <li>Unzip RSS Growler</li>
+  <li>Drag RSS Growler into your Application folder</li>
+  <%= image_tag("installation/rss_growler/drag_into_application_folder.png") %>
+  <li>Modify your RSS Growler Preferences</li>
+  <%= image_tag("installation/rss_growler/preferences.png") %>
+  <li>Subscribe to your personal account's RSS feed</li>
+  <%= image_tag("installation/rss_growler/subscribe.png") %>
 </ol>
 
 <h3>Linux</h3>
@@ -63,3 +62,4 @@
 
 <h2>Updating Your Profile</h2>
 <h2>Setting Your Notification Preferences</h2>
+</div>
