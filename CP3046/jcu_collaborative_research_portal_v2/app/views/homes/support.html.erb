@@ -11,14 +11,11 @@
 <% end %>
 <div class='install_guide'>
 <h1>Support</h1>
-<h2>Getting Started</h2>
-<p>
-</p>
 
 <h2>Setting Up The Notification System</h2>
 <p>Notifications are provided through RSS feeds.</p>
 <p>Your personal RSS feed is customized based on your liked and disliked post tags. A link to your RSS feed is available from your profile page.</p>
-<%= image_tag("installation/notification_link.png") %>
+<%= image_tag("support/installation/notification_link.png") %>
 
 <p>To access your personalised RSS feed, you need a feed reader. We provide installation instructons for RSS feed readers below.</p>
 <p>
@@ -38,13 +35,13 @@
   <li>Run Omea Reader</li>
   <li>Press the <strong>subscribe</strong> button</li>
   <li>Enter the URL of your personal account's RSS feed, your jc number and password</li>
-  <%= image_tag("installation/omea/rss_feed_subscribe.png") %>
+  <%= image_tag("support/installation/omea/rss_feed_subscribe.png") %>
   <li>Right click your new Posts folder, and choose notify me</li>
-  <%= image_tag("installation/omea/rss_feed_notify.png") %>
+  <%= image_tag("support/installation/omea/rss_feed_notify.png") %>
   <li>Choose your preferred notification options, then press OK</li>
-  <%= image_tag("installation/omea/rss_feed_notify_options.png") %>
+  <%= image_tag("support/installation/omea/rss_feed_notify_options.png") %>
   <p><span class='ui-state-highlight'><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>If you select <strong>Show Desktop Alert</strong>, Omea Reader will show notifications when new posts are made matching your notification preferences</span></p>
-  <%= image_tag("installation/omea/rss_feed_notify_alert.png") %>
+  <%= image_tag("support/installation/omea/rss_feed_notify_alert.png") %>
 </ol>
 
 
@@ -58,15 +55,37 @@
   <li>Download RSS Growler from <%= link_to 'http://osiris.laya.com/projects/RSSGrowler/', 'http://osiris.laya.com/projects/RSSGrowler/' %></li>
   <li>Unzip RSS Growler</li>
   <li>Drag RSS Growler into your Application folder</li>
-  <%= image_tag("installation/rss_growler/drag_into_application_folder.png") %>
+  <%= image_tag("support/installation/rss_growler/drag_into_application_folder.png") %>
   <li>Open RSS Growler from your Applications folder</li>
   <li>Modify your RSS Growler Preferences</li>
-  <%= image_tag("installation/rss_growler/preferences.png") %>
+  <%= image_tag("support/installation/rss_growler/preferences.png") %>
   <li>Subscribe to your personal account's RSS feed</li>
-  <%= image_tag("installation/rss_growler/subscribe.png") %>
+  <%= image_tag("support/installation/rss_growler/subscribe.png") %>
   <p><span class='ui-state-highlight'><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>You will now recieve notifications about posts matching your notification preferences</span></p>
-  <%= image_tag("installation/rss_growler/notification.png") %>
+  <%= image_tag("support/installation/rss_growler/notification.png") %>
 </ol>
 
 <h2>Setting Your Notification Preferences</h2>
+<p>
+Notifications are provided based on the following:
+</p>
+<ul>
+  <li>If a post is made, and you haven't liked or disliked tags associated with it, then you will be notified of it.</li>
+  <li>If a post is made, and you have liked tags associated with it, then you will always be notified of it.</li>
+  <li>If a post is made, and you have disliked tags associated with it, but haven't liked any tags associated with it, then you won't be notified of it.</li>
+</ul>
+
+<p>We expect to refine this system further in the future.</p>
+
+<p>When viewing a Post, you can like or dislike the tags associated with it. In the following image, you can see a post and its associate tags.</p>
+<%= image_tag("support/post_notification_tags.png") %>
+
+<p>If you wanted to hear more about ideas related to the ieee, then you would press <strong>like</strong> on the tag <strong>ieee</strong></p>
+
+<p>If you wanted to hear less about ideas related to robotics, then you would press <strong>dislike</strong> on the tag <strong>robot</strong></p>
+
+<p>You can later alter your existing notification preferences from your edit-profile page.</p>
+<%= image_tag("support/edit_notification_preferences.png") %>
+
+<p>Pressing <strong>forget</strong> removes your existing preference for that tag.</p>
 </div>
