@@ -8,8 +8,9 @@
 # title::         The Researcher's title (e.g Senior Lecturer) 
 class Researcher < ActiveRecord::Base
   extend FriendlyId
-  
-  RELATED_ITEM_LIMIT = 20 # Only show up to this many similar researchers
+
+  # Only show up to this many similar researchers
+  RELATED_ITEM_LIMIT = 20 
 
   # Before a user is created, even before validation, attempt to prefill their user-details.
   before_create :prefill_user_details_from_ldap
@@ -58,6 +59,7 @@ class Researcher < ActiveRecord::Base
   # profile image must be less than 1MB 
   validates_attachment_size :profile_image, :less_than=>1.megabyte, :message => "too large, must be less than 1 megabyte in size."
   
+  # validator to make sure that a tag isn't in both the liked and disliked list
   def liked_tags_cant_also_be_disliked
     # perform an intersection.
     unless ( both_liked_and_disliked_tags = ( liked_tag_list & disliked_tag_list ) ).empty?
@@ -65,6 +67,7 @@ class Researcher < ActiveRecord::Base
     end
   end
   
+  # downcase the researcher's liked and disliked tags
   def downcase_tags
     (liked_tag_list + disliked_tag_list).each do |tag|
       tag.downcase!
@@ -79,8 +82,6 @@ class Researcher < ActiveRecord::Base
   #   - If the user/pass doesn't match an existing researcher's user_id, 
   #     create a new researcher, and return it.
   # - Else, the user/pass is invalid: return false
-  #
-  # TODO: Hook this method into JCU's LDAP
   def self.authenticate(jc_number, pass)
     # XXX Put in temporary code to set whether the log in is valid or not based on regex
     valid = false

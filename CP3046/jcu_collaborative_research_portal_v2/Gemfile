@@ -36,6 +36,8 @@ gem 'acts-as-taggable-on', '~>2.1.0'
 gem 'bluecloth', "~> 2.0"
 gem "ruby-ldap", "~> 0.9.11"
 
+gem "railroady"
+
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 

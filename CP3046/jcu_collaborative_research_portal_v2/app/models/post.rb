@@ -6,8 +6,9 @@
 # tags::                    The Post can be tagged (acts_as_taggable)
 class Post < ActiveRecord::Base
   extend FriendlyId
-  
-  RELATED_ITEM_LIMIT = 20 # Only show up to this many similar researchers
+
+  # Only show up to this many similar researchers
+  RELATED_ITEM_LIMIT = 20 
 
   # How many posts to show per page (for pagination)
   self.per_page = 20
@@ -48,7 +49,8 @@ class Post < ActiveRecord::Base
         :conditions => ['title like ?', "%#{search_title}%"]
     else
       paginate :per_page => self.per_page, :page => page,
-        :conditions => ['title like ?', "%#{search_title}%"]
+        :conditions => ['title like ?', "%#{search_title}%"],
+        :order => 'created_at DESC'
     end
   end
 end

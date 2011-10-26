@@ -75,6 +75,7 @@ GEM
       rack
     rack-test (0.6.1)
       rack (>= 1.0)
+    railroady (1.0.2)
     rails (3.1.0)
       actionmailer (= 3.1.0)
       actionpack (= 3.1.0)
@@ -131,6 +132,7 @@ DEPENDENCIES
   friendly_id (~> 4.0.0.beta8)
   jquery-rails
   paperclip (~> 2.4)
+  railroady
   rails (= 3.1.0)
   ruby-ldap (~> 0.9.11)
   rubycas-client-rails
