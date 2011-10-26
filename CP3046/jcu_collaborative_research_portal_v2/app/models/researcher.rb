@@ -83,9 +83,38 @@ class Researcher < ActiveRecord::Base
   #     create a new researcher, and return it.
   # - Else, the user/pass is invalid: return false
   def self.authenticate(jc_number, pass)
-    # XXX Put in temporary code to set whether the log in is valid or not based on regex
     valid = false
-    valid = true if jc_number =~ /^jc\d+$/
+    begin
+      # Don't proceed unless a jc_number and password were provided. Make sure neither are empty.
+      if (jc_number and !jc_number.empty? and pass and !pass.empty?)
+        # Create a connection to JCU's LDAP
+        conn = LDAP::Conn.new(LDAP_HOSTNAME, LDAP::LDAP_PORT)
+        dn = nil
+
+        # Bind to the LDAP
+        conn.bind(LDAP_BASE) do
+          # Search for the user, and get their dn
+          filter = "(&(uid=#{jc_number})(objectclass=jcuPerson))"
+          conn.search(LDAP_BASE, LDAP::LDAP_SCOPE_SUBTREE, filter) do |entry|
+            dn = entry.get_dn
+          end
+        end
+
+        # If we found a dn...
+        if dn
+          # Attempt to bind to the LDAP using the user's password.
+          # If we fail to bind, the user is invalid.
+          conn.bind("#{dn}", "#{pass}") do
+            valid = true
+          end
+        end
+
+      end
+    rescue => err
+      logger.error "Error authenticating jc number against LDAP. jc_number: #{jc_number.inspect}. Error: #{err}. Backtrace: #{err.backtrace}"
+      valid = false
+    end
+
     if valid
       researcher = Researcher.find_or_create_by_jc_number({:jc_number => jc_number, :name => jc_number})
     else
@@ -109,7 +138,7 @@ class Researcher < ActiveRecord::Base
     begin
       conn = LDAP::Conn.new(LDAP_HOSTNAME, LDAP::LDAP_PORT)
       conn.bind(LDAP_BASE) do
-        filter = "uid=#{self.jc_number}"
+        filter = "(&(uid=#{jc_number})(objectclass=jcuPerson))"
         conn.search(LDAP_BASE, LDAP::LDAP_SCOPE_SUBTREE, filter) do |entry|
           
           if self.name == self.jc_number
